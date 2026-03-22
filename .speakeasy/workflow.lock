@@ -1,0 +1,34 @@
+speakeasyVersion: 1.759.0
+sources: {}
+targets:
+    spaire:
+        source: Spaire-OAS
+workflow:
+    workflowVersion: 1.0.0
+    speakeasyVersion: latest
+    sources:
+        Spaire-OAS:
+            inputs:
+                - location: https://api.spairehq.com/openapi.json
+            overlays:
+                - location: https://raw.githubusercontent.com/Spaire-Tech/polar/main/sdk/overlays/security.yml
+                - location: https://raw.githubusercontent.com/Spaire-Tech/polar/main/sdk/overlays/type_parameter.yml
+                - location: https://raw.githubusercontent.com/Spaire-Tech/polar/main/sdk/overlays/read_only.yml
+                - location: https://raw.githubusercontent.com/Spaire-Tech/polar/main/sdk/overlays/event_discriminator.yml
+                - location: https://raw.githubusercontent.com/Spaire-Tech/polar/main/sdk/overlays/timezone_enum.yml
+                - location: https://raw.githubusercontent.com/Spaire-Tech/polar/main/sdk/overlays/event_metadata.yml
+            registry:
+                location: registry.speakeasyapi.dev/spaire/spaire/spaire-oas
+    targets:
+        spaire:
+            target: ruby
+            source: Spaire-OAS
+            publish:
+                rubygems:
+                    token: $rubygems_auth_token
+            codeSamples:
+                registry:
+                    location: registry.speakeasyapi.dev/spaire/spaire/spaire-api-ruby-code-samples
+                labelOverride:
+                    fixedValue: Ruby (SDK)
+                blocking: false

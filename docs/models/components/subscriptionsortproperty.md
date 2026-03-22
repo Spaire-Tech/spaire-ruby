@@ -1,0 +1,33 @@
+# SubscriptionSortProperty
+
+## Example Usage
+
+```ruby
+require "spaire"
+
+value = SubscriptionSortProperty::CUSTOMER
+```
+
+
+## Values
+
+| Name                       | Value                      |
+| -------------------------- | -------------------------- |
+| `CUSTOMER`                 | customer                   |
+| `MINUS_CUSTOMER`           | -customer                  |
+| `STATUS`                   | status                     |
+| `MINUS_STATUS`             | -status                    |
+| `STARTED_AT`               | started_at                 |
+| `MINUS_STARTED_AT`         | -started_at                |
+| `CURRENT_PERIOD_END`       | current_period_end         |
+| `MINUS_CURRENT_PERIOD_END` | -current_period_end        |
+| `ENDED_AT`                 | ended_at                   |
+| `MINUS_ENDED_AT`           | -ended_at                  |
+| `ENDS_AT`                  | ends_at                    |
+| `MINUS_ENDS_AT`            | -ends_at                   |
+| `AMOUNT`                   | amount                     |
+| `MINUS_AMOUNT`             | -amount                    |
+| `PRODUCT`                  | product                    |
+| `MINUS_PRODUCT`            | -product                   |
+| `DISCOUNT`                 | discount                   |
+| `MINUS_DISCOUNT`           | -discount                  |

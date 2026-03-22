@@ -1,0 +1,11 @@
+# OrganizationAccessTokenCreate
+
+
+## Fields
+
+| Field                                                                                 | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `organization_id`                                                                     | *T.nilable(::String)*                                                                 | :heavy_minus_sign:                                                                    | N/A                                                                                   |
+| `comment`                                                                             | *::String*                                                                            | :heavy_check_mark:                                                                    | N/A                                                                                   |
+| `expires_in`                                                                          | *T.nilable(::String)*                                                                 | :heavy_minus_sign:                                                                    | N/A                                                                                   |
+| `scopes`                                                                              | T::Array<[Models::Components::AvailableScope](../../models/shared/availablescope.md)> | :heavy_check_mark:                                                                    | N/A                                                                                   |

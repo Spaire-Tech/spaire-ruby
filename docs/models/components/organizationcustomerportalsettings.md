@@ -1,0 +1,9 @@
+# OrganizationCustomerPortalSettings
+
+
+## Fields
+
+| Field                                                                                                               | Type                                                                                                                | Required                                                                                                            | Description                                                                                                         |
+| ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| `usage`                                                                                                             | [Models::Components::CustomerPortalUsageSettings](../../models/shared/customerportalusagesettings.md)               | :heavy_check_mark:                                                                                                  | N/A                                                                                                                 |
+| `subscription`                                                                                                      | [Models::Components::CustomerPortalSubscriptionSettings](../../models/shared/customerportalsubscriptionsettings.md) | :heavy_check_mark:                                                                                                  | N/A                                                                                                                 |

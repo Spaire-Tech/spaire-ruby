@@ -1,0 +1,9 @@
+# CustomersUpdateExternalRequest
+
+
+## Fields
+
+| Field                                                                                           | Type                                                                                            | Required                                                                                        | Description                                                                                     |
+| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| `external_id`                                                                                   | *::String*                                                                                      | :heavy_check_mark:                                                                              | The customer external ID.                                                                       |
+| `body`                                                                                          | [Models::Components::CustomerUpdateExternalID](../../models/shared/customerupdateexternalid.md) | :heavy_check_mark:                                                                              | N/A                                                                                             |

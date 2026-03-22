@@ -1,0 +1,12 @@
+# AuthorizeResponseUser
+
+
+## Fields
+
+| Field                                                                                | Type                                                                                 | Required                                                                             | Description                                                                          |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| `client`                                                                             | [Models::Components::OAuth2ClientPublic](../../models/shared/oauth2clientpublic.md)  | :heavy_check_mark:                                                                   | N/A                                                                                  |
+| `sub_type`                                                                           | *::String*                                                                           | :heavy_check_mark:                                                                   | N/A                                                                                  |
+| `sub`                                                                                | [T.nilable(Models::Components::AuthorizeUser)](../../models/shared/authorizeuser.md) | :heavy_check_mark:                                                                   | N/A                                                                                  |
+| `scopes`                                                                             | T::Array<[Models::Components::Scope](../../models/shared/scope.md)>                  | :heavy_check_mark:                                                                   | N/A                                                                                  |
+| `scope_display_names`                                                                | T::Hash[Symbol, *::String*]                                                          | :heavy_minus_sign:                                                                   | N/A                                                                                  |

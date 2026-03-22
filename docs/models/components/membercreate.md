@@ -1,0 +1,14 @@
+# MemberCreate
+
+Schema for creating a new member.
+
+
+## Fields
+
+| Field                                                                          | Type                                                                           | Required                                                                       | Description                                                                    | Example                                                                        |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `customer_id`                                                                  | *::String*                                                                     | :heavy_check_mark:                                                             | The ID of the customer this member belongs to.                                 |                                                                                |
+| `email`                                                                        | *::String*                                                                     | :heavy_check_mark:                                                             | The email address of the member.                                               | member@example.com                                                             |
+| `name`                                                                         | *T.nilable(::String)*                                                          | :heavy_minus_sign:                                                             | N/A                                                                            | Jane Doe                                                                       |
+| `external_id`                                                                  | *T.nilable(::String)*                                                          | :heavy_minus_sign:                                                             | The ID of the member in your system. This must be unique within the customer.  | usr_1337                                                                       |
+| `role`                                                                         | [T.nilable(Models::Components::MemberRole)](../../models/shared/memberrole.md) | :heavy_minus_sign:                                                             | N/A                                                                            |                                                                                |

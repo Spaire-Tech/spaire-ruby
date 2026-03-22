@@ -1,0 +1,32 @@
+# typed: true
+# frozen_string_literal: true
+
+class OpenApiSDK::Models::Operations::BenefitsCreateResponse
+  extend ::Crystalline::MetadataFields::ClassMethods
+end
+
+class OpenApiSDK::Models::Operations::BenefitsCreateResponse
+  def content_type
+  end
+
+  def content_type=(str_)
+  end
+
+  def status_code
+  end
+
+  def status_code=(str_)
+  end
+
+  def raw_response
+  end
+
+  def raw_response=(str_)
+  end
+
+  def benefit
+  end
+
+  def benefit=(str_)
+  end
+end

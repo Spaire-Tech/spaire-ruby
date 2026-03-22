@@ -1,0 +1,38 @@
+# typed: true
+# frozen_string_literal: true
+
+class OpenApiSDK::Models::Components::AuthorizeResponseUser
+  extend ::Crystalline::MetadataFields::ClassMethods
+end
+
+class OpenApiSDK::Models::Components::AuthorizeResponseUser
+  def client
+  end
+
+  def client=(str_)
+  end
+
+  def scopes
+  end
+
+  def scopes=(str_)
+  end
+
+  def sub_type
+  end
+
+  def sub_type=(str_)
+  end
+
+  def sub
+  end
+
+  def sub=(str_)
+  end
+
+  def scope_display_names
+  end
+
+  def scope_display_names=(str_)
+  end
+end
