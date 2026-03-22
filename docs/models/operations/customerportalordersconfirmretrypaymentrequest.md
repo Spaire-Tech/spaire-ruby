@@ -1,0 +1,9 @@
+# CustomerPortalOrdersConfirmRetryPaymentRequest
+
+
+## Fields
+
+| Field                                                                                                 | Type                                                                                                  | Required                                                                                              | Description                                                                                           |
+| ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| `id`                                                                                                  | *::String*                                                                                            | :heavy_check_mark:                                                                                    | The order ID.                                                                                         |
+| `body`                                                                                                | [Models::Components::CustomerOrderConfirmPayment](../../models/shared/customerorderconfirmpayment.md) | :heavy_check_mark:                                                                                    | N/A                                                                                                   |

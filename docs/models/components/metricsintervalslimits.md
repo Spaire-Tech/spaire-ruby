@@ -1,0 +1,14 @@
+# MetricsIntervalsLimits
+
+Date interval limits to get metrics for each interval.
+
+
+## Fields
+
+| Field                                                                                   | Type                                                                                    | Required                                                                                | Description                                                                             |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `hour`                                                                                  | [Models::Components::MetricsIntervalLimit](../../models/shared/metricsintervallimit.md) | :heavy_check_mark:                                                                      | Date interval limit to get metrics for a given interval.                                |
+| `day`                                                                                   | [Models::Components::MetricsIntervalLimit](../../models/shared/metricsintervallimit.md) | :heavy_check_mark:                                                                      | Date interval limit to get metrics for a given interval.                                |
+| `week`                                                                                  | [Models::Components::MetricsIntervalLimit](../../models/shared/metricsintervallimit.md) | :heavy_check_mark:                                                                      | Date interval limit to get metrics for a given interval.                                |
+| `month`                                                                                 | [Models::Components::MetricsIntervalLimit](../../models/shared/metricsintervallimit.md) | :heavy_check_mark:                                                                      | Date interval limit to get metrics for a given interval.                                |
+| `year`                                                                                  | [Models::Components::MetricsIntervalLimit](../../models/shared/metricsintervallimit.md) | :heavy_check_mark:                                                                      | Date interval limit to get metrics for a given interval.                                |

@@ -1,0 +1,20 @@
+# MemberSession
+
+A member session that can be used to authenticate as a member in the customer portal.
+
+
+## Fields
+
+| Field                                                                | Type                                                                 | Required                                                             | Description                                                          |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| `created_at`                                                         | [Date](https://ruby-doc.org/stdlib-2.6.1/libdoc/date/rdoc/Date.html) | :heavy_check_mark:                                                   | Creation timestamp of the object.                                    |
+| `modified_at`                                                        | [Date](https://ruby-doc.org/stdlib-2.6.1/libdoc/date/rdoc/Date.html) | :heavy_check_mark:                                                   | Last modification timestamp of the object.                           |
+| `id`                                                                 | *::String*                                                           | :heavy_check_mark:                                                   | The ID of the object.                                                |
+| `token`                                                              | *::String*                                                           | :heavy_check_mark:                                                   | N/A                                                                  |
+| `expires_at`                                                         | [Date](https://ruby-doc.org/stdlib-2.6.1/libdoc/date/rdoc/Date.html) | :heavy_check_mark:                                                   | N/A                                                                  |
+| `return_url`                                                         | *T.nilable(::String)*                                                | :heavy_check_mark:                                                   | N/A                                                                  |
+| `member_portal_url`                                                  | *::String*                                                           | :heavy_check_mark:                                                   | N/A                                                                  |
+| `member_id`                                                          | *::String*                                                           | :heavy_check_mark:                                                   | N/A                                                                  |
+| `member`                                                             | [Models::Components::Member](../../models/shared/member.md)          | :heavy_check_mark:                                                   | A member of a customer.                                              |
+| `customer_id`                                                        | *::String*                                                           | :heavy_check_mark:                                                   | N/A                                                                  |
+| `customer`                                                           | [Models::Components::Customer](../../models/shared/customer.md)      | :heavy_check_mark:                                                   | A customer in an organization.                                       |

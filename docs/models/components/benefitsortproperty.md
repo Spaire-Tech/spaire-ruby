@@ -1,0 +1,23 @@
+# BenefitSortProperty
+
+## Example Usage
+
+```ruby
+require "spaire"
+
+value = BenefitSortProperty::CREATED_AT
+```
+
+
+## Values
+
+| Name                | Value               |
+| ------------------- | ------------------- |
+| `CREATED_AT`        | created_at          |
+| `MINUS_CREATED_AT`  | -created_at         |
+| `DESCRIPTION`       | description         |
+| `MINUS_DESCRIPTION` | -description        |
+| `TYPE`              | type                |
+| `MINUS_TYPE`        | -type               |
+| `USER_ORDER`        | user_order          |
+| `MINUS_USER_ORDER`  | -user_order         |

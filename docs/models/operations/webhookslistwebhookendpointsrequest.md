@@ -1,0 +1,10 @@
+# WebhooksListWebhookEndpointsRequest
+
+
+## Fields
+
+| Field                                                                                                 | Type                                                                                                  | Required                                                                                              | Description                                                                                           |
+| ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| `organization_id`                                                                                     | [T.nilable(T.any(::String, T::Array[::String]))](../../models/operations/queryparamorganizationid.md) | :heavy_minus_sign:                                                                                    | Filter by organization ID.                                                                            |
+| `page`                                                                                                | *T.nilable(::Integer)*                                                                                | :heavy_minus_sign:                                                                                    | Page number, defaults to 1.                                                                           |
+| `limit`                                                                                               | *T.nilable(::Integer)*                                                                                | :heavy_minus_sign:                                                                                    | Size of a page, defaults to 10. Maximum is 100.                                                       |
