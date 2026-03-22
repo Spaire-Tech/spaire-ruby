@@ -1,14 +1,14 @@
 openapi: "3.1.0"
 info:
-  summary: "Polar HTTP and Webhooks API"
-  title: "Polar API"
-  description: "Read the docs at https://docs.polar.sh/api"
+  summary: "Spaire HTTP and Webhooks API"
+  title: "Spaire API"
+  description: "Read the docs at https://docs.spaire.sh/api"
   version: "0.1.0"
 servers:
-  - url: "https://api.polar.sh"
+  - url: "https://api.spaire.sh"
     description: "Production environment"
     x-speakeasy-server-id: "production"
-  - url: "https://sandbox-api.polar.sh"
+  - url: "https://sandbox-api.spaire.sh"
     description: "Sandbox environment"
     x-speakeasy-server-id: "sandbox"
 paths:
@@ -56,13 +56,13 @@ paths:
               - type: "string"
                 format: "uuid4"
                 description: "The organization ID."
-                x-polar-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
+                x-spaire-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
               - type: "array"
                 items:
                   type: "string"
                   format: "uuid4"
                   description: "The organization ID."
-                  x-polar-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
+                  x-spaire-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
               - type: "null"
             title: "OrganizationID Filter"
             description: "Filter by organization ID."
@@ -113,7 +113,7 @@ paths:
         - oidc:
             - external_organizations:read
         - pat: []
-      x-polar-allowed-subjects: ["Anonymous", "Organization", "User"]
+      x-spaire-allowed-subjects: ["Anonymous", "Organization", "User"]
       x-speakeasy-pagination: {"type": "offsetLimit", "inputs": [{"name": "page", "in": "parameters", "type": "page"}, {"name": "limit", "in": "parameters", "type": "limit"}], "outputs": {"results": "$.items", "numPages": "$.pagination.max_page"}}
       x-speakeasy-group: "external_organizations"
       x-speakeasy-name-override: "list"
@@ -184,13 +184,13 @@ paths:
               - type: "string"
                 format: "uuid4"
                 description: "The organization ID."
-                x-polar-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
+                x-spaire-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
               - type: "array"
                 items:
                   type: "string"
                   format: "uuid4"
                   description: "The organization ID."
-                  x-polar-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
+                  x-spaire-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
               - type: "null"
             title: "OrganizationID Filter"
             description: "Filter by organization ID."
@@ -242,7 +242,7 @@ paths:
             - repositories:read
             - repositories:write
         - pat: []
-      x-polar-allowed-subjects: ["Anonymous", "Organization", "User"]
+      x-spaire-allowed-subjects: ["Anonymous", "Organization", "User"]
       x-speakeasy-pagination: {"type": "offsetLimit", "inputs": [{"name": "page", "in": "parameters", "type": "page"}, {"name": "limit", "in": "parameters", "type": "limit"}], "outputs": {"results": "$.items", "numPages": "$.pagination.max_page"}}
       x-speakeasy-group: "repositories"
       x-speakeasy-name-override: "list"
@@ -264,7 +264,7 @@ paths:
             title: "Id"
             format: "uuid4"
             description: "The repository ID."
-            x-polar-selector-widget: {"resourceRoot": "/v1/repositories", "resourceName": "Repository", "displayProperty": "name"}
+            x-spaire-selector-widget: {"resourceRoot": "/v1/repositories", "resourceName": "Repository", "displayProperty": "name"}
       responses:
         "200":
           description: "Successful Response"
@@ -286,7 +286,7 @@ paths:
             - repositories:read
             - repositories:write
         - pat: []
-      x-polar-allowed-subjects: ["Anonymous", "Organization", "User"]
+      x-spaire-allowed-subjects: ["Anonymous", "Organization", "User"]
       x-speakeasy-group: "repositories"
       x-speakeasy-name-override: "get"
     patch:
@@ -306,7 +306,7 @@ paths:
             title: "Id"
             format: "uuid4"
             description: "The repository ID."
-            x-polar-selector-widget: {"resourceRoot": "/v1/repositories", "resourceName": "Repository", "displayProperty": "name"}
+            x-spaire-selector-widget: {"resourceRoot": "/v1/repositories", "resourceName": "Repository", "displayProperty": "name"}
       requestBody:
         content:
           "application/json":
@@ -337,7 +337,7 @@ paths:
         - oidc:
             - repositories:write
         - pat: []
-      x-polar-allowed-subjects: ["Organization", "User"]
+      x-spaire-allowed-subjects: ["Organization", "User"]
       x-speakeasy-group: "repositories"
       x-speakeasy-name-override: "update"
   "/v1/organizations/":
@@ -408,7 +408,7 @@ paths:
             - organizations:read
             - organizations:write
         - pat: []
-      x-polar-allowed-subjects: ["Organization", "User"]
+      x-spaire-allowed-subjects: ["Organization", "User"]
       x-speakeasy-pagination: {"type": "offsetLimit", "inputs": [{"name": "page", "in": "parameters", "type": "page"}, {"name": "limit", "in": "parameters", "type": "limit"}], "outputs": {"results": "$.items", "numPages": "$.pagination.max_page"}}
       x-speakeasy-group: "organizations"
       x-speakeasy-name-override: "list"
@@ -440,7 +440,7 @@ paths:
         - oidc:
             - organizations:write
         - pat: []
-      x-polar-allowed-subjects: ["User"]
+      x-spaire-allowed-subjects: ["User"]
       x-speakeasy-group: "organizations"
       x-speakeasy-name-override: "create"
   "/v1/organizations/{id}":
@@ -461,7 +461,7 @@ paths:
             title: "Id"
             format: "uuid4"
             description: "The organization ID."
-            x-polar-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
+            x-spaire-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
       responses:
         "200":
           description: "Successful Response"
@@ -483,7 +483,7 @@ paths:
             - organizations:read
             - organizations:write
         - pat: []
-      x-polar-allowed-subjects: ["Organization", "User"]
+      x-spaire-allowed-subjects: ["Organization", "User"]
       x-speakeasy-group: "organizations"
       x-speakeasy-name-override: "get"
     patch:
@@ -503,7 +503,7 @@ paths:
             title: "Id"
             format: "uuid4"
             description: "The organization ID."
-            x-polar-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
+            x-spaire-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
       requestBody:
         content:
           "application/json":
@@ -534,7 +534,7 @@ paths:
         - oidc:
             - organizations:write
         - pat: []
-      x-polar-allowed-subjects: ["Organization", "User"]
+      x-spaire-allowed-subjects: ["Organization", "User"]
       x-speakeasy-group: "organizations"
       x-speakeasy-name-override: "update"
   "/v1/subscriptions/":
@@ -555,13 +555,13 @@ paths:
               - type: "string"
                 format: "uuid4"
                 description: "The organization ID."
-                x-polar-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
+                x-spaire-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
               - type: "array"
                 items:
                   type: "string"
                   format: "uuid4"
                   description: "The organization ID."
-                  x-polar-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
+                  x-spaire-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
               - type: "null"
             title: "OrganizationID Filter"
             description: "Filter by organization ID."
@@ -574,13 +574,13 @@ paths:
               - type: "string"
                 format: "uuid4"
                 description: "The product ID."
-                x-polar-selector-widget: {"resourceRoot": "/v1/products", "resourceName": "Product", "displayProperty": "name"}
+                x-spaire-selector-widget: {"resourceRoot": "/v1/products", "resourceName": "Product", "displayProperty": "name"}
               - type: "array"
                 items:
                   type: "string"
                   format: "uuid4"
                   description: "The product ID."
-                  x-polar-selector-widget: {"resourceRoot": "/v1/products", "resourceName": "Product", "displayProperty": "name"}
+                  x-spaire-selector-widget: {"resourceRoot": "/v1/products", "resourceName": "Product", "displayProperty": "name"}
               - type: "null"
             title: "ProductID Filter"
             description: "Filter by product ID."
@@ -608,13 +608,13 @@ paths:
               - type: "string"
                 format: "uuid4"
                 description: "The product ID."
-                x-polar-selector-widget: {"resourceRoot": "/v1/products", "resourceName": "Product", "displayProperty": "name"}
+                x-spaire-selector-widget: {"resourceRoot": "/v1/products", "resourceName": "Product", "displayProperty": "name"}
               - type: "array"
                 items:
                   type: "string"
                   format: "uuid4"
                   description: "The product ID."
-                  x-polar-selector-widget: {"resourceRoot": "/v1/products", "resourceName": "Product", "displayProperty": "name"}
+                  x-spaire-selector-widget: {"resourceRoot": "/v1/products", "resourceName": "Product", "displayProperty": "name"}
               - type: "null"
             title: "DiscountID Filter"
             description: "Filter by discount ID."
@@ -676,7 +676,7 @@ paths:
             - subscriptions:read
             - subscriptions:write
         - pat: []
-      x-polar-allowed-subjects: ["Organization", "User"]
+      x-spaire-allowed-subjects: ["Organization", "User"]
       x-speakeasy-pagination: {"type": "offsetLimit", "inputs": [{"name": "page", "in": "parameters", "type": "page"}, {"name": "limit", "in": "parameters", "type": "limit"}], "outputs": {"results": "$.items", "numPages": "$.pagination.max_page"}}
       x-speakeasy-group: "subscriptions"
       x-speakeasy-name-override: "list"
@@ -698,13 +698,13 @@ paths:
               - type: "string"
                 format: "uuid4"
                 description: "The organization ID."
-                x-polar-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
+                x-spaire-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
               - type: "array"
                 items:
                   type: "string"
                   format: "uuid4"
                   description: "The organization ID."
-                  x-polar-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
+                  x-spaire-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
               - type: "null"
             title: "Organization Id"
             description: "Filter by organization ID."
@@ -724,7 +724,7 @@ paths:
             - subscriptions:read
             - subscriptions:write
         - pat: []
-      x-polar-allowed-subjects: ["Organization", "User"]
+      x-spaire-allowed-subjects: ["Organization", "User"]
       x-speakeasy-group: "subscriptions"
       x-speakeasy-name-override: "export"
   "/v1/advertisements/":
@@ -744,7 +744,7 @@ paths:
             title: "Benefit Id"
             format: "uuid4"
             description: "The benefit ID."
-            x-polar-selector-widget: {"resourceRoot": "/v1/benefits", "resourceName": "Benefit", "displayProperty": "description"}
+            x-spaire-selector-widget: {"resourceRoot": "/v1/benefits", "resourceName": "Benefit", "displayProperty": "description"}
         - name: "page"
           in: "query"
           description: "Page number, defaults to 1."
@@ -871,7 +871,7 @@ paths:
       security:
         - oidc: []
         - pat: []
-      x-polar-allowed-subjects: ["User"]
+      x-spaire-allowed-subjects: ["User"]
       x-speakeasy-pagination: {"type": "offsetLimit", "inputs": [{"name": "page", "in": "parameters", "type": "page"}, {"name": "limit", "in": "parameters", "type": "limit"}], "outputs": {"results": "$.items", "numPages": "$.pagination.max_page"}}
       x-speakeasy-group: "oauth2.clients"
       x-speakeasy-name-override: "list"
@@ -903,7 +903,7 @@ paths:
       security:
         - oidc: []
         - pat: []
-      x-polar-allowed-subjects: ["User"]
+      x-spaire-allowed-subjects: ["User"]
       x-speakeasy-group: "oauth2.clients"
       x-speakeasy-name-override: "create"
   "/v1/oauth2/register/{client_id}":
@@ -936,7 +936,7 @@ paths:
       security:
         - oidc: []
         - pat: []
-      x-polar-allowed-subjects: ["Anonymous", "User"]
+      x-spaire-allowed-subjects: ["Anonymous", "User"]
       x-speakeasy-group: "oauth2.clients"
       x-speakeasy-name-override: "get"
     put:
@@ -973,7 +973,7 @@ paths:
       security:
         - oidc: []
         - pat: []
-      x-polar-allowed-subjects: ["Anonymous", "User"]
+      x-spaire-allowed-subjects: ["Anonymous", "User"]
       x-speakeasy-group: "oauth2.clients"
       x-speakeasy-name-override: "update"
     delete:
@@ -1005,7 +1005,7 @@ paths:
       security:
         - oidc: []
         - pat: []
-      x-polar-allowed-subjects: ["Anonymous", "User"]
+      x-spaire-allowed-subjects: ["Anonymous", "User"]
       x-speakeasy-group: "oauth2.clients"
       x-speakeasy-name-override: "delete"
   "/v1/oauth2/authorize":
@@ -1033,7 +1033,7 @@ paths:
       security:
         - oidc: []
         - pat: []
-      x-polar-allowed-subjects: ["Anonymous", "User"]
+      x-spaire-allowed-subjects: ["Anonymous", "User"]
       x-speakeasy-group: "oauth2"
       x-speakeasy-name-override: "authorize"
   "/v1/oauth2/token":
@@ -1200,13 +1200,13 @@ paths:
               - type: "string"
                 format: "uuid4"
                 description: "The organization ID."
-                x-polar-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
+                x-spaire-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
               - type: "array"
                 items:
                   type: "string"
                   format: "uuid4"
                   description: "The organization ID."
-                  x-polar-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
+                  x-spaire-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
               - type: "null"
             title: "OrganizationID Filter"
             description: "Filter by organization ID."
@@ -1258,7 +1258,7 @@ paths:
             - benefits:read
             - benefits:write
         - pat: []
-      x-polar-allowed-subjects: ["Organization", "User"]
+      x-spaire-allowed-subjects: ["Organization", "User"]
       x-speakeasy-pagination: {"type": "offsetLimit", "inputs": [{"name": "page", "in": "parameters", "type": "page"}, {"name": "limit", "in": "parameters", "type": "limit"}], "outputs": {"results": "$.items", "numPages": "$.pagination.max_page"}}
       x-speakeasy-group: "benefits"
       x-speakeasy-name-override: "list"
@@ -1289,7 +1289,7 @@ paths:
         - oidc:
             - benefits:write
         - pat: []
-      x-polar-allowed-subjects: ["Organization", "User"]
+      x-spaire-allowed-subjects: ["Organization", "User"]
       x-speakeasy-group: "benefits"
       x-speakeasy-name-override: "create"
   "/v1/benefits/{id}":
@@ -1309,7 +1309,7 @@ paths:
             title: "Id"
             format: "uuid4"
             description: "The benefit ID."
-            x-polar-selector-widget: {"resourceRoot": "/v1/benefits", "resourceName": "Benefit", "displayProperty": "description"}
+            x-spaire-selector-widget: {"resourceRoot": "/v1/benefits", "resourceName": "Benefit", "displayProperty": "description"}
       responses:
         "200":
           description: "Successful Response"
@@ -1331,7 +1331,7 @@ paths:
             - benefits:read
             - benefits:write
         - pat: []
-      x-polar-allowed-subjects: ["Organization", "User"]
+      x-spaire-allowed-subjects: ["Organization", "User"]
       x-speakeasy-group: "benefits"
       x-speakeasy-name-override: "get"
     delete:
@@ -1350,7 +1350,7 @@ paths:
             title: "Id"
             format: "uuid4"
             description: "The benefit ID."
-            x-polar-selector-widget: {"resourceRoot": "/v1/benefits", "resourceName": "Benefit", "displayProperty": "description"}
+            x-spaire-selector-widget: {"resourceRoot": "/v1/benefits", "resourceName": "Benefit", "displayProperty": "description"}
       responses:
         "204":
           description: "Benefit deleted."
@@ -1373,7 +1373,7 @@ paths:
         - oidc:
             - benefits:write
         - pat: []
-      x-polar-allowed-subjects: ["Organization", "User"]
+      x-spaire-allowed-subjects: ["Organization", "User"]
       x-speakeasy-group: "benefits"
       x-speakeasy-name-override: "delete"
     patch:
@@ -1392,7 +1392,7 @@ paths:
             title: "Id"
             format: "uuid4"
             description: "The benefit ID."
-            x-polar-selector-widget: {"resourceRoot": "/v1/benefits", "resourceName": "Benefit", "displayProperty": "description"}
+            x-spaire-selector-widget: {"resourceRoot": "/v1/benefits", "resourceName": "Benefit", "displayProperty": "description"}
       requestBody:
         content:
           "application/json":
@@ -1431,7 +1431,7 @@ paths:
         - oidc:
             - benefits:write
         - pat: []
-      x-polar-allowed-subjects: ["Organization", "User"]
+      x-spaire-allowed-subjects: ["Organization", "User"]
       x-speakeasy-group: "benefits"
       x-speakeasy-name-override: "update"
   "/v1/benefits/{id}/grants":
@@ -1451,7 +1451,7 @@ paths:
             title: "Id"
             format: "uuid4"
             description: "The benefit ID."
-            x-polar-selector-widget: {"resourceRoot": "/v1/benefits", "resourceName": "Benefit", "displayProperty": "description"}
+            x-spaire-selector-widget: {"resourceRoot": "/v1/benefits", "resourceName": "Benefit", "displayProperty": "description"}
         - name: "is_granted"
           in: "query"
           description: "Filter by granted status. If `true`, only granted benefits will be returned. If `false`, only revoked benefits will be returned. "
@@ -1518,7 +1518,7 @@ paths:
             - benefits:read
             - benefits:write
         - pat: []
-      x-polar-allowed-subjects: ["Organization", "User"]
+      x-spaire-allowed-subjects: ["Organization", "User"]
       x-speakeasy-pagination: {"type": "offsetLimit", "inputs": [{"name": "page", "in": "parameters", "type": "page"}, {"name": "limit", "in": "parameters", "type": "limit"}], "outputs": {"results": "$.items", "numPages": "$.pagination.max_page"}}
       x-speakeasy-group: "benefits"
       x-speakeasy-name-override: "grants"
@@ -1541,13 +1541,13 @@ paths:
               - type: "string"
                 format: "uuid4"
                 description: "The organization ID."
-                x-polar-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
+                x-spaire-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
               - type: "array"
                 items:
                   type: "string"
                   format: "uuid4"
                   description: "The organization ID."
-                  x-polar-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
+                  x-spaire-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
               - type: "null"
             title: "OrganizationID Filter"
             description: "Filter by organization ID."
@@ -1590,13 +1590,13 @@ paths:
               - type: "string"
                 format: "uuid4"
                 description: "The benefit ID."
-                x-polar-selector-widget: {"resourceRoot": "/v1/benefits", "resourceName": "Benefit", "displayProperty": "description"}
+                x-spaire-selector-widget: {"resourceRoot": "/v1/benefits", "resourceName": "Benefit", "displayProperty": "description"}
               - type: "array"
                 items:
                   type: "string"
                   format: "uuid4"
                   description: "The benefit ID."
-                  x-polar-selector-widget: {"resourceRoot": "/v1/benefits", "resourceName": "Benefit", "displayProperty": "description"}
+                  x-spaire-selector-widget: {"resourceRoot": "/v1/benefits", "resourceName": "Benefit", "displayProperty": "description"}
               - type: "null"
             title: "BenefitID Filter"
             description: "Filter products granting specific benefit."
@@ -1648,7 +1648,7 @@ paths:
             - products:read
             - products:write
         - pat: []
-      x-polar-allowed-subjects: ["Organization", "User"]
+      x-spaire-allowed-subjects: ["Organization", "User"]
       x-speakeasy-pagination: {"type": "offsetLimit", "inputs": [{"name": "page", "in": "parameters", "type": "page"}, {"name": "limit", "in": "parameters", "type": "limit"}], "outputs": {"results": "$.items", "numPages": "$.pagination.max_page"}}
       x-speakeasy-group: "products"
       x-speakeasy-name-override: "list"
@@ -1680,7 +1680,7 @@ paths:
         - oidc:
             - products:write
         - pat: []
-      x-polar-allowed-subjects: ["Organization", "User"]
+      x-spaire-allowed-subjects: ["Organization", "User"]
       x-speakeasy-group: "products"
       x-speakeasy-name-override: "create"
   "/v1/products/{id}":
@@ -1701,7 +1701,7 @@ paths:
             title: "Id"
             format: "uuid4"
             description: "The product ID."
-            x-polar-selector-widget: {"resourceRoot": "/v1/products", "resourceName": "Product", "displayProperty": "name"}
+            x-spaire-selector-widget: {"resourceRoot": "/v1/products", "resourceName": "Product", "displayProperty": "name"}
       responses:
         "200":
           description: "Successful Response"
@@ -1723,7 +1723,7 @@ paths:
             - products:read
             - products:write
         - pat: []
-      x-polar-allowed-subjects: ["Organization", "User"]
+      x-spaire-allowed-subjects: ["Organization", "User"]
       x-speakeasy-group: "products"
       x-speakeasy-name-override: "get"
     patch:
@@ -1743,7 +1743,7 @@ paths:
             title: "Id"
             format: "uuid4"
             description: "The product ID."
-            x-polar-selector-widget: {"resourceRoot": "/v1/products", "resourceName": "Product", "displayProperty": "name"}
+            x-spaire-selector-widget: {"resourceRoot": "/v1/products", "resourceName": "Product", "displayProperty": "name"}
       requestBody:
         content:
           "application/json":
@@ -1774,7 +1774,7 @@ paths:
         - oidc:
             - products:write
         - pat: []
-      x-polar-allowed-subjects: ["Organization", "User"]
+      x-spaire-allowed-subjects: ["Organization", "User"]
       x-speakeasy-group: "products"
       x-speakeasy-name-override: "update"
   "/v1/products/{id}/benefits":
@@ -1795,7 +1795,7 @@ paths:
             title: "Id"
             format: "uuid4"
             description: "The product ID."
-            x-polar-selector-widget: {"resourceRoot": "/v1/products", "resourceName": "Product", "displayProperty": "name"}
+            x-spaire-selector-widget: {"resourceRoot": "/v1/products", "resourceName": "Product", "displayProperty": "name"}
       requestBody:
         content:
           "application/json":
@@ -1826,7 +1826,7 @@ paths:
         - oidc:
             - products:write
         - pat: []
-      x-polar-allowed-subjects: ["Organization", "User"]
+      x-spaire-allowed-subjects: ["Organization", "User"]
       x-speakeasy-group: "products"
       x-speakeasy-name-override: "update_benefits"
   "/v1/orders/":
@@ -1847,13 +1847,13 @@ paths:
               - type: "string"
                 format: "uuid4"
                 description: "The organization ID."
-                x-polar-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
+                x-spaire-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
               - type: "array"
                 items:
                   type: "string"
                   format: "uuid4"
                   description: "The organization ID."
-                  x-polar-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
+                  x-spaire-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
               - type: "null"
             title: "OrganizationID Filter"
             description: "Filter by organization ID."
@@ -1866,13 +1866,13 @@ paths:
               - type: "string"
                 format: "uuid4"
                 description: "The product ID."
-                x-polar-selector-widget: {"resourceRoot": "/v1/products", "resourceName": "Product", "displayProperty": "name"}
+                x-spaire-selector-widget: {"resourceRoot": "/v1/products", "resourceName": "Product", "displayProperty": "name"}
               - type: "array"
                 items:
                   type: "string"
                   format: "uuid4"
                   description: "The product ID."
-                  x-polar-selector-widget: {"resourceRoot": "/v1/products", "resourceName": "Product", "displayProperty": "name"}
+                  x-spaire-selector-widget: {"resourceRoot": "/v1/products", "resourceName": "Product", "displayProperty": "name"}
               - type: "null"
             title: "ProductID Filter"
             description: "Filter by product ID."
@@ -1965,7 +1965,7 @@ paths:
         - oidc:
             - orders:read
         - pat: []
-      x-polar-allowed-subjects: ["Organization", "User"]
+      x-spaire-allowed-subjects: ["Organization", "User"]
       x-speakeasy-pagination: {"type": "offsetLimit", "inputs": [{"name": "page", "in": "parameters", "type": "page"}, {"name": "limit", "in": "parameters", "type": "limit"}], "outputs": {"results": "$.items", "numPages": "$.pagination.max_page"}}
       x-speakeasy-group: "orders"
       x-speakeasy-name-override: "list"
@@ -2007,7 +2007,7 @@ paths:
         - oidc:
             - orders:read
         - pat: []
-      x-polar-allowed-subjects: ["Organization", "User"]
+      x-spaire-allowed-subjects: ["Organization", "User"]
       x-speakeasy-group: "orders"
       x-speakeasy-name-override: "get"
   "/v1/orders/{id}/invoice":
@@ -2048,7 +2048,7 @@ paths:
         - oidc:
             - orders:read
         - pat: []
-      x-polar-allowed-subjects: ["Organization", "User"]
+      x-spaire-allowed-subjects: ["Organization", "User"]
       x-speakeasy-group: "orders"
       x-speakeasy-name-override: "invoice"
   "/v1/checkouts/custom/":
@@ -2071,13 +2071,13 @@ paths:
               - type: "string"
                 format: "uuid4"
                 description: "The organization ID."
-                x-polar-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
+                x-spaire-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
               - type: "array"
                 items:
                   type: "string"
                   format: "uuid4"
                   description: "The organization ID."
-                  x-polar-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
+                  x-spaire-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
               - type: "null"
             title: "OrganizationID Filter"
             description: "Filter by organization ID."
@@ -2090,13 +2090,13 @@ paths:
               - type: "string"
                 format: "uuid4"
                 description: "The product ID."
-                x-polar-selector-widget: {"resourceRoot": "/v1/products", "resourceName": "Product", "displayProperty": "name"}
+                x-spaire-selector-widget: {"resourceRoot": "/v1/products", "resourceName": "Product", "displayProperty": "name"}
               - type: "array"
                 items:
                   type: "string"
                   format: "uuid4"
                   description: "The product ID."
-                  x-polar-selector-widget: {"resourceRoot": "/v1/products", "resourceName": "Product", "displayProperty": "name"}
+                  x-spaire-selector-widget: {"resourceRoot": "/v1/products", "resourceName": "Product", "displayProperty": "name"}
               - type: "null"
             title: "ProductID Filter"
             description: "Filter by product ID."
@@ -2148,7 +2148,7 @@ paths:
             - checkouts:read
             - checkouts:write
         - pat: []
-      x-polar-allowed-subjects: ["Organization", "User"]
+      x-spaire-allowed-subjects: ["Organization", "User"]
       x-speakeasy-pagination: {"type": "offsetLimit", "inputs": [{"name": "page", "in": "parameters", "type": "page"}, {"name": "limit", "in": "parameters", "type": "limit"}], "outputs": {"results": "$.items", "numPages": "$.pagination.max_page"}}
       x-speakeasy-group: "checkouts.custom"
       x-speakeasy-name-override: "list"
@@ -2181,7 +2181,7 @@ paths:
         - oidc:
             - checkouts:write
         - pat: []
-      x-polar-allowed-subjects: ["Organization", "User"]
+      x-spaire-allowed-subjects: ["Organization", "User"]
       x-speakeasy-group: "checkouts.custom"
       x-speakeasy-name-override: "create"
   "/v1/checkouts/custom/{id}":
@@ -2225,7 +2225,7 @@ paths:
             - checkouts:read
             - checkouts:write
         - pat: []
-      x-polar-allowed-subjects: ["Organization", "User"]
+      x-spaire-allowed-subjects: ["Organization", "User"]
       x-speakeasy-group: "checkouts.custom"
       x-speakeasy-name-override: "get"
     patch:
@@ -2272,7 +2272,7 @@ paths:
         - oidc:
             - checkouts:write
         - pat: []
-      x-polar-allowed-subjects: ["Organization", "User"]
+      x-spaire-allowed-subjects: ["Organization", "User"]
       x-speakeasy-group: "checkouts.custom"
       x-speakeasy-name-override: "update"
   "/v1/checkouts/custom/client/{client_secret}":
@@ -2396,7 +2396,7 @@ paths:
       security:
         - oidc: []
         - pat: []
-      x-polar-allowed-subjects: ["Anonymous", "User"]
+      x-spaire-allowed-subjects: ["Anonymous", "User"]
       x-speakeasy-group: "checkouts.custom"
       x-speakeasy-name-override: "client_confirm"
   "/v1/checkouts/":
@@ -2427,7 +2427,7 @@ paths:
       security:
         - oidc: []
         - pat: []
-      x-polar-allowed-subjects: ["Anonymous", "User"]
+      x-spaire-allowed-subjects: ["Anonymous", "User"]
       x-speakeasy-deprecation-replacement: "checkouts:custom:create"
       x-speakeasy-deprecation-message: "This API is deprecated. We recommend you to use the new custom checkout API, which is more flexible and powerful. Please refer to the documentation for more information."
       x-speakeasy-group: "checkouts"
@@ -2479,7 +2479,7 @@ paths:
               - type: "string"
                 format: "uuid4"
                 description: "The organization ID."
-                x-polar-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
+                x-spaire-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
               - type: "null"
             title: "Organization Id"
         - name: "ids"
@@ -2530,7 +2530,7 @@ paths:
         - oidc:
             - files:write
         - pat: []
-      x-polar-allowed-subjects: ["Organization", "User"]
+      x-spaire-allowed-subjects: ["Organization", "User"]
       x-speakeasy-pagination: {"type": "offsetLimit", "inputs": [{"name": "page", "in": "parameters", "type": "page"}, {"name": "limit", "in": "parameters", "type": "limit"}], "outputs": {"results": "$.items", "numPages": "$.pagination.max_page"}}
       x-speakeasy-group: "files"
       x-speakeasy-name-override: "list"
@@ -2561,7 +2561,7 @@ paths:
         - oidc:
             - files:write
         - pat: []
-      x-polar-allowed-subjects: ["Organization", "User"]
+      x-spaire-allowed-subjects: ["Organization", "User"]
       x-speakeasy-group: "files"
       x-speakeasy-name-override: "create"
   "/v1/files/{id}/uploaded":
@@ -2623,7 +2623,7 @@ paths:
         - oidc:
             - files:write
         - pat: []
-      x-polar-allowed-subjects: ["Organization", "User"]
+      x-spaire-allowed-subjects: ["Organization", "User"]
       x-speakeasy-group: "files"
       x-speakeasy-name-override: "uploaded"
   "/v1/files/{id}":
@@ -2664,7 +2664,7 @@ paths:
         - oidc:
             - files:write
         - pat: []
-      x-polar-allowed-subjects: ["Organization", "User"]
+      x-spaire-allowed-subjects: ["Organization", "User"]
       x-speakeasy-group: "files"
       x-speakeasy-name-override: "delete"
     patch:
@@ -2725,7 +2725,7 @@ paths:
         - oidc:
             - files:write
         - pat: []
-      x-polar-allowed-subjects: ["Organization", "User"]
+      x-spaire-allowed-subjects: ["Organization", "User"]
       x-speakeasy-group: "files"
       x-speakeasy-name-override: "update"
   "/v1/metrics/":
@@ -2769,13 +2769,13 @@ paths:
               - type: "string"
                 format: "uuid4"
                 description: "The organization ID."
-                x-polar-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
+                x-spaire-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
               - type: "array"
                 items:
                   type: "string"
                   format: "uuid4"
                   description: "The organization ID."
-                  x-polar-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
+                  x-spaire-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
               - type: "null"
             title: "OrganizationID Filter"
             description: "Filter by organization ID."
@@ -2788,13 +2788,13 @@ paths:
               - type: "string"
                 format: "uuid4"
                 description: "The product ID."
-                x-polar-selector-widget: {"resourceRoot": "/v1/products", "resourceName": "Product", "displayProperty": "name"}
+                x-spaire-selector-widget: {"resourceRoot": "/v1/products", "resourceName": "Product", "displayProperty": "name"}
               - type: "array"
                 items:
                   type: "string"
                   format: "uuid4"
                   description: "The product ID."
-                  x-polar-selector-widget: {"resourceRoot": "/v1/products", "resourceName": "Product", "displayProperty": "name"}
+                  x-spaire-selector-widget: {"resourceRoot": "/v1/products", "resourceName": "Product", "displayProperty": "name"}
               - type: "null"
             title: "ProductID Filter"
             description: "Filter by product ID."
@@ -2825,7 +2825,7 @@ paths:
         - oidc:
             - metrics:read
         - pat: []
-      x-polar-allowed-subjects: ["Organization", "User"]
+      x-spaire-allowed-subjects: ["Organization", "User"]
       x-speakeasy-group: "metrics"
       x-speakeasy-name-override: "get"
   "/v1/metrics/limits":
@@ -2846,7 +2846,7 @@ paths:
         - oidc:
             - metrics:read
         - pat: []
-      x-polar-allowed-subjects: ["Organization", "User"]
+      x-spaire-allowed-subjects: ["Organization", "User"]
       x-speakeasy-group: "metrics"
       x-speakeasy-name-override: "limits"
   "/v1/license-keys":
@@ -2868,13 +2868,13 @@ paths:
               - type: "string"
                 format: "uuid4"
                 description: "The organization ID."
-                x-polar-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
+                x-spaire-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
               - type: "array"
                 items:
                   type: "string"
                   format: "uuid4"
                   description: "The organization ID."
-                  x-polar-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
+                  x-spaire-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
               - type: "null"
             title: "OrganizationID Filter"
             description: "Filter by organization ID."
@@ -2887,13 +2887,13 @@ paths:
               - type: "string"
                 format: "uuid4"
                 description: "The benefit ID."
-                x-polar-selector-widget: {"resourceRoot": "/v1/benefits", "resourceName": "Benefit", "displayProperty": "description"}
+                x-spaire-selector-widget: {"resourceRoot": "/v1/benefits", "resourceName": "Benefit", "displayProperty": "description"}
               - type: "array"
                 items:
                   type: "string"
                   format: "uuid4"
                   description: "The benefit ID."
-                  x-polar-selector-widget: {"resourceRoot": "/v1/benefits", "resourceName": "Benefit", "displayProperty": "description"}
+                  x-spaire-selector-widget: {"resourceRoot": "/v1/benefits", "resourceName": "Benefit", "displayProperty": "description"}
               - type: "null"
             title: "BenefitID Filter"
             description: "Filter by benefit ID."
@@ -2943,7 +2943,7 @@ paths:
             - license_keys:read
             - license_keys:write
         - pat: []
-      x-polar-allowed-subjects: ["Organization", "User"]
+      x-spaire-allowed-subjects: ["Organization", "User"]
       x-speakeasy-pagination: {"type": "offsetLimit", "inputs": [{"name": "page", "in": "parameters", "type": "page"}, {"name": "limit", "in": "parameters", "type": "limit"}], "outputs": {"results": "$.items", "numPages": "$.pagination.max_page"}}
       x-speakeasy-group: "license_keys"
       x-speakeasy-name-override: "list"
@@ -2990,7 +2990,7 @@ paths:
             - license_keys:read
             - license_keys:write
         - pat: []
-      x-polar-allowed-subjects: ["Organization", "User"]
+      x-spaire-allowed-subjects: ["Organization", "User"]
       x-speakeasy-group: "license_keys"
       x-speakeasy-name-override: "get"
     patch:
@@ -3039,7 +3039,7 @@ paths:
         - oidc:
             - license_keys:write
         - pat: []
-      x-polar-allowed-subjects: ["Organization", "User"]
+      x-spaire-allowed-subjects: ["Organization", "User"]
       x-speakeasy-group: "license_keys"
       x-speakeasy-name-override: "update"
   "/v1/license-keys/{id}/activations/{activation_id}":
@@ -3092,7 +3092,7 @@ paths:
             - license_keys:read
             - license_keys:write
         - pat: []
-      x-polar-allowed-subjects: ["Organization", "User"]
+      x-spaire-allowed-subjects: ["Organization", "User"]
       x-speakeasy-group: "license_keys"
       x-speakeasy-name-override: "get_activation"
   "/v1/checkout-links/":
@@ -3113,13 +3113,13 @@ paths:
               - type: "string"
                 format: "uuid4"
                 description: "The organization ID."
-                x-polar-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
+                x-spaire-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
               - type: "array"
                 items:
                   type: "string"
                   format: "uuid4"
                   description: "The organization ID."
-                  x-polar-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
+                  x-spaire-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
               - type: "null"
             title: "OrganizationID Filter"
             description: "Filter by organization ID."
@@ -3132,13 +3132,13 @@ paths:
               - type: "string"
                 format: "uuid4"
                 description: "The product ID."
-                x-polar-selector-widget: {"resourceRoot": "/v1/products", "resourceName": "Product", "displayProperty": "name"}
+                x-spaire-selector-widget: {"resourceRoot": "/v1/products", "resourceName": "Product", "displayProperty": "name"}
               - type: "array"
                 items:
                   type: "string"
                   format: "uuid4"
                   description: "The product ID."
-                  x-polar-selector-widget: {"resourceRoot": "/v1/products", "resourceName": "Product", "displayProperty": "name"}
+                  x-spaire-selector-widget: {"resourceRoot": "/v1/products", "resourceName": "Product", "displayProperty": "name"}
               - type: "null"
             title: "ProductID Filter"
             description: "Filter by product ID."
@@ -3190,7 +3190,7 @@ paths:
             - checkout_links:read
             - checkout_links:write
         - pat: []
-      x-polar-allowed-subjects: ["Organization", "User"]
+      x-spaire-allowed-subjects: ["Organization", "User"]
       x-speakeasy-pagination: {"type": "offsetLimit", "inputs": [{"name": "page", "in": "parameters", "type": "page"}, {"name": "limit", "in": "parameters", "type": "limit"}], "outputs": {"results": "$.items", "numPages": "$.pagination.max_page"}}
       x-speakeasy-group: "checkout-links"
       x-speakeasy-name-override: "list"
@@ -3221,7 +3221,7 @@ paths:
         - oidc:
             - checkout_links:write
         - pat: []
-      x-polar-allowed-subjects: ["Organization", "User"]
+      x-spaire-allowed-subjects: ["Organization", "User"]
       x-speakeasy-group: "checkout-links"
       x-speakeasy-name-override: "create"
   "/v1/checkout-links/{id}":
@@ -3263,7 +3263,7 @@ paths:
             - checkout_links:read
             - checkout_links:write
         - pat: []
-      x-polar-allowed-subjects: ["Organization", "User"]
+      x-spaire-allowed-subjects: ["Organization", "User"]
       x-speakeasy-group: "checkout-links"
       x-speakeasy-name-override: "get"
     delete:
@@ -3300,7 +3300,7 @@ paths:
         - oidc:
             - checkout_links:write
         - pat: []
-      x-polar-allowed-subjects: ["Organization", "User"]
+      x-spaire-allowed-subjects: ["Organization", "User"]
       x-speakeasy-group: "checkout-links"
       x-speakeasy-name-override: "delete"
     patch:
@@ -3345,7 +3345,7 @@ paths:
         - oidc:
             - checkout_links:write
         - pat: []
-      x-polar-allowed-subjects: ["Organization", "User"]
+      x-spaire-allowed-subjects: ["Organization", "User"]
       x-speakeasy-group: "checkout-links"
       x-speakeasy-name-override: "update"
   "/v1/custom-fields/":
@@ -3366,13 +3366,13 @@ paths:
               - type: "string"
                 format: "uuid4"
                 description: "The organization ID."
-                x-polar-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
+                x-spaire-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
               - type: "array"
                 items:
                   type: "string"
                   format: "uuid4"
                   description: "The organization ID."
-                  x-polar-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
+                  x-spaire-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
               - type: "null"
             title: "OrganizationID Filter"
             description: "Filter by organization ID."
@@ -3446,7 +3446,7 @@ paths:
             - custom_fields:read
             - custom_fields:write
         - pat: []
-      x-polar-allowed-subjects: ["Organization", "User"]
+      x-spaire-allowed-subjects: ["Organization", "User"]
       x-speakeasy-pagination: {"type": "offsetLimit", "inputs": [{"name": "page", "in": "parameters", "type": "page"}, {"name": "limit", "in": "parameters", "type": "limit"}], "outputs": {"results": "$.items", "numPages": "$.pagination.max_page"}}
       x-speakeasy-group: "custom-fields"
       x-speakeasy-name-override: "list"
@@ -3477,7 +3477,7 @@ paths:
         - oidc:
             - custom_fields:write
         - pat: []
-      x-polar-allowed-subjects: ["Organization", "User"]
+      x-spaire-allowed-subjects: ["Organization", "User"]
       x-speakeasy-group: "custom-fields"
       x-speakeasy-name-override: "create"
   "/v1/custom-fields/{id}":
@@ -3519,7 +3519,7 @@ paths:
             - custom_fields:read
             - custom_fields:write
         - pat: []
-      x-polar-allowed-subjects: ["Organization", "User"]
+      x-spaire-allowed-subjects: ["Organization", "User"]
       x-speakeasy-group: "custom-fields"
       x-speakeasy-name-override: "get"
     delete:
@@ -3556,7 +3556,7 @@ paths:
         - oidc:
             - custom_fields:write
         - pat: []
-      x-polar-allowed-subjects: ["Organization", "User"]
+      x-spaire-allowed-subjects: ["Organization", "User"]
       x-speakeasy-group: "custom-fields"
       x-speakeasy-name-override: "delete"
     patch:
@@ -3601,7 +3601,7 @@ paths:
         - oidc:
             - custom_fields:write
         - pat: []
-      x-polar-allowed-subjects: ["Organization", "User"]
+      x-spaire-allowed-subjects: ["Organization", "User"]
       x-speakeasy-group: "custom-fields"
       x-speakeasy-name-override: "update"
   "/v1/discounts/":
@@ -3623,13 +3623,13 @@ paths:
               - type: "string"
                 format: "uuid4"
                 description: "The organization ID."
-                x-polar-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
+                x-spaire-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
               - type: "array"
                 items:
                   type: "string"
                   format: "uuid4"
                   description: "The organization ID."
-                  x-polar-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
+                  x-spaire-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
               - type: "null"
             title: "OrganizationID Filter"
             description: "Filter by organization ID."
@@ -3691,7 +3691,7 @@ paths:
             - discounts:read
             - discounts:write
         - pat: []
-      x-polar-allowed-subjects: ["Organization", "User"]
+      x-spaire-allowed-subjects: ["Organization", "User"]
       x-speakeasy-pagination: {"type": "offsetLimit", "inputs": [{"name": "page", "in": "parameters", "type": "page"}, {"name": "limit", "in": "parameters", "type": "limit"}], "outputs": {"results": "$.items", "numPages": "$.pagination.max_page"}}
       x-speakeasy-group: "discounts"
       x-speakeasy-name-override: "list"
@@ -3723,7 +3723,7 @@ paths:
         - oidc:
             - discounts:write
         - pat: []
-      x-polar-allowed-subjects: ["Organization", "User"]
+      x-spaire-allowed-subjects: ["Organization", "User"]
       x-speakeasy-group: "discounts"
       x-speakeasy-name-override: "create"
   "/v1/discounts/{id}":
@@ -3766,7 +3766,7 @@ paths:
             - discounts:read
             - discounts:write
         - pat: []
-      x-polar-allowed-subjects: ["Organization", "User"]
+      x-spaire-allowed-subjects: ["Organization", "User"]
       x-speakeasy-group: "discounts"
       x-speakeasy-name-override: "get"
     delete:
@@ -3804,7 +3804,7 @@ paths:
         - oidc:
             - discounts:write
         - pat: []
-      x-polar-allowed-subjects: ["Organization", "User"]
+      x-spaire-allowed-subjects: ["Organization", "User"]
       x-speakeasy-group: "discounts"
       x-speakeasy-name-override: "delete"
     patch:
@@ -3850,7 +3850,7 @@ paths:
         - oidc:
             - discounts:write
         - pat: []
-      x-polar-allowed-subjects: ["Organization", "User"]
+      x-spaire-allowed-subjects: ["Organization", "User"]
       x-speakeasy-group: "discounts"
       x-speakeasy-name-override: "update"
   "/v1/customers/":
@@ -3872,13 +3872,13 @@ paths:
               - type: "string"
                 format: "uuid4"
                 description: "The organization ID."
-                x-polar-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
+                x-spaire-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
               - type: "array"
                 items:
                   type: "string"
                   format: "uuid4"
                   description: "The organization ID."
-                  x-polar-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
+                  x-spaire-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
               - type: "null"
             title: "OrganizationID Filter"
             description: "Filter by organization ID."
@@ -3940,7 +3940,7 @@ paths:
             - customers:read
             - customers:write
         - pat: []
-      x-polar-allowed-subjects: ["Organization", "User"]
+      x-spaire-allowed-subjects: ["Organization", "User"]
       x-speakeasy-pagination: {"type": "offsetLimit", "inputs": [{"name": "page", "in": "parameters", "type": "page"}, {"name": "limit", "in": "parameters", "type": "limit"}], "outputs": {"results": "$.items", "numPages": "$.pagination.max_page"}}
       x-speakeasy-group: "customers"
       x-speakeasy-name-override: "list"
@@ -3972,7 +3972,7 @@ paths:
         - oidc:
             - customers:write
         - pat: []
-      x-polar-allowed-subjects: ["Organization", "User"]
+      x-spaire-allowed-subjects: ["Organization", "User"]
       x-speakeasy-group: "customers"
       x-speakeasy-name-override: "create"
   "/v1/customers/{id}":
@@ -4015,7 +4015,7 @@ paths:
             - customers:read
             - customers:write
         - pat: []
-      x-polar-allowed-subjects: ["Organization", "User"]
+      x-spaire-allowed-subjects: ["Organization", "User"]
       x-speakeasy-group: "customers"
       x-speakeasy-name-override: "get"
     delete:
@@ -4053,7 +4053,7 @@ paths:
         - oidc:
             - customers:write
         - pat: []
-      x-polar-allowed-subjects: ["Organization", "User"]
+      x-spaire-allowed-subjects: ["Organization", "User"]
       x-speakeasy-group: "customers"
       x-speakeasy-name-override: "delete"
     patch:
@@ -4099,7 +4099,7 @@ paths:
         - oidc:
             - customers:write
         - pat: []
-      x-polar-allowed-subjects: ["Organization", "User"]
+      x-spaire-allowed-subjects: ["Organization", "User"]
       x-speakeasy-group: "customers"
       x-speakeasy-name-override: "update"
   "/v1/customer-portal/benefit-grants/":
@@ -4148,13 +4148,13 @@ paths:
               - type: "string"
                 format: "uuid4"
                 description: "The organization ID."
-                x-polar-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
+                x-spaire-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
               - type: "array"
                 items:
                   type: "string"
                   format: "uuid4"
                   description: "The organization ID."
-                  x-polar-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
+                  x-spaire-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
               - type: "null"
             title: "OrganizationID Filter"
             description: "Filter by organization ID."
@@ -4252,7 +4252,7 @@ paths:
             - customer_portal:write
         - pat: []
         - customer_session: []
-      x-polar-allowed-subjects: ["Customer", "User"]
+      x-spaire-allowed-subjects: ["Customer", "User"]
       x-speakeasy-pagination: {"type": "offsetLimit", "inputs": [{"name": "page", "in": "parameters", "type": "page"}, {"name": "limit", "in": "parameters", "type": "limit"}], "outputs": {"results": "$.items", "numPages": "$.pagination.max_page"}}
       x-speakeasy-group: "customer_portal.benefit-grants"
       x-speakeasy-name-override: "list"
@@ -4297,7 +4297,7 @@ paths:
             - customer_portal:write
         - pat: []
         - customer_session: []
-      x-polar-allowed-subjects: ["Customer", "User"]
+      x-spaire-allowed-subjects: ["Customer", "User"]
       x-speakeasy-group: "customer_portal.benefit-grants"
       x-speakeasy-name-override: "get"
     patch:
@@ -4349,7 +4349,7 @@ paths:
             - customer_portal:write
         - pat: []
         - customer_session: []
-      x-polar-allowed-subjects: ["Customer", "User"]
+      x-spaire-allowed-subjects: ["Customer", "User"]
       x-speakeasy-group: "customer_portal.benefit-grants"
       x-speakeasy-name-override: "update"
   "/v1/customer-portal/customers/{id}":
@@ -4393,7 +4393,7 @@ paths:
             - customer_portal:write
         - pat: []
         - customer_session: []
-      x-polar-allowed-subjects: ["Customer", "User"]
+      x-spaire-allowed-subjects: ["Customer", "User"]
       x-speakeasy-group: "customer_portal.customers"
       x-speakeasy-name-override: "get"
   "/v1/customer-portal/downloadables/":
@@ -4414,13 +4414,13 @@ paths:
               - type: "string"
                 format: "uuid4"
                 description: "The organization ID."
-                x-polar-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
+                x-spaire-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
               - type: "array"
                 items:
                   type: "string"
                   format: "uuid4"
                   description: "The organization ID."
-                  x-polar-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
+                  x-spaire-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
               - type: "null"
             title: "OrganizationID Filter"
             description: "Filter by organization ID."
@@ -4433,13 +4433,13 @@ paths:
               - type: "string"
                 format: "uuid4"
                 description: "The benefit ID."
-                x-polar-selector-widget: {"resourceRoot": "/v1/benefits", "resourceName": "Benefit", "displayProperty": "description"}
+                x-spaire-selector-widget: {"resourceRoot": "/v1/benefits", "resourceName": "Benefit", "displayProperty": "description"}
               - type: "array"
                 items:
                   type: "string"
                   format: "uuid4"
                   description: "The benefit ID."
-                  x-polar-selector-widget: {"resourceRoot": "/v1/benefits", "resourceName": "Benefit", "displayProperty": "description"}
+                  x-spaire-selector-widget: {"resourceRoot": "/v1/benefits", "resourceName": "Benefit", "displayProperty": "description"}
               - type: "null"
             title: "BenefitID Filter"
             description: "Filter by benefit ID."
@@ -4480,7 +4480,7 @@ paths:
             - customer_portal:write
         - pat: []
         - customer_session: []
-      x-polar-allowed-subjects: ["Customer", "User"]
+      x-spaire-allowed-subjects: ["Customer", "User"]
       x-speakeasy-pagination: {"type": "offsetLimit", "inputs": [{"name": "page", "in": "parameters", "type": "page"}, {"name": "limit", "in": "parameters", "type": "limit"}], "outputs": {"results": "$.items", "numPages": "$.pagination.max_page"}}
       x-speakeasy-group: "customer_portal.downloadables"
       x-speakeasy-name-override: "list"
@@ -4539,13 +4539,13 @@ paths:
               - type: "string"
                 format: "uuid4"
                 description: "The organization ID."
-                x-polar-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
+                x-spaire-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
               - type: "array"
                 items:
                   type: "string"
                   format: "uuid4"
                   description: "The organization ID."
-                  x-polar-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
+                  x-spaire-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
               - type: "null"
             title: "OrganizationID Filter"
             description: "Filter by organization ID."
@@ -4558,7 +4558,7 @@ paths:
               - type: "string"
                 format: "uuid4"
                 description: "The benefit ID."
-                x-polar-selector-widget: {"resourceRoot": "/v1/benefits", "resourceName": "Benefit", "displayProperty": "description"}
+                x-spaire-selector-widget: {"resourceRoot": "/v1/benefits", "resourceName": "Benefit", "displayProperty": "description"}
               - type: "null"
             title: "Benefit Id"
             description: "Filter by a specific benefit"
@@ -4609,7 +4609,7 @@ paths:
             - customer_portal:write
         - pat: []
         - customer_session: []
-      x-polar-allowed-subjects: ["Customer", "User"]
+      x-spaire-allowed-subjects: ["Customer", "User"]
       x-speakeasy-pagination: {"type": "offsetLimit", "inputs": [{"name": "page", "in": "parameters", "type": "page"}, {"name": "limit", "in": "parameters", "type": "limit"}], "outputs": {"results": "$.items", "numPages": "$.pagination.max_page"}}
       x-speakeasy-group: "customer_portal.license_keys"
       x-speakeasy-name-override: "list"
@@ -4653,7 +4653,7 @@ paths:
             - customer_portal:write
         - pat: []
         - customer_session: []
-      x-polar-allowed-subjects: ["Customer", "User"]
+      x-spaire-allowed-subjects: ["Customer", "User"]
       x-speakeasy-group: "customer_portal.license_keys"
       x-speakeasy-name-override: "get"
   "/v1/customer-portal/license-keys/validate":
@@ -4776,13 +4776,13 @@ paths:
               - type: "string"
                 format: "uuid4"
                 description: "The organization ID."
-                x-polar-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
+                x-spaire-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
               - type: "array"
                 items:
                   type: "string"
                   format: "uuid4"
                   description: "The organization ID."
-                  x-polar-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
+                  x-spaire-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
               - type: "null"
             title: "OrganizationID Filter"
             description: "Filter by organization ID."
@@ -4795,13 +4795,13 @@ paths:
               - type: "string"
                 format: "uuid4"
                 description: "The product ID."
-                x-polar-selector-widget: {"resourceRoot": "/v1/products", "resourceName": "Product", "displayProperty": "name"}
+                x-spaire-selector-widget: {"resourceRoot": "/v1/products", "resourceName": "Product", "displayProperty": "name"}
               - type: "array"
                 items:
                   type: "string"
                   format: "uuid4"
                   description: "The product ID."
-                  x-polar-selector-widget: {"resourceRoot": "/v1/products", "resourceName": "Product", "displayProperty": "name"}
+                  x-spaire-selector-widget: {"resourceRoot": "/v1/products", "resourceName": "Product", "displayProperty": "name"}
               - type: "null"
             title: "ProductID Filter"
             description: "Filter by product ID."
@@ -4891,7 +4891,7 @@ paths:
             - customer_portal:write
         - pat: []
         - customer_session: []
-      x-polar-allowed-subjects: ["Customer", "User"]
+      x-spaire-allowed-subjects: ["Customer", "User"]
       x-speakeasy-pagination: {"type": "offsetLimit", "inputs": [{"name": "page", "in": "parameters", "type": "page"}, {"name": "limit", "in": "parameters", "type": "limit"}], "outputs": {"results": "$.items", "numPages": "$.pagination.max_page"}}
       x-speakeasy-group: "customer_portal.orders"
       x-speakeasy-name-override: "list"
@@ -4936,7 +4936,7 @@ paths:
             - customer_portal:write
         - pat: []
         - customer_session: []
-      x-polar-allowed-subjects: ["Customer", "User"]
+      x-spaire-allowed-subjects: ["Customer", "User"]
       x-speakeasy-group: "customer_portal.orders"
       x-speakeasy-name-override: "get"
   "/v1/customer-portal/orders/{id}/invoice":
@@ -4980,7 +4980,7 @@ paths:
             - customer_portal:write
         - pat: []
         - customer_session: []
-      x-polar-allowed-subjects: ["Customer", "User"]
+      x-spaire-allowed-subjects: ["Customer", "User"]
       x-speakeasy-group: "customer_portal.orders"
       x-speakeasy-name-override: "invoice"
   "/v1/customer-portal/organizations/{slug}":
@@ -5039,13 +5039,13 @@ paths:
               - type: "string"
                 format: "uuid4"
                 description: "The organization ID."
-                x-polar-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
+                x-spaire-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
               - type: "array"
                 items:
                   type: "string"
                   format: "uuid4"
                   description: "The organization ID."
-                  x-polar-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
+                  x-spaire-selector-widget: {"resourceRoot": "/v1/organizations", "resourceName": "Organization", "displayProperty": "name"}
               - type: "null"
             title: "OrganizationID Filter"
             description: "Filter by organization ID."
@@ -5058,13 +5058,13 @@ paths:
               - type: "string"
                 format: "uuid4"
                 description: "The product ID."
-                x-polar-selector-widget: {"resourceRoot": "/v1/products", "resourceName": "Product", "displayProperty": "name"}
+                x-spaire-selector-widget: {"resourceRoot": "/v1/products", "resourceName": "Product", "displayProperty": "name"}
               - type: "array"
                 items:
                   type: "string"
                   format: "uuid4"
                   description: "The product ID."
-                  x-polar-selector-widget: {"resourceRoot": "/v1/products", "resourceName": "Product", "displayProperty": "name"}
+                  x-spaire-selector-widget: {"resourceRoot": "/v1/products", "resourceName": "Product", "displayProperty": "name"}
               - type: "null"
             title: "ProductID Filter"
             description: "Filter by product ID."
@@ -5137,7 +5137,7 @@ paths:
             - customer_portal:write
         - pat: []
         - customer_session: []
-      x-polar-allowed-subjects: ["Customer", "User"]
+      x-spaire-allowed-subjects: ["Customer", "User"]
       x-speakeasy-pagination: {"type": "offsetLimit", "inputs": [{"name": "page", "in": "parameters", "type": "page"}, {"name": "limit", "in": "parameters", "type": "limit"}], "outputs": {"results": "$.items", "numPages": "$.pagination.max_page"}}
       x-speakeasy-group: "customer_portal.subscriptions"
       x-speakeasy-name-override: "list"
@@ -5183,7 +5183,7 @@ paths:
             - customer_portal:write
         - pat: []
         - customer_session: []
-      x-polar-allowed-subjects: ["Customer", "User"]
+      x-spaire-allowed-subjects: ["Customer", "User"]
       x-speakeasy-group: "customer_portal.subscriptions"
       x-speakeasy-name-override: "get"
     delete:
@@ -5231,7 +5231,7 @@ paths:
             - customer_portal:write
         - pat: []
         - customer_session: []
-      x-polar-allowed-subjects: ["Customer", "User"]
+      x-spaire-allowed-subjects: ["Customer", "User"]
       x-speakeasy-group: "customer_portal.subscriptions"
       x-speakeasy-name-override: "cancel"
     patch:
@@ -5279,7 +5279,7 @@ paths:
             - customer_portal:write
         - pat: []
         - customer_session: []
-      x-polar-allowed-subjects: ["Customer", "User"]
+      x-spaire-allowed-subjects: ["Customer", "User"]
       x-speakeasy-group: "customer_portal.subscriptions"
       x-speakeasy-name-override: "update"
   "/v1/customer-sessions/":
@@ -5311,7 +5311,7 @@ paths:
         - oidc:
             - customer_sessions:write
         - pat: []
-      x-polar-allowed-subjects: ["Organization", "User"]
+      x-spaire-allowed-subjects: ["Organization", "User"]
       x-speakeasy-group: "customer-sessions"
       x-speakeasy-name-override: "create"
 components:
@@ -5727,7 +5727,7 @@ components:
             - type: "string"
               format: "uuid4"
               description: "The organization ID."
-              x-polar-selector-widget: {"displayProperty": "name", "resourceName": "Organization", "resourceRoot": "/v1/organizations"}
+              x-spaire-selector-widget: {"displayProperty": "name", "resourceName": "Organization", "resourceRoot": "/v1/organizations"}
             - type: "null"
           title: "Organization Id"
           description: "The ID of the organization owning the benefit. **Required unless you use an organization token.**"
@@ -5979,7 +5979,7 @@ components:
             - type: "string"
               format: "uuid4"
               description: "The organization ID."
-              x-polar-selector-widget: {"displayProperty": "name", "resourceName": "Organization", "resourceRoot": "/v1/organizations"}
+              x-spaire-selector-widget: {"displayProperty": "name", "resourceName": "Organization", "resourceRoot": "/v1/organizations"}
             - type: "null"
           title: "Organization Id"
           description: "The ID of the organization owning the benefit. **Required unless you use an organization token.**"
@@ -6190,7 +6190,7 @@ components:
             - type: "string"
               format: "uuid4"
               description: "The organization ID."
-              x-polar-selector-widget: {"displayProperty": "name", "resourceName": "Organization", "resourceRoot": "/v1/organizations"}
+              x-spaire-selector-widget: {"displayProperty": "name", "resourceName": "Organization", "resourceRoot": "/v1/organizations"}
             - type: "null"
           title: "Organization Id"
           description: "The ID of the organization owning the benefit. **Required unless you use an organization token.**"
@@ -6403,7 +6403,7 @@ components:
             - type: "string"
               format: "uuid4"
               description: "The organization ID."
-              x-polar-selector-widget: {"displayProperty": "name", "resourceName": "Organization", "resourceRoot": "/v1/organizations"}
+              x-spaire-selector-widget: {"displayProperty": "name", "resourceName": "Organization", "resourceRoot": "/v1/organizations"}
             - type: "null"
           title: "Organization Id"
           description: "The ID of the organization owning the benefit. **Required unless you use an organization token.**"
@@ -6619,7 +6619,7 @@ components:
             - type: "string"
               format: "uuid4"
               description: "The organization ID."
-              x-polar-selector-widget: {"displayProperty": "name", "resourceName": "Organization", "resourceRoot": "/v1/organizations"}
+              x-spaire-selector-widget: {"displayProperty": "name", "resourceName": "Organization", "resourceRoot": "/v1/organizations"}
             - type: "null"
           title: "Organization Id"
           description: "The ID of the organization owning the benefit. **Required unless you use an organization token.**"
@@ -6635,7 +6635,7 @@ components:
         "repository_owner":
           type: "string"
           examples:
-            - "polarsource"
+            - "spairesource"
           title: "Repository Owner"
           description: "The owner of the repository."
         "repository_name":
@@ -6666,7 +6666,7 @@ components:
         "repository_owner":
           type: "string"
           examples:
-            - "polarsource"
+            - "spairesource"
           title: "Repository Owner"
           description: "The owner of the repository."
         "repository_name":
@@ -6761,7 +6761,7 @@ components:
         "repository_owner":
           type: "string"
           examples:
-            - "polarsource"
+            - "spairesource"
           title: "Repository Owner"
           description: "The owner of the repository."
         "repository_name":
@@ -7171,7 +7171,7 @@ components:
             - type: "string"
               format: "uuid4"
               description: "The organization ID."
-              x-polar-selector-widget: {"displayProperty": "name", "resourceName": "Organization", "resourceRoot": "/v1/organizations"}
+              x-spaire-selector-widget: {"displayProperty": "name", "resourceName": "Organization", "resourceRoot": "/v1/organizations"}
             - type: "null"
           title: "Organization Id"
           description: "The ID of the organization owning the benefit. **Required unless you use an organization token.**"
@@ -8317,7 +8317,7 @@ components:
             - type: "string"
             - type: "null"
           title: "Embed Origin"
-          description: "If you plan to embed the checkout session, set this to the Origin of the embedding page. It'll allow the Polar iframe to communicate with the parent page."
+          description: "If you plan to embed the checkout session, set this to the Origin of the embedding page. It'll allow the Spaire iframe to communicate with the parent page."
         "product_price_id":
           type: "string"
           title: "Product Price Id"
@@ -8513,7 +8513,7 @@ components:
             - type: "string"
             - type: "null"
           title: "Embed Origin"
-          description: "If you plan to embed the checkout session, set this to the Origin of the embedding page. It'll allow the Polar iframe to communicate with the parent page."
+          description: "If you plan to embed the checkout session, set this to the Origin of the embedding page. It'll allow the Spaire iframe to communicate with the parent page."
         "product_id":
           type: "string"
           title: "Product Id"
@@ -9083,7 +9083,7 @@ components:
             - type: "string"
             - type: "null"
           title: "Embed Origin"
-          description: "If you plan to embed the checkout session, set this to the Origin of the embedding page. It'll allow the Polar iframe to communicate with the parent page."
+          description: "If you plan to embed the checkout session, set this to the Origin of the embedding page. It'll allow the Spaire iframe to communicate with the parent page."
       title: "CheckoutUpdate"
       description: "Update an existing checkout session using an access token."
     "CheckoutUpdatePublic":
@@ -9215,7 +9215,7 @@ components:
           title: "Organization Id"
           format: "uuid4"
           description: "The ID of the organization owning the custom field."
-          x-polar-selector-widget: {"displayProperty": "name", "resourceName": "Organization", "resourceRoot": "/v1/organizations"}
+          x-spaire-selector-widget: {"displayProperty": "name", "resourceName": "Organization", "resourceRoot": "/v1/organizations"}
         "properties": {"$ref": "#/components/schemas/CustomFieldCheckboxProperties"}
       title: "CustomFieldCheckbox"
       required:
@@ -9297,7 +9297,7 @@ components:
             - type: "string"
               format: "uuid4"
               description: "The organization ID."
-              x-polar-selector-widget: {"displayProperty": "name", "resourceName": "Organization", "resourceRoot": "/v1/organizations"}
+              x-spaire-selector-widget: {"displayProperty": "name", "resourceName": "Organization", "resourceRoot": "/v1/organizations"}
             - type: "null"
           title: "Organization Id"
           description: "The ID of the organization owning the custom field. **Required unless you use an organization token.**"
@@ -9346,7 +9346,7 @@ components:
             - type: "string"
               format: "uuid4"
               description: "The organization ID."
-              x-polar-selector-widget: {"displayProperty": "name", "resourceName": "Organization", "resourceRoot": "/v1/organizations"}
+              x-spaire-selector-widget: {"displayProperty": "name", "resourceName": "Organization", "resourceRoot": "/v1/organizations"}
             - type: "null"
           title: "Organization Id"
           description: "The ID of the organization owning the custom field. **Required unless you use an organization token.**"
@@ -9395,7 +9395,7 @@ components:
             - type: "string"
               format: "uuid4"
               description: "The organization ID."
-              x-polar-selector-widget: {"displayProperty": "name", "resourceName": "Organization", "resourceRoot": "/v1/organizations"}
+              x-spaire-selector-widget: {"displayProperty": "name", "resourceName": "Organization", "resourceRoot": "/v1/organizations"}
             - type: "null"
           title: "Organization Id"
           description: "The ID of the organization owning the custom field. **Required unless you use an organization token.**"
@@ -9444,7 +9444,7 @@ components:
             - type: "string"
               format: "uuid4"
               description: "The organization ID."
-              x-polar-selector-widget: {"displayProperty": "name", "resourceName": "Organization", "resourceRoot": "/v1/organizations"}
+              x-spaire-selector-widget: {"displayProperty": "name", "resourceName": "Organization", "resourceRoot": "/v1/organizations"}
             - type: "null"
           title: "Organization Id"
           description: "The ID of the organization owning the custom field. **Required unless you use an organization token.**"
@@ -9493,7 +9493,7 @@ components:
             - type: "string"
               format: "uuid4"
               description: "The organization ID."
-              x-polar-selector-widget: {"displayProperty": "name", "resourceName": "Organization", "resourceRoot": "/v1/organizations"}
+              x-spaire-selector-widget: {"displayProperty": "name", "resourceName": "Organization", "resourceRoot": "/v1/organizations"}
             - type: "null"
           title: "Organization Id"
           description: "The ID of the organization owning the custom field. **Required unless you use an organization token.**"
@@ -9552,7 +9552,7 @@ components:
           title: "Organization Id"
           format: "uuid4"
           description: "The ID of the organization owning the custom field."
-          x-polar-selector-widget: {"displayProperty": "name", "resourceName": "Organization", "resourceRoot": "/v1/organizations"}
+          x-spaire-selector-widget: {"displayProperty": "name", "resourceName": "Organization", "resourceRoot": "/v1/organizations"}
         "properties": {"$ref": "#/components/schemas/CustomFieldDateProperties"}
       title: "CustomFieldDate"
       required:
@@ -9635,7 +9635,7 @@ components:
           title: "Organization Id"
           format: "uuid4"
           description: "The ID of the organization owning the custom field."
-          x-polar-selector-widget: {"displayProperty": "name", "resourceName": "Organization", "resourceRoot": "/v1/organizations"}
+          x-spaire-selector-widget: {"displayProperty": "name", "resourceName": "Organization", "resourceRoot": "/v1/organizations"}
         "properties": {"$ref": "#/components/schemas/CustomFieldNumberProperties"}
       title: "CustomFieldNumber"
       required:
@@ -9718,7 +9718,7 @@ components:
           title: "Organization Id"
           format: "uuid4"
           description: "The ID of the organization owning the custom field."
-          x-polar-selector-widget: {"displayProperty": "name", "resourceName": "Organization", "resourceRoot": "/v1/organizations"}
+          x-spaire-selector-widget: {"displayProperty": "name", "resourceName": "Organization", "resourceRoot": "/v1/organizations"}
         "properties": {"$ref": "#/components/schemas/CustomFieldSelectProperties"}
       title: "CustomFieldSelect"
       required:
@@ -9828,7 +9828,7 @@ components:
           title: "Organization Id"
           format: "uuid4"
           description: "The ID of the organization owning the custom field."
-          x-polar-selector-widget: {"displayProperty": "name", "resourceName": "Organization", "resourceRoot": "/v1/organizations"}
+          x-spaire-selector-widget: {"displayProperty": "name", "resourceName": "Organization", "resourceRoot": "/v1/organizations"}
         "properties": {"$ref": "#/components/schemas/CustomFieldTextProperties"}
       title: "CustomFieldText"
       required:
@@ -10808,7 +10808,7 @@ components:
             - type: "string"
               format: "uuid4"
               description: "The organization ID."
-              x-polar-selector-widget: {"displayProperty": "name", "resourceName": "Organization", "resourceRoot": "/v1/organizations"}
+              x-spaire-selector-widget: {"displayProperty": "name", "resourceName": "Organization", "resourceRoot": "/v1/organizations"}
             - type: "null"
           title: "Organization Id"
           description: "The ID of the organization owning the customer. **Required unless you use an organization token.**"
@@ -11555,7 +11555,7 @@ components:
           title: "Organization Id"
           format: "uuid4"
           description: "The organization ID."
-          x-polar-selector-widget: {"displayProperty": "name", "resourceName": "Organization", "resourceRoot": "/v1/organizations"}
+          x-spaire-selector-widget: {"displayProperty": "name", "resourceName": "Organization", "resourceRoot": "/v1/organizations"}
         "products":
           type: "array"
           items: {"$ref": "#/components/schemas/DiscountProduct"}
@@ -11654,7 +11654,7 @@ components:
           title: "Organization Id"
           format: "uuid4"
           description: "The organization ID."
-          x-polar-selector-widget: {"displayProperty": "name", "resourceName": "Organization", "resourceRoot": "/v1/organizations"}
+          x-spaire-selector-widget: {"displayProperty": "name", "resourceName": "Organization", "resourceRoot": "/v1/organizations"}
       title: "DiscountFixedOnceForeverDurationBase"
       required:
         - "duration"
@@ -11746,7 +11746,7 @@ components:
             - type: "string"
               format: "uuid4"
               description: "The organization ID."
-              x-polar-selector-widget: {"displayProperty": "name", "resourceName": "Organization", "resourceRoot": "/v1/organizations"}
+              x-spaire-selector-widget: {"displayProperty": "name", "resourceName": "Organization", "resourceRoot": "/v1/organizations"}
             - type: "null"
           title: "Organization Id"
           description: "The ID of the organization owning the discount. **Required unless you use an organization token.**"
@@ -11835,7 +11835,7 @@ components:
           title: "Organization Id"
           format: "uuid4"
           description: "The organization ID."
-          x-polar-selector-widget: {"displayProperty": "name", "resourceName": "Organization", "resourceRoot": "/v1/organizations"}
+          x-spaire-selector-widget: {"displayProperty": "name", "resourceName": "Organization", "resourceRoot": "/v1/organizations"}
         "products":
           type: "array"
           items: {"$ref": "#/components/schemas/DiscountProduct"}
@@ -11938,7 +11938,7 @@ components:
           title: "Organization Id"
           format: "uuid4"
           description: "The organization ID."
-          x-polar-selector-widget: {"displayProperty": "name", "resourceName": "Organization", "resourceRoot": "/v1/organizations"}
+          x-spaire-selector-widget: {"displayProperty": "name", "resourceName": "Organization", "resourceRoot": "/v1/organizations"}
       title: "DiscountFixedRepeatDurationBase"
       required:
         - "duration"
@@ -12036,7 +12036,7 @@ components:
             - type: "string"
               format: "uuid4"
               description: "The organization ID."
-              x-polar-selector-widget: {"displayProperty": "name", "resourceName": "Organization", "resourceRoot": "/v1/organizations"}
+              x-spaire-selector-widget: {"displayProperty": "name", "resourceName": "Organization", "resourceRoot": "/v1/organizations"}
             - type: "null"
           title: "Organization Id"
           description: "The ID of the organization owning the discount. **Required unless you use an organization token.**"
@@ -12120,7 +12120,7 @@ components:
           title: "Organization Id"
           format: "uuid4"
           description: "The organization ID."
-          x-polar-selector-widget: {"displayProperty": "name", "resourceName": "Organization", "resourceRoot": "/v1/organizations"}
+          x-spaire-selector-widget: {"displayProperty": "name", "resourceName": "Organization", "resourceRoot": "/v1/organizations"}
         "products":
           type: "array"
           items: {"$ref": "#/components/schemas/DiscountProduct"}
@@ -12215,7 +12215,7 @@ components:
           title: "Organization Id"
           format: "uuid4"
           description: "The organization ID."
-          x-polar-selector-widget: {"displayProperty": "name", "resourceName": "Organization", "resourceRoot": "/v1/organizations"}
+          x-spaire-selector-widget: {"displayProperty": "name", "resourceName": "Organization", "resourceRoot": "/v1/organizations"}
       title: "DiscountPercentageOnceForeverDurationBase"
       required:
         - "duration"
@@ -12301,7 +12301,7 @@ components:
             - type: "string"
               format: "uuid4"
               description: "The organization ID."
-              x-polar-selector-widget: {"displayProperty": "name", "resourceName": "Organization", "resourceRoot": "/v1/organizations"}
+              x-spaire-selector-widget: {"displayProperty": "name", "resourceName": "Organization", "resourceRoot": "/v1/organizations"}
             - type: "null"
           title: "Organization Id"
           description: "The ID of the organization owning the discount. **Required unless you use an organization token.**"
@@ -12387,7 +12387,7 @@ components:
           title: "Organization Id"
           format: "uuid4"
           description: "The organization ID."
-          x-polar-selector-widget: {"displayProperty": "name", "resourceName": "Organization", "resourceRoot": "/v1/organizations"}
+          x-spaire-selector-widget: {"displayProperty": "name", "resourceName": "Organization", "resourceRoot": "/v1/organizations"}
         "products":
           type: "array"
           items: {"$ref": "#/components/schemas/DiscountProduct"}
@@ -12486,7 +12486,7 @@ components:
           title: "Organization Id"
           format: "uuid4"
           description: "The organization ID."
-          x-polar-selector-widget: {"displayProperty": "name", "resourceName": "Organization", "resourceRoot": "/v1/organizations"}
+          x-spaire-selector-widget: {"displayProperty": "name", "resourceName": "Organization", "resourceRoot": "/v1/organizations"}
       title: "DiscountPercentageRepeatDurationBase"
       required:
         - "duration"
@@ -12578,7 +12578,7 @@ components:
             - type: "string"
               format: "uuid4"
               description: "The organization ID."
-              x-polar-selector-widget: {"displayProperty": "name", "resourceName": "Organization", "resourceRoot": "/v1/organizations"}
+              x-spaire-selector-widget: {"displayProperty": "name", "resourceName": "Organization", "resourceRoot": "/v1/organizations"}
             - type: "null"
           title: "Organization Id"
           description: "The ID of the organization owning the discount. **Required unless you use an organization token.**"
@@ -12778,7 +12778,7 @@ components:
             - type: "string"
               format: "uuid4"
               description: "The organization ID."
-              x-polar-selector-widget: {"displayProperty": "name", "resourceName": "Organization", "resourceRoot": "/v1/organizations"}
+              x-spaire-selector-widget: {"displayProperty": "name", "resourceName": "Organization", "resourceRoot": "/v1/organizations"}
             - type: "null"
           title: "Organization Id"
         "name":
@@ -12991,7 +12991,7 @@ components:
             - type: "string"
               format: "uuid4"
               description: "The organization ID."
-              x-polar-selector-widget: {"displayProperty": "name", "resourceName": "Organization", "resourceRoot": "/v1/organizations"}
+              x-spaire-selector-widget: {"displayProperty": "name", "resourceName": "Organization", "resourceRoot": "/v1/organizations"}
             - type: "null"
           title: "Organization Id"
       title: "ExternalOrganization"
@@ -13384,7 +13384,7 @@ components:
               format: "date-time"
             - type: "null"
           title: "Confirmed Solved At"
-          description: "If this issue has been marked as confirmed solved through Polar"
+          description: "If this issue has been marked as confirmed solved through Spaire"
         "funding": {"$ref": "#/components/schemas/Funding"}
         "repository": {"$ref": "#/components/schemas/Repository", "description": "The repository that the issue is in"}
         "upfront_split_to_contributors":
@@ -13396,7 +13396,7 @@ components:
         "pledge_badge_currently_embedded":
           type: "boolean"
           title: "Pledge Badge Currently Embedded"
-          description: "If this issue currently has the Polar badge SVG embedded"
+          description: "If this issue currently has the Spaire badge SVG embedded"
         "badge_custom_content":
           anyOf:
             - type: "string"
@@ -13646,7 +13646,7 @@ components:
           title: "Benefit Id"
           format: "uuid4"
           description: "The benefit ID."
-          x-polar-selector-widget: {"displayProperty": "description", "resourceName": "Benefit", "resourceRoot": "/v1/benefits"}
+          x-spaire-selector-widget: {"displayProperty": "description", "resourceName": "Benefit", "resourceRoot": "/v1/benefits"}
         "key":
           type: "string"
           title: "Key"
@@ -13782,7 +13782,7 @@ components:
             - type: "string"
               format: "uuid4"
               description: "The benefit ID."
-              x-polar-selector-widget: {"displayProperty": "description", "resourceName": "Benefit", "resourceRoot": "/v1/benefits"}
+              x-spaire-selector-widget: {"displayProperty": "description", "resourceName": "Benefit", "resourceRoot": "/v1/benefits"}
             - type: "null"
           title: "Benefit Id"
         "customer_id":
@@ -13831,7 +13831,7 @@ components:
           title: "Benefit Id"
           format: "uuid4"
           description: "The benefit ID."
-          x-polar-selector-widget: {"displayProperty": "description", "resourceName": "Benefit", "resourceRoot": "/v1/benefits"}
+          x-spaire-selector-widget: {"displayProperty": "description", "resourceName": "Benefit", "resourceRoot": "/v1/benefits"}
         "key":
           type: "string"
           title: "Key"
@@ -15084,7 +15084,7 @@ components:
           title: "Id"
           format: "uuid4"
           description: "The organization ID."
-          x-polar-selector-widget: {"displayProperty": "name", "resourceName": "Organization", "resourceRoot": "/v1/organizations"}
+          x-spaire-selector-widget: {"displayProperty": "name", "resourceName": "Organization", "resourceRoot": "/v1/organizations"}
         "name":
           type: "string"
           title: "Name"
@@ -15174,7 +15174,7 @@ components:
             - type: "string"
               format: "uuid4"
               description: "The organization ID."
-              x-polar-selector-widget: {"displayProperty": "name", "resourceName": "Organization", "resourceRoot": "/v1/organizations"}
+              x-spaire-selector-widget: {"displayProperty": "name", "resourceName": "Organization", "resourceRoot": "/v1/organizations"}
             - type: "null"
           title: "Organization Id"
         "name":
@@ -15733,7 +15733,7 @@ components:
             type: "string"
             format: "uuid4"
             description: "The benefit ID."
-            x-polar-selector-widget: {"displayProperty": "description", "resourceName": "Benefit", "resourceRoot": "/v1/benefits"}
+            x-spaire-selector-widget: {"displayProperty": "description", "resourceName": "Benefit", "resourceRoot": "/v1/benefits"}
           title: "Benefits"
           description: "List of benefit IDs. Each one must be on the same organization as the product."
       title: "ProductBenefitsUpdate"
@@ -15752,7 +15752,7 @@ components:
             - type: "string"
               format: "uuid4"
               description: "The organization ID."
-              x-polar-selector-widget: {"displayProperty": "name", "resourceName": "Organization", "resourceRoot": "/v1/organizations"}
+              x-spaire-selector-widget: {"displayProperty": "name", "resourceName": "Organization", "resourceRoot": "/v1/organizations"}
             - type: "null"
           title: "Organization Id"
         "name":
@@ -15945,7 +15945,7 @@ components:
             - type: "string"
               format: "uuid4"
               description: "The organization ID."
-              x-polar-selector-widget: {"displayProperty": "name", "resourceName": "Organization", "resourceRoot": "/v1/organizations"}
+              x-spaire-selector-widget: {"displayProperty": "name", "resourceName": "Organization", "resourceRoot": "/v1/organizations"}
             - type: "null"
           title: "Organization Id"
           description: "The ID of the organization owning the product. **Required unless you use an organization token.**"
@@ -16605,7 +16605,7 @@ components:
             - type: "string"
               format: "uuid4"
               description: "The organization ID."
-              x-polar-selector-widget: {"displayProperty": "name", "resourceName": "Organization", "resourceRoot": "/v1/organizations"}
+              x-spaire-selector-widget: {"displayProperty": "name", "resourceName": "Organization", "resourceRoot": "/v1/organizations"}
             - type: "null"
           title: "Organization Id"
           description: "The ID of the organization owning the product. **Required unless you use an organization token.**"
@@ -17584,7 +17584,7 @@ components:
           title: "Benefit Id"
           format: "uuid4"
           description: "The benefit ID."
-          x-polar-selector-widget: {"displayProperty": "description", "resourceName": "Benefit", "resourceRoot": "/v1/benefits"}
+          x-spaire-selector-widget: {"displayProperty": "description", "resourceName": "Benefit", "resourceRoot": "/v1/benefits"}
         "key":
           type: "string"
           title: "Key"
@@ -17939,7 +17939,7 @@ components:
       openIdConnectUrl: "/.well-known/openid-configuration"
     "pat":
       type: "http"
-      description: "You can generate a **Personal Access Token** from your [settings](https://polar.sh/settings)."
+      description: "You can generate a **Personal Access Token** from your [settings](https://spaire.sh/settings)."
       scheme: "bearer"
     "customer_session":
       type: "http"
@@ -17948,11 +17948,11 @@ tags:
   - name: "private"
     description: "Endpoints that should appear in the schema only in development to generate our internal JS SDK."
   - name: "documented"
-    description: "Endpoints shown and documented in the Polar API documentation."
+    description: "Endpoints shown and documented in the Spaire API documentation."
   - name: "featured"
-    description: "Endpoints featured in the Polar API documentation for their interest in common use-cases."
+    description: "Endpoints featured in the Spaire API documentation for their interest in common use-cases."
   - name: "issue_funding"
-    description: "Endpoints related to issue funding and rewards in the Polar API."
+    description: "Endpoints related to issue funding and rewards in the Spaire API."
 webhooks:
   "checkout.created":
     post:
