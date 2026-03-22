@@ -1,21 +1,21 @@
 workflowVersion: 1.0.0
 speakeasyVersion: latest
 sources:
-    Polar-OAS:
+    Spaire-OAS:
         inputs:
-            - location: https://api.polar.sh/openapi.json
+            - location: https://api.spaire.com/openapi.json
         overlays:
-            - location: https://raw.githubusercontent.com/polarsource/polar/main/sdk/overlays/security.yml
-            - location: https://raw.githubusercontent.com/polarsource/polar/main/sdk/overlays/type_parameter.yml
-            - location: https://raw.githubusercontent.com/polarsource/polar/main/sdk/overlays/product_price_discriminator.yml
-            - location: https://raw.githubusercontent.com/polarsource/polar/main/sdk/overlays/read_only.yml
+            - location: https://raw.githubusercontent.com/Spaire-Tech/spaire-ruby/main/sdk/overlays/security.yml
+            - location: https://raw.githubusercontent.com/Spaire-Tech/spaire-ruby/main/sdk/overlays/type_parameter.yml
+            - location: https://raw.githubusercontent.com/Spaire-Tech/spaire-ruby/main/sdk/overlays/product_price_discriminator.yml
+            - location: https://raw.githubusercontent.com/Spaire-Tech/spaire-ruby/main/sdk/overlays/read_only.yml
         registry:
-            location: registry.speakeasyapi.dev/polar/polar/polar-oas
+            location: registry.speakeasyapi.dev/spaire/spaire/spaire-oas
 targets:
-    polar:
+    spaire:
         target: ruby
-        source: Polar-OAS
+        source: Spaire-OAS
         codeSamples:
             registry:
-                location: registry.speakeasyapi.dev/polar/polar/polar-api-ruby-code-samples
+                location: registry.speakeasyapi.dev/spaire/spaire/spaire-api-ruby-code-samples
             blocking: false

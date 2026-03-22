@@ -1,19 +1,19 @@
 {
   "openapi": "3.1.0",
   "info": {
-    "summary": "Polar HTTP and Webhooks API",
-    "title": "Polar API",
-    "description": "Read the docs at https://docs.polar.sh/api",
+    "summary": "Spaire HTTP and Webhooks API",
+    "title": "Spaire API",
+    "description": "Read the docs at https://docs.spaire.sh/api",
     "version": "0.1.0"
   },
   "servers": [
     {
-      "url": "https://api.polar.sh",
+      "url": "https://api.spaire.sh",
       "description": "Production environment",
       "x-speakeasy-server-id": "production"
     },
     {
-      "url": "https://sandbox-api.polar.sh",
+      "url": "https://sandbox-api.spaire.sh",
       "description": "Sandbox environment",
       "x-speakeasy-server-id": "sandbox"
     }
@@ -89,7 +89,7 @@
                   "type": "string",
                   "format": "uuid4",
                   "description": "The organization ID.",
-                  "x-polar-selector-widget": {
+                  "x-spaire-selector-widget": {
                     "resourceRoot": "/v1/organizations",
                     "resourceName": "Organization",
                     "displayProperty": "name"
@@ -101,7 +101,7 @@
                     "type": "string",
                     "format": "uuid4",
                     "description": "The organization ID.",
-                    "x-polar-selector-widget": {
+                    "x-spaire-selector-widget": {
                       "resourceRoot": "/v1/organizations",
                       "resourceName": "Organization",
                       "displayProperty": "name"
@@ -199,7 +199,7 @@
             "pat": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Anonymous",
           "Organization",
           "User"
@@ -339,7 +339,7 @@
                   "type": "string",
                   "format": "uuid4",
                   "description": "The organization ID.",
-                  "x-polar-selector-widget": {
+                  "x-spaire-selector-widget": {
                     "resourceRoot": "/v1/organizations",
                     "resourceName": "Organization",
                     "displayProperty": "name"
@@ -351,7 +351,7 @@
                     "type": "string",
                     "format": "uuid4",
                     "description": "The organization ID.",
-                    "x-polar-selector-widget": {
+                    "x-spaire-selector-widget": {
                       "resourceRoot": "/v1/organizations",
                       "resourceName": "Organization",
                       "displayProperty": "name"
@@ -450,7 +450,7 @@
             "pat": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Anonymous",
           "Organization",
           "User"
@@ -498,7 +498,7 @@
               "title": "Id",
               "format": "uuid4",
               "description": "The repository ID.",
-              "x-polar-selector-widget": {
+              "x-spaire-selector-widget": {
                 "resourceRoot": "/v1/repositories",
                 "resourceName": "Repository",
                 "displayProperty": "name"
@@ -549,7 +549,7 @@
             "pat": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Anonymous",
           "Organization",
           "User"
@@ -576,7 +576,7 @@
               "title": "Id",
               "format": "uuid4",
               "description": "The repository ID.",
-              "x-polar-selector-widget": {
+              "x-spaire-selector-widget": {
                 "resourceRoot": "/v1/repositories",
                 "resourceName": "Repository",
                 "displayProperty": "name"
@@ -646,7 +646,7 @@
             "pat": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Organization",
           "User"
         ],
@@ -767,7 +767,7 @@
             "pat": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Organization",
           "User"
         ],
@@ -844,7 +844,7 @@
             "pat": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "User"
         ],
         "x-speakeasy-group": "organizations",
@@ -871,7 +871,7 @@
               "title": "Id",
               "format": "uuid4",
               "description": "The organization ID.",
-              "x-polar-selector-widget": {
+              "x-spaire-selector-widget": {
                 "resourceRoot": "/v1/organizations",
                 "resourceName": "Organization",
                 "displayProperty": "name"
@@ -922,7 +922,7 @@
             "pat": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Organization",
           "User"
         ],
@@ -948,7 +948,7 @@
               "title": "Id",
               "format": "uuid4",
               "description": "The organization ID.",
-              "x-polar-selector-widget": {
+              "x-spaire-selector-widget": {
                 "resourceRoot": "/v1/organizations",
                 "resourceName": "Organization",
                 "displayProperty": "name"
@@ -1018,7 +1018,7 @@
             "pat": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Organization",
           "User"
         ],
@@ -1047,7 +1047,7 @@
                   "type": "string",
                   "format": "uuid4",
                   "description": "The organization ID.",
-                  "x-polar-selector-widget": {
+                  "x-spaire-selector-widget": {
                     "resourceRoot": "/v1/organizations",
                     "resourceName": "Organization",
                     "displayProperty": "name"
@@ -1059,7 +1059,7 @@
                     "type": "string",
                     "format": "uuid4",
                     "description": "The organization ID.",
-                    "x-polar-selector-widget": {
+                    "x-spaire-selector-widget": {
                       "resourceRoot": "/v1/organizations",
                       "resourceName": "Organization",
                       "displayProperty": "name"
@@ -1085,7 +1085,7 @@
                   "type": "string",
                   "format": "uuid4",
                   "description": "The product ID.",
-                  "x-polar-selector-widget": {
+                  "x-spaire-selector-widget": {
                     "resourceRoot": "/v1/products",
                     "resourceName": "Product",
                     "displayProperty": "name"
@@ -1097,7 +1097,7 @@
                     "type": "string",
                     "format": "uuid4",
                     "description": "The product ID.",
-                    "x-polar-selector-widget": {
+                    "x-spaire-selector-widget": {
                       "resourceRoot": "/v1/products",
                       "resourceName": "Product",
                       "displayProperty": "name"
@@ -1149,7 +1149,7 @@
                   "type": "string",
                   "format": "uuid4",
                   "description": "The product ID.",
-                  "x-polar-selector-widget": {
+                  "x-spaire-selector-widget": {
                     "resourceRoot": "/v1/products",
                     "resourceName": "Product",
                     "displayProperty": "name"
@@ -1161,7 +1161,7 @@
                     "type": "string",
                     "format": "uuid4",
                     "description": "The product ID.",
-                    "x-polar-selector-widget": {
+                    "x-spaire-selector-widget": {
                       "resourceRoot": "/v1/products",
                       "resourceName": "Product",
                       "displayProperty": "name"
@@ -1278,7 +1278,7 @@
             "pat": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Organization",
           "User"
         ],
@@ -1326,7 +1326,7 @@
                   "type": "string",
                   "format": "uuid4",
                   "description": "The organization ID.",
-                  "x-polar-selector-widget": {
+                  "x-spaire-selector-widget": {
                     "resourceRoot": "/v1/organizations",
                     "resourceName": "Organization",
                     "displayProperty": "name"
@@ -1338,7 +1338,7 @@
                     "type": "string",
                     "format": "uuid4",
                     "description": "The organization ID.",
-                    "x-polar-selector-widget": {
+                    "x-spaire-selector-widget": {
                       "resourceRoot": "/v1/organizations",
                       "resourceName": "Organization",
                       "displayProperty": "name"
@@ -1385,7 +1385,7 @@
             "pat": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Organization",
           "User"
         ],
@@ -1412,7 +1412,7 @@
               "title": "Benefit Id",
               "format": "uuid4",
               "description": "The benefit ID.",
-              "x-polar-selector-widget": {
+              "x-spaire-selector-widget": {
                 "resourceRoot": "/v1/benefits",
                 "resourceName": "Benefit",
                 "displayProperty": "description"
@@ -1642,7 +1642,7 @@
             "pat": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "User"
         ],
         "x-speakeasy-pagination": {
@@ -1716,7 +1716,7 @@
             "pat": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "User"
         ],
         "x-speakeasy-group": "oauth2.clients",
@@ -1772,7 +1772,7 @@
             "pat": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Anonymous",
           "User"
         ],
@@ -1837,7 +1837,7 @@
             "pat": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Anonymous",
           "User"
         ],
@@ -1892,7 +1892,7 @@
             "pat": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Anonymous",
           "User"
         ],
@@ -1943,7 +1943,7 @@
             "pat": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Anonymous",
           "User"
         ],
@@ -2277,7 +2277,7 @@
                   "type": "string",
                   "format": "uuid4",
                   "description": "The organization ID.",
-                  "x-polar-selector-widget": {
+                  "x-spaire-selector-widget": {
                     "resourceRoot": "/v1/organizations",
                     "resourceName": "Organization",
                     "displayProperty": "name"
@@ -2289,7 +2289,7 @@
                     "type": "string",
                     "format": "uuid4",
                     "description": "The organization ID.",
-                    "x-polar-selector-widget": {
+                    "x-spaire-selector-widget": {
                       "resourceRoot": "/v1/organizations",
                       "resourceName": "Organization",
                       "displayProperty": "name"
@@ -2388,7 +2388,7 @@
             "pat": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Organization",
           "User"
         ],
@@ -2465,7 +2465,7 @@
             "pat": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Organization",
           "User"
         ],
@@ -2492,7 +2492,7 @@
               "title": "Id",
               "format": "uuid4",
               "description": "The benefit ID.",
-              "x-polar-selector-widget": {
+              "x-spaire-selector-widget": {
                 "resourceRoot": "/v1/benefits",
                 "resourceName": "Benefit",
                 "displayProperty": "description"
@@ -2544,7 +2544,7 @@
             "pat": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Organization",
           "User"
         ],
@@ -2569,7 +2569,7 @@
               "title": "Id",
               "format": "uuid4",
               "description": "The benefit ID.",
-              "x-polar-selector-widget": {
+              "x-spaire-selector-widget": {
                 "resourceRoot": "/v1/benefits",
                 "resourceName": "Benefit",
                 "displayProperty": "description"
@@ -2622,7 +2622,7 @@
             "pat": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Organization",
           "User"
         ],
@@ -2647,7 +2647,7 @@
               "title": "Id",
               "format": "uuid4",
               "description": "The benefit ID.",
-              "x-polar-selector-widget": {
+              "x-spaire-selector-widget": {
                 "resourceRoot": "/v1/benefits",
                 "resourceName": "Benefit",
                 "displayProperty": "description"
@@ -2738,7 +2738,7 @@
             "pat": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Organization",
           "User"
         ],
@@ -2765,7 +2765,7 @@
               "title": "Id",
               "format": "uuid4",
               "description": "The benefit ID.",
-              "x-polar-selector-widget": {
+              "x-spaire-selector-widget": {
                 "resourceRoot": "/v1/benefits",
                 "resourceName": "Benefit",
                 "displayProperty": "description"
@@ -2886,7 +2886,7 @@
             "pat": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Organization",
           "User"
         ],
@@ -2935,7 +2935,7 @@
                   "type": "string",
                   "format": "uuid4",
                   "description": "The organization ID.",
-                  "x-polar-selector-widget": {
+                  "x-spaire-selector-widget": {
                     "resourceRoot": "/v1/organizations",
                     "resourceName": "Organization",
                     "displayProperty": "name"
@@ -2947,7 +2947,7 @@
                     "type": "string",
                     "format": "uuid4",
                     "description": "The organization ID.",
-                    "x-polar-selector-widget": {
+                    "x-spaire-selector-widget": {
                       "resourceRoot": "/v1/organizations",
                       "resourceName": "Organization",
                       "displayProperty": "name"
@@ -3027,7 +3027,7 @@
                   "type": "string",
                   "format": "uuid4",
                   "description": "The benefit ID.",
-                  "x-polar-selector-widget": {
+                  "x-spaire-selector-widget": {
                     "resourceRoot": "/v1/benefits",
                     "resourceName": "Benefit",
                     "displayProperty": "description"
@@ -3039,7 +3039,7 @@
                     "type": "string",
                     "format": "uuid4",
                     "description": "The benefit ID.",
-                    "x-polar-selector-widget": {
+                    "x-spaire-selector-widget": {
                       "resourceRoot": "/v1/benefits",
                       "resourceName": "Benefit",
                       "displayProperty": "description"
@@ -3138,7 +3138,7 @@
             "pat": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Organization",
           "User"
         ],
@@ -3216,7 +3216,7 @@
             "pat": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Organization",
           "User"
         ],
@@ -3244,7 +3244,7 @@
               "title": "Id",
               "format": "uuid4",
               "description": "The product ID.",
-              "x-polar-selector-widget": {
+              "x-spaire-selector-widget": {
                 "resourceRoot": "/v1/products",
                 "resourceName": "Product",
                 "displayProperty": "name"
@@ -3295,7 +3295,7 @@
             "pat": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Organization",
           "User"
         ],
@@ -3321,7 +3321,7 @@
               "title": "Id",
               "format": "uuid4",
               "description": "The product ID.",
-              "x-polar-selector-widget": {
+              "x-spaire-selector-widget": {
                 "resourceRoot": "/v1/products",
                 "resourceName": "Product",
                 "displayProperty": "name"
@@ -3391,7 +3391,7 @@
             "pat": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Organization",
           "User"
         ],
@@ -3419,7 +3419,7 @@
               "title": "Id",
               "format": "uuid4",
               "description": "The product ID.",
-              "x-polar-selector-widget": {
+              "x-spaire-selector-widget": {
                 "resourceRoot": "/v1/products",
                 "resourceName": "Product",
                 "displayProperty": "name"
@@ -3489,7 +3489,7 @@
             "pat": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Organization",
           "User"
         ],
@@ -3518,7 +3518,7 @@
                   "type": "string",
                   "format": "uuid4",
                   "description": "The organization ID.",
-                  "x-polar-selector-widget": {
+                  "x-spaire-selector-widget": {
                     "resourceRoot": "/v1/organizations",
                     "resourceName": "Organization",
                     "displayProperty": "name"
@@ -3530,7 +3530,7 @@
                     "type": "string",
                     "format": "uuid4",
                     "description": "The organization ID.",
-                    "x-polar-selector-widget": {
+                    "x-spaire-selector-widget": {
                       "resourceRoot": "/v1/organizations",
                       "resourceName": "Organization",
                       "displayProperty": "name"
@@ -3556,7 +3556,7 @@
                   "type": "string",
                   "format": "uuid4",
                   "description": "The product ID.",
-                  "x-polar-selector-widget": {
+                  "x-spaire-selector-widget": {
                     "resourceRoot": "/v1/products",
                     "resourceName": "Product",
                     "displayProperty": "name"
@@ -3568,7 +3568,7 @@
                     "type": "string",
                     "format": "uuid4",
                     "description": "The product ID.",
-                    "x-polar-selector-widget": {
+                    "x-spaire-selector-widget": {
                       "resourceRoot": "/v1/products",
                       "resourceName": "Product",
                       "displayProperty": "name"
@@ -3742,7 +3742,7 @@
             "pat": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Organization",
           "User"
         ],
@@ -3834,7 +3834,7 @@
             "pat": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Organization",
           "User"
         ],
@@ -3907,7 +3907,7 @@
             "pat": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Organization",
           "User"
         ],
@@ -3938,7 +3938,7 @@
                   "type": "string",
                   "format": "uuid4",
                   "description": "The organization ID.",
-                  "x-polar-selector-widget": {
+                  "x-spaire-selector-widget": {
                     "resourceRoot": "/v1/organizations",
                     "resourceName": "Organization",
                     "displayProperty": "name"
@@ -3950,7 +3950,7 @@
                     "type": "string",
                     "format": "uuid4",
                     "description": "The organization ID.",
-                    "x-polar-selector-widget": {
+                    "x-spaire-selector-widget": {
                       "resourceRoot": "/v1/organizations",
                       "resourceName": "Organization",
                       "displayProperty": "name"
@@ -3976,7 +3976,7 @@
                   "type": "string",
                   "format": "uuid4",
                   "description": "The product ID.",
-                  "x-polar-selector-widget": {
+                  "x-spaire-selector-widget": {
                     "resourceRoot": "/v1/products",
                     "resourceName": "Product",
                     "displayProperty": "name"
@@ -3988,7 +3988,7 @@
                     "type": "string",
                     "format": "uuid4",
                     "description": "The product ID.",
-                    "x-polar-selector-widget": {
+                    "x-spaire-selector-widget": {
                       "resourceRoot": "/v1/products",
                       "resourceName": "Product",
                       "displayProperty": "name"
@@ -4087,7 +4087,7 @@
             "pat": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Organization",
           "User"
         ],
@@ -4165,7 +4165,7 @@
             "pat": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Organization",
           "User"
         ],
@@ -4241,7 +4241,7 @@
             "pat": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Organization",
           "User"
         ],
@@ -4324,7 +4324,7 @@
             "pat": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Organization",
           "User"
         ],
@@ -4534,7 +4534,7 @@
             "pat": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Anonymous",
           "User"
         ],
@@ -4592,7 +4592,7 @@
             "pat": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Anonymous",
           "User"
         ],
@@ -4670,7 +4670,7 @@
                   "type": "string",
                   "format": "uuid4",
                   "description": "The organization ID.",
-                  "x-polar-selector-widget": {
+                  "x-spaire-selector-widget": {
                     "resourceRoot": "/v1/organizations",
                     "resourceName": "Organization",
                     "displayProperty": "name"
@@ -4764,7 +4764,7 @@
             "pat": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Organization",
           "User"
         ],
@@ -4840,7 +4840,7 @@
             "pat": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Organization",
           "User"
         ],
@@ -4952,7 +4952,7 @@
             "pat": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Organization",
           "User"
         ],
@@ -5026,7 +5026,7 @@
             "pat": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Organization",
           "User"
         ],
@@ -5136,7 +5136,7 @@
             "pat": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Organization",
           "User"
         ],
@@ -5199,7 +5199,7 @@
                   "type": "string",
                   "format": "uuid4",
                   "description": "The organization ID.",
-                  "x-polar-selector-widget": {
+                  "x-spaire-selector-widget": {
                     "resourceRoot": "/v1/organizations",
                     "resourceName": "Organization",
                     "displayProperty": "name"
@@ -5211,7 +5211,7 @@
                     "type": "string",
                     "format": "uuid4",
                     "description": "The organization ID.",
-                    "x-polar-selector-widget": {
+                    "x-spaire-selector-widget": {
                       "resourceRoot": "/v1/organizations",
                       "resourceName": "Organization",
                       "displayProperty": "name"
@@ -5237,7 +5237,7 @@
                   "type": "string",
                   "format": "uuid4",
                   "description": "The product ID.",
-                  "x-polar-selector-widget": {
+                  "x-spaire-selector-widget": {
                     "resourceRoot": "/v1/products",
                     "resourceName": "Product",
                     "displayProperty": "name"
@@ -5249,7 +5249,7 @@
                     "type": "string",
                     "format": "uuid4",
                     "description": "The product ID.",
-                    "x-polar-selector-widget": {
+                    "x-spaire-selector-widget": {
                       "resourceRoot": "/v1/products",
                       "resourceName": "Product",
                       "displayProperty": "name"
@@ -5321,7 +5321,7 @@
             "pat": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Organization",
           "User"
         ],
@@ -5360,7 +5360,7 @@
             "pat": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Organization",
           "User"
         ],
@@ -5390,7 +5390,7 @@
                   "type": "string",
                   "format": "uuid4",
                   "description": "The organization ID.",
-                  "x-polar-selector-widget": {
+                  "x-spaire-selector-widget": {
                     "resourceRoot": "/v1/organizations",
                     "resourceName": "Organization",
                     "displayProperty": "name"
@@ -5402,7 +5402,7 @@
                     "type": "string",
                     "format": "uuid4",
                     "description": "The organization ID.",
-                    "x-polar-selector-widget": {
+                    "x-spaire-selector-widget": {
                       "resourceRoot": "/v1/organizations",
                       "resourceName": "Organization",
                       "displayProperty": "name"
@@ -5428,7 +5428,7 @@
                   "type": "string",
                   "format": "uuid4",
                   "description": "The benefit ID.",
-                  "x-polar-selector-widget": {
+                  "x-spaire-selector-widget": {
                     "resourceRoot": "/v1/benefits",
                     "resourceName": "Benefit",
                     "displayProperty": "description"
@@ -5440,7 +5440,7 @@
                     "type": "string",
                     "format": "uuid4",
                     "description": "The benefit ID.",
-                    "x-polar-selector-widget": {
+                    "x-spaire-selector-widget": {
                       "resourceRoot": "/v1/benefits",
                       "resourceName": "Benefit",
                       "displayProperty": "description"
@@ -5535,7 +5535,7 @@
             "pat": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Organization",
           "User"
         ],
@@ -5637,7 +5637,7 @@
             "pat": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Organization",
           "User"
         ],
@@ -5727,7 +5727,7 @@
             "pat": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Organization",
           "User"
         ],
@@ -5820,7 +5820,7 @@
             "pat": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Organization",
           "User"
         ],
@@ -5849,7 +5849,7 @@
                   "type": "string",
                   "format": "uuid4",
                   "description": "The organization ID.",
-                  "x-polar-selector-widget": {
+                  "x-spaire-selector-widget": {
                     "resourceRoot": "/v1/organizations",
                     "resourceName": "Organization",
                     "displayProperty": "name"
@@ -5861,7 +5861,7 @@
                     "type": "string",
                     "format": "uuid4",
                     "description": "The organization ID.",
-                    "x-polar-selector-widget": {
+                    "x-spaire-selector-widget": {
                       "resourceRoot": "/v1/organizations",
                       "resourceName": "Organization",
                       "displayProperty": "name"
@@ -5887,7 +5887,7 @@
                   "type": "string",
                   "format": "uuid4",
                   "description": "The product ID.",
-                  "x-polar-selector-widget": {
+                  "x-spaire-selector-widget": {
                     "resourceRoot": "/v1/products",
                     "resourceName": "Product",
                     "displayProperty": "name"
@@ -5899,7 +5899,7 @@
                     "type": "string",
                     "format": "uuid4",
                     "description": "The product ID.",
-                    "x-polar-selector-widget": {
+                    "x-spaire-selector-widget": {
                       "resourceRoot": "/v1/products",
                       "resourceName": "Product",
                       "displayProperty": "name"
@@ -5998,7 +5998,7 @@
             "pat": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Organization",
           "User"
         ],
@@ -6074,7 +6074,7 @@
             "pat": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Organization",
           "User"
         ],
@@ -6148,7 +6148,7 @@
             "pat": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Organization",
           "User"
         ],
@@ -6212,7 +6212,7 @@
             "pat": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Organization",
           "User"
         ],
@@ -6293,7 +6293,7 @@
             "pat": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Organization",
           "User"
         ],
@@ -6322,7 +6322,7 @@
                   "type": "string",
                   "format": "uuid4",
                   "description": "The organization ID.",
-                  "x-polar-selector-widget": {
+                  "x-spaire-selector-widget": {
                     "resourceRoot": "/v1/organizations",
                     "resourceName": "Organization",
                     "displayProperty": "name"
@@ -6334,7 +6334,7 @@
                     "type": "string",
                     "format": "uuid4",
                     "description": "The organization ID.",
-                    "x-polar-selector-widget": {
+                    "x-spaire-selector-widget": {
                       "resourceRoot": "/v1/organizations",
                       "resourceName": "Organization",
                       "displayProperty": "name"
@@ -6475,7 +6475,7 @@
             "pat": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Organization",
           "User"
         ],
@@ -6552,7 +6552,7 @@
             "pat": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Organization",
           "User"
         ],
@@ -6627,7 +6627,7 @@
             "pat": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Organization",
           "User"
         ],
@@ -6691,7 +6691,7 @@
             "pat": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Organization",
           "User"
         ],
@@ -6773,7 +6773,7 @@
             "pat": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Organization",
           "User"
         ],
@@ -6803,7 +6803,7 @@
                   "type": "string",
                   "format": "uuid4",
                   "description": "The organization ID.",
-                  "x-polar-selector-widget": {
+                  "x-spaire-selector-widget": {
                     "resourceRoot": "/v1/organizations",
                     "resourceName": "Organization",
                     "displayProperty": "name"
@@ -6815,7 +6815,7 @@
                     "type": "string",
                     "format": "uuid4",
                     "description": "The organization ID.",
-                    "x-polar-selector-widget": {
+                    "x-spaire-selector-widget": {
                       "resourceRoot": "/v1/organizations",
                       "resourceName": "Organization",
                       "displayProperty": "name"
@@ -6932,7 +6932,7 @@
             "pat": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Organization",
           "User"
         ],
@@ -7010,7 +7010,7 @@
             "pat": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Organization",
           "User"
         ],
@@ -7086,7 +7086,7 @@
             "pat": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Organization",
           "User"
         ],
@@ -7151,7 +7151,7 @@
             "pat": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Organization",
           "User"
         ],
@@ -7234,7 +7234,7 @@
             "pat": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Organization",
           "User"
         ],
@@ -7264,7 +7264,7 @@
                   "type": "string",
                   "format": "uuid4",
                   "description": "The organization ID.",
-                  "x-polar-selector-widget": {
+                  "x-spaire-selector-widget": {
                     "resourceRoot": "/v1/organizations",
                     "resourceName": "Organization",
                     "displayProperty": "name"
@@ -7276,7 +7276,7 @@
                     "type": "string",
                     "format": "uuid4",
                     "description": "The organization ID.",
-                    "x-polar-selector-widget": {
+                    "x-spaire-selector-widget": {
                       "resourceRoot": "/v1/organizations",
                       "resourceName": "Organization",
                       "displayProperty": "name"
@@ -7393,7 +7393,7 @@
             "pat": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Organization",
           "User"
         ],
@@ -7470,7 +7470,7 @@
             "pat": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Organization",
           "User"
         ],
@@ -7545,7 +7545,7 @@
             "pat": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Organization",
           "User"
         ],
@@ -7610,7 +7610,7 @@
             "pat": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Organization",
           "User"
         ],
@@ -7692,7 +7692,7 @@
             "pat": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Organization",
           "User"
         ],
@@ -7772,7 +7772,7 @@
                   "type": "string",
                   "format": "uuid4",
                   "description": "The organization ID.",
-                  "x-polar-selector-widget": {
+                  "x-spaire-selector-widget": {
                     "resourceRoot": "/v1/organizations",
                     "resourceName": "Organization",
                     "displayProperty": "name"
@@ -7784,7 +7784,7 @@
                     "type": "string",
                     "format": "uuid4",
                     "description": "The organization ID.",
-                    "x-polar-selector-widget": {
+                    "x-spaire-selector-widget": {
                       "resourceRoot": "/v1/organizations",
                       "resourceName": "Organization",
                       "displayProperty": "name"
@@ -7964,7 +7964,7 @@
             "customer_session": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Customer",
           "User"
         ],
@@ -8062,7 +8062,7 @@
             "customer_session": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Customer",
           "User"
         ],
@@ -8159,7 +8159,7 @@
             "customer_session": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Customer",
           "User"
         ],
@@ -8237,7 +8237,7 @@
             "customer_session": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Customer",
           "User"
         ],
@@ -8266,7 +8266,7 @@
                   "type": "string",
                   "format": "uuid4",
                   "description": "The organization ID.",
-                  "x-polar-selector-widget": {
+                  "x-spaire-selector-widget": {
                     "resourceRoot": "/v1/organizations",
                     "resourceName": "Organization",
                     "displayProperty": "name"
@@ -8278,7 +8278,7 @@
                     "type": "string",
                     "format": "uuid4",
                     "description": "The organization ID.",
-                    "x-polar-selector-widget": {
+                    "x-spaire-selector-widget": {
                       "resourceRoot": "/v1/organizations",
                       "resourceName": "Organization",
                       "displayProperty": "name"
@@ -8304,7 +8304,7 @@
                   "type": "string",
                   "format": "uuid4",
                   "description": "The benefit ID.",
-                  "x-polar-selector-widget": {
+                  "x-spaire-selector-widget": {
                     "resourceRoot": "/v1/benefits",
                     "resourceName": "Benefit",
                     "displayProperty": "description"
@@ -8316,7 +8316,7 @@
                     "type": "string",
                     "format": "uuid4",
                     "description": "The benefit ID.",
-                    "x-polar-selector-widget": {
+                    "x-spaire-selector-widget": {
                       "resourceRoot": "/v1/benefits",
                       "resourceName": "Benefit",
                       "displayProperty": "description"
@@ -8394,7 +8394,7 @@
             "customer_session": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Customer",
           "User"
         ],
@@ -8499,7 +8499,7 @@
                   "type": "string",
                   "format": "uuid4",
                   "description": "The organization ID.",
-                  "x-polar-selector-widget": {
+                  "x-spaire-selector-widget": {
                     "resourceRoot": "/v1/organizations",
                     "resourceName": "Organization",
                     "displayProperty": "name"
@@ -8511,7 +8511,7 @@
                     "type": "string",
                     "format": "uuid4",
                     "description": "The organization ID.",
-                    "x-polar-selector-widget": {
+                    "x-spaire-selector-widget": {
                       "resourceRoot": "/v1/organizations",
                       "resourceName": "Organization",
                       "displayProperty": "name"
@@ -8537,7 +8537,7 @@
                   "type": "string",
                   "format": "uuid4",
                   "description": "The benefit ID.",
-                  "x-polar-selector-widget": {
+                  "x-spaire-selector-widget": {
                     "resourceRoot": "/v1/benefits",
                     "resourceName": "Benefit",
                     "displayProperty": "description"
@@ -8634,7 +8634,7 @@
             "customer_session": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Customer",
           "User"
         ],
@@ -8730,7 +8730,7 @@
             "customer_session": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Customer",
           "User"
         ],
@@ -8934,7 +8934,7 @@
                   "type": "string",
                   "format": "uuid4",
                   "description": "The organization ID.",
-                  "x-polar-selector-widget": {
+                  "x-spaire-selector-widget": {
                     "resourceRoot": "/v1/organizations",
                     "resourceName": "Organization",
                     "displayProperty": "name"
@@ -8946,7 +8946,7 @@
                     "type": "string",
                     "format": "uuid4",
                     "description": "The organization ID.",
-                    "x-polar-selector-widget": {
+                    "x-spaire-selector-widget": {
                       "resourceRoot": "/v1/organizations",
                       "resourceName": "Organization",
                       "displayProperty": "name"
@@ -8972,7 +8972,7 @@
                   "type": "string",
                   "format": "uuid4",
                   "description": "The product ID.",
-                  "x-polar-selector-widget": {
+                  "x-spaire-selector-widget": {
                     "resourceRoot": "/v1/products",
                     "resourceName": "Product",
                     "displayProperty": "name"
@@ -8984,7 +8984,7 @@
                     "type": "string",
                     "format": "uuid4",
                     "description": "The product ID.",
-                    "x-polar-selector-widget": {
+                    "x-spaire-selector-widget": {
                       "resourceRoot": "/v1/products",
                       "resourceName": "Product",
                       "displayProperty": "name"
@@ -9154,7 +9154,7 @@
             "customer_session": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Customer",
           "User"
         ],
@@ -9251,7 +9251,7 @@
             "customer_session": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Customer",
           "User"
         ],
@@ -9329,7 +9329,7 @@
             "customer_session": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Customer",
           "User"
         ],
@@ -9419,7 +9419,7 @@
                   "type": "string",
                   "format": "uuid4",
                   "description": "The organization ID.",
-                  "x-polar-selector-widget": {
+                  "x-spaire-selector-widget": {
                     "resourceRoot": "/v1/organizations",
                     "resourceName": "Organization",
                     "displayProperty": "name"
@@ -9431,7 +9431,7 @@
                     "type": "string",
                     "format": "uuid4",
                     "description": "The organization ID.",
-                    "x-polar-selector-widget": {
+                    "x-spaire-selector-widget": {
                       "resourceRoot": "/v1/organizations",
                       "resourceName": "Organization",
                       "displayProperty": "name"
@@ -9457,7 +9457,7 @@
                   "type": "string",
                   "format": "uuid4",
                   "description": "The product ID.",
-                  "x-polar-selector-widget": {
+                  "x-spaire-selector-widget": {
                     "resourceRoot": "/v1/products",
                     "resourceName": "Product",
                     "displayProperty": "name"
@@ -9469,7 +9469,7 @@
                     "type": "string",
                     "format": "uuid4",
                     "description": "The product ID.",
-                    "x-polar-selector-widget": {
+                    "x-spaire-selector-widget": {
                       "resourceRoot": "/v1/products",
                       "resourceName": "Product",
                       "displayProperty": "name"
@@ -9607,7 +9607,7 @@
             "customer_session": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Customer",
           "User"
         ],
@@ -9705,7 +9705,7 @@
             "customer_session": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Customer",
           "User"
         ],
@@ -9791,7 +9791,7 @@
             "customer_session": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Customer",
           "User"
         ],
@@ -9877,7 +9877,7 @@
             "customer_session": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Customer",
           "User"
         ],
@@ -9937,7 +9937,7 @@
             "pat": []
           }
         ],
-        "x-polar-allowed-subjects": [
+        "x-spaire-allowed-subjects": [
           "Organization",
           "User"
         ],
@@ -10558,7 +10558,7 @@
                 "type": "string",
                 "format": "uuid4",
                 "description": "The organization ID.",
-                "x-polar-selector-widget": {
+                "x-spaire-selector-widget": {
                   "displayProperty": "name",
                   "resourceName": "Organization",
                   "resourceRoot": "/v1/organizations"
@@ -10924,7 +10924,7 @@
                 "type": "string",
                 "format": "uuid4",
                 "description": "The organization ID.",
-                "x-polar-selector-widget": {
+                "x-spaire-selector-widget": {
                   "displayProperty": "name",
                   "resourceName": "Organization",
                   "resourceRoot": "/v1/organizations"
@@ -11251,7 +11251,7 @@
                 "type": "string",
                 "format": "uuid4",
                 "description": "The organization ID.",
-                "x-polar-selector-widget": {
+                "x-spaire-selector-widget": {
                   "displayProperty": "name",
                   "resourceName": "Organization",
                   "resourceRoot": "/v1/organizations"
@@ -11554,7 +11554,7 @@
                 "type": "string",
                 "format": "uuid4",
                 "description": "The organization ID.",
-                "x-polar-selector-widget": {
+                "x-spaire-selector-widget": {
                   "displayProperty": "name",
                   "resourceName": "Organization",
                   "resourceRoot": "/v1/organizations"
@@ -11864,7 +11864,7 @@
                 "type": "string",
                 "format": "uuid4",
                 "description": "The organization ID.",
-                "x-polar-selector-widget": {
+                "x-spaire-selector-widget": {
                   "displayProperty": "name",
                   "resourceName": "Organization",
                   "resourceRoot": "/v1/organizations"
@@ -11894,7 +11894,7 @@
           "repository_owner": {
             "type": "string",
             "examples": [
-              "polarsource"
+              "spairesource"
             ],
             "title": "Repository Owner",
             "description": "The owner of the repository."
@@ -11934,7 +11934,7 @@
           "repository_owner": {
             "type": "string",
             "examples": [
-              "polarsource"
+              "spairesource"
             ],
             "title": "Repository Owner",
             "description": "The owner of the repository."
@@ -12065,7 +12065,7 @@
           "repository_owner": {
             "type": "string",
             "examples": [
-              "polarsource"
+              "spairesource"
             ],
             "title": "Repository Owner",
             "description": "The owner of the repository."
@@ -12685,7 +12685,7 @@
                 "type": "string",
                 "format": "uuid4",
                 "description": "The organization ID.",
-                "x-polar-selector-widget": {
+                "x-spaire-selector-widget": {
                   "displayProperty": "name",
                   "resourceName": "Organization",
                   "resourceRoot": "/v1/organizations"
@@ -14609,7 +14609,7 @@
               }
             ],
             "title": "Embed Origin",
-            "description": "If you plan to embed the checkout session, set this to the Origin of the embedding page. It'll allow the Polar iframe to communicate with the parent page."
+            "description": "If you plan to embed the checkout session, set this to the Origin of the embedding page. It'll allow the Spaire iframe to communicate with the parent page."
           },
           "product_price_id": {
             "type": "string",
@@ -14928,7 +14928,7 @@
               }
             ],
             "title": "Embed Origin",
-            "description": "If you plan to embed the checkout session, set this to the Origin of the embedding page. It'll allow the Polar iframe to communicate with the parent page."
+            "description": "If you plan to embed the checkout session, set this to the Origin of the embedding page. It'll allow the Spaire iframe to communicate with the parent page."
           },
           "product_id": {
             "type": "string",
@@ -15875,7 +15875,7 @@
               }
             ],
             "title": "Embed Origin",
-            "description": "If you plan to embed the checkout session, set this to the Origin of the embedding page. It'll allow the Polar iframe to communicate with the parent page."
+            "description": "If you plan to embed the checkout session, set this to the Origin of the embedding page. It'll allow the Spaire iframe to communicate with the parent page."
           }
         },
         "title": "CheckoutUpdate",
@@ -16101,7 +16101,7 @@
             "title": "Organization Id",
             "format": "uuid4",
             "description": "The ID of the organization owning the custom field.",
-            "x-polar-selector-widget": {
+            "x-spaire-selector-widget": {
               "displayProperty": "name",
               "resourceName": "Organization",
               "resourceRoot": "/v1/organizations"
@@ -16226,7 +16226,7 @@
                 "type": "string",
                 "format": "uuid4",
                 "description": "The organization ID.",
-                "x-polar-selector-widget": {
+                "x-spaire-selector-widget": {
                   "displayProperty": "name",
                   "resourceName": "Organization",
                   "resourceRoot": "/v1/organizations"
@@ -16303,7 +16303,7 @@
                 "type": "string",
                 "format": "uuid4",
                 "description": "The organization ID.",
-                "x-polar-selector-widget": {
+                "x-spaire-selector-widget": {
                   "displayProperty": "name",
                   "resourceName": "Organization",
                   "resourceRoot": "/v1/organizations"
@@ -16380,7 +16380,7 @@
                 "type": "string",
                 "format": "uuid4",
                 "description": "The organization ID.",
-                "x-polar-selector-widget": {
+                "x-spaire-selector-widget": {
                   "displayProperty": "name",
                   "resourceName": "Organization",
                   "resourceRoot": "/v1/organizations"
@@ -16457,7 +16457,7 @@
                 "type": "string",
                 "format": "uuid4",
                 "description": "The organization ID.",
-                "x-polar-selector-widget": {
+                "x-spaire-selector-widget": {
                   "displayProperty": "name",
                   "resourceName": "Organization",
                   "resourceRoot": "/v1/organizations"
@@ -16534,7 +16534,7 @@
                 "type": "string",
                 "format": "uuid4",
                 "description": "The organization ID.",
-                "x-polar-selector-widget": {
+                "x-spaire-selector-widget": {
                   "displayProperty": "name",
                   "resourceName": "Organization",
                   "resourceRoot": "/v1/organizations"
@@ -16628,7 +16628,7 @@
             "title": "Organization Id",
             "format": "uuid4",
             "description": "The ID of the organization owning the custom field.",
-            "x-polar-selector-widget": {
+            "x-spaire-selector-widget": {
               "displayProperty": "name",
               "resourceName": "Organization",
               "resourceRoot": "/v1/organizations"
@@ -16749,7 +16749,7 @@
             "title": "Organization Id",
             "format": "uuid4",
             "description": "The ID of the organization owning the custom field.",
-            "x-polar-selector-widget": {
+            "x-spaire-selector-widget": {
               "displayProperty": "name",
               "resourceName": "Organization",
               "resourceRoot": "/v1/organizations"
@@ -16870,7 +16870,7 @@
             "title": "Organization Id",
             "format": "uuid4",
             "description": "The ID of the organization owning the custom field.",
-            "x-polar-selector-widget": {
+            "x-spaire-selector-widget": {
               "displayProperty": "name",
               "resourceName": "Organization",
               "resourceRoot": "/v1/organizations"
@@ -17027,7 +17027,7 @@
             "title": "Organization Id",
             "format": "uuid4",
             "description": "The ID of the organization owning the custom field.",
-            "x-polar-selector-widget": {
+            "x-spaire-selector-widget": {
               "displayProperty": "name",
               "resourceName": "Organization",
               "resourceRoot": "/v1/organizations"
@@ -18630,7 +18630,7 @@
                 "type": "string",
                 "format": "uuid4",
                 "description": "The organization ID.",
-                "x-polar-selector-widget": {
+                "x-spaire-selector-widget": {
                   "displayProperty": "name",
                   "resourceName": "Organization",
                   "resourceRoot": "/v1/organizations"
@@ -19801,7 +19801,7 @@
             "title": "Organization Id",
             "format": "uuid4",
             "description": "The organization ID.",
-            "x-polar-selector-widget": {
+            "x-spaire-selector-widget": {
               "displayProperty": "name",
               "resourceName": "Organization",
               "resourceRoot": "/v1/organizations"
@@ -19960,7 +19960,7 @@
             "title": "Organization Id",
             "format": "uuid4",
             "description": "The organization ID.",
-            "x-polar-selector-widget": {
+            "x-spaire-selector-widget": {
               "displayProperty": "name",
               "resourceName": "Organization",
               "resourceRoot": "/v1/organizations"
@@ -20109,7 +20109,7 @@
                 "type": "string",
                 "format": "uuid4",
                 "description": "The organization ID.",
-                "x-polar-selector-widget": {
+                "x-spaire-selector-widget": {
                   "displayProperty": "name",
                   "resourceName": "Organization",
                   "resourceRoot": "/v1/organizations"
@@ -20260,7 +20260,7 @@
             "title": "Organization Id",
             "format": "uuid4",
             "description": "The organization ID.",
-            "x-polar-selector-widget": {
+            "x-spaire-selector-widget": {
               "displayProperty": "name",
               "resourceName": "Organization",
               "resourceRoot": "/v1/organizations"
@@ -20424,7 +20424,7 @@
             "title": "Organization Id",
             "format": "uuid4",
             "description": "The organization ID.",
-            "x-polar-selector-widget": {
+            "x-spaire-selector-widget": {
               "displayProperty": "name",
               "resourceName": "Organization",
               "resourceRoot": "/v1/organizations"
@@ -20580,7 +20580,7 @@
                 "type": "string",
                 "format": "uuid4",
                 "description": "The organization ID.",
-                "x-polar-selector-widget": {
+                "x-spaire-selector-widget": {
                   "displayProperty": "name",
                   "resourceName": "Organization",
                   "resourceRoot": "/v1/organizations"
@@ -20724,7 +20724,7 @@
             "title": "Organization Id",
             "format": "uuid4",
             "description": "The organization ID.",
-            "x-polar-selector-widget": {
+            "x-spaire-selector-widget": {
               "displayProperty": "name",
               "resourceName": "Organization",
               "resourceRoot": "/v1/organizations"
@@ -20878,7 +20878,7 @@
             "title": "Organization Id",
             "format": "uuid4",
             "description": "The organization ID.",
-            "x-polar-selector-widget": {
+            "x-spaire-selector-widget": {
               "displayProperty": "name",
               "resourceName": "Organization",
               "resourceRoot": "/v1/organizations"
@@ -21020,7 +21020,7 @@
                 "type": "string",
                 "format": "uuid4",
                 "description": "The organization ID.",
-                "x-polar-selector-widget": {
+                "x-spaire-selector-widget": {
                   "displayProperty": "name",
                   "resourceName": "Organization",
                   "resourceRoot": "/v1/organizations"
@@ -21167,7 +21167,7 @@
             "title": "Organization Id",
             "format": "uuid4",
             "description": "The organization ID.",
-            "x-polar-selector-widget": {
+            "x-spaire-selector-widget": {
               "displayProperty": "name",
               "resourceName": "Organization",
               "resourceRoot": "/v1/organizations"
@@ -21326,7 +21326,7 @@
             "title": "Organization Id",
             "format": "uuid4",
             "description": "The organization ID.",
-            "x-polar-selector-widget": {
+            "x-spaire-selector-widget": {
               "displayProperty": "name",
               "resourceName": "Organization",
               "resourceRoot": "/v1/organizations"
@@ -21475,7 +21475,7 @@
                 "type": "string",
                 "format": "uuid4",
                 "description": "The organization ID.",
-                "x-polar-selector-widget": {
+                "x-spaire-selector-widget": {
                   "displayProperty": "name",
                   "resourceName": "Organization",
                   "resourceRoot": "/v1/organizations"
@@ -21822,7 +21822,7 @@
                 "type": "string",
                 "format": "uuid4",
                 "description": "The organization ID.",
-                "x-polar-selector-widget": {
+                "x-spaire-selector-widget": {
                   "displayProperty": "name",
                   "resourceName": "Organization",
                   "resourceRoot": "/v1/organizations"
@@ -22176,7 +22176,7 @@
                 "type": "string",
                 "format": "uuid4",
                 "description": "The organization ID.",
-                "x-polar-selector-widget": {
+                "x-spaire-selector-widget": {
                   "displayProperty": "name",
                   "resourceName": "Organization",
                   "resourceRoot": "/v1/organizations"
@@ -22817,7 +22817,7 @@
               }
             ],
             "title": "Confirmed Solved At",
-            "description": "If this issue has been marked as confirmed solved through Polar"
+            "description": "If this issue has been marked as confirmed solved through Spaire"
           },
           "funding": {
             "$ref": "#/components/schemas/Funding"
@@ -22841,7 +22841,7 @@
           "pledge_badge_currently_embedded": {
             "type": "boolean",
             "title": "Pledge Badge Currently Embedded",
-            "description": "If this issue currently has the Polar badge SVG embedded"
+            "description": "If this issue currently has the Spaire badge SVG embedded"
           },
           "badge_custom_content": {
             "anyOf": [
@@ -23206,7 +23206,7 @@
             "title": "Benefit Id",
             "format": "uuid4",
             "description": "The benefit ID.",
-            "x-polar-selector-widget": {
+            "x-spaire-selector-widget": {
               "displayProperty": "description",
               "resourceName": "Benefit",
               "resourceRoot": "/v1/benefits"
@@ -23430,7 +23430,7 @@
                 "type": "string",
                 "format": "uuid4",
                 "description": "The benefit ID.",
-                "x-polar-selector-widget": {
+                "x-spaire-selector-widget": {
                   "displayProperty": "description",
                   "resourceName": "Benefit",
                   "resourceRoot": "/v1/benefits"
@@ -23513,7 +23513,7 @@
             "title": "Benefit Id",
             "format": "uuid4",
             "description": "The benefit ID.",
-            "x-polar-selector-widget": {
+            "x-spaire-selector-widget": {
               "displayProperty": "description",
               "resourceName": "Benefit",
               "resourceRoot": "/v1/benefits"
@@ -25515,7 +25515,7 @@
             "title": "Id",
             "format": "uuid4",
             "description": "The organization ID.",
-            "x-polar-selector-widget": {
+            "x-spaire-selector-widget": {
               "displayProperty": "name",
               "resourceName": "Organization",
               "resourceRoot": "/v1/organizations"
@@ -25678,7 +25678,7 @@
                 "type": "string",
                 "format": "uuid4",
                 "description": "The organization ID.",
-                "x-polar-selector-widget": {
+                "x-spaire-selector-widget": {
                   "displayProperty": "name",
                   "resourceName": "Organization",
                   "resourceRoot": "/v1/organizations"
@@ -26581,7 +26581,7 @@
               "type": "string",
               "format": "uuid4",
               "description": "The benefit ID.",
-              "x-polar-selector-widget": {
+              "x-spaire-selector-widget": {
                 "displayProperty": "description",
                 "resourceName": "Benefit",
                 "resourceRoot": "/v1/benefits"
@@ -26616,7 +26616,7 @@
                 "type": "string",
                 "format": "uuid4",
                 "description": "The organization ID.",
-                "x-polar-selector-widget": {
+                "x-spaire-selector-widget": {
                   "displayProperty": "name",
                   "resourceName": "Organization",
                   "resourceRoot": "/v1/organizations"
@@ -26927,7 +26927,7 @@
                 "type": "string",
                 "format": "uuid4",
                 "description": "The organization ID.",
-                "x-polar-selector-widget": {
+                "x-spaire-selector-widget": {
                   "displayProperty": "name",
                   "resourceName": "Organization",
                   "resourceRoot": "/v1/organizations"
@@ -27883,7 +27883,7 @@
                 "type": "string",
                 "format": "uuid4",
                 "description": "The organization ID.",
-                "x-polar-selector-widget": {
+                "x-spaire-selector-widget": {
                   "displayProperty": "name",
                   "resourceName": "Organization",
                   "resourceRoot": "/v1/organizations"
@@ -29402,7 +29402,7 @@
             "title": "Benefit Id",
             "format": "uuid4",
             "description": "The benefit ID.",
-            "x-polar-selector-widget": {
+            "x-spaire-selector-widget": {
               "displayProperty": "description",
               "resourceName": "Benefit",
               "resourceRoot": "/v1/benefits"
@@ -29943,7 +29943,7 @@
       },
       "pat": {
         "type": "http",
-        "description": "You can generate a **Personal Access Token** from your [settings](https://polar.sh/settings).",
+        "description": "You can generate a **Personal Access Token** from your [settings](https://spaire.sh/settings).",
         "scheme": "bearer"
       },
       "customer_session": {
@@ -29959,15 +29959,15 @@
     },
     {
       "name": "documented",
-      "description": "Endpoints shown and documented in the Polar API documentation."
+      "description": "Endpoints shown and documented in the Spaire API documentation."
     },
     {
       "name": "featured",
-      "description": "Endpoints featured in the Polar API documentation for their interest in common use-cases."
+      "description": "Endpoints featured in the Spaire API documentation for their interest in common use-cases."
     },
     {
       "name": "issue_funding",
-      "description": "Endpoints related to issue funding and rewards in the Polar API."
+      "description": "Endpoints related to issue funding and rewards in the Spaire API."
     }
   ],
   "webhooks": {
