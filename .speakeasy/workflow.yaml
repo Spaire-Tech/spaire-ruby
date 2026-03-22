@@ -19,7 +19,7 @@ targets:
         source: Spaire-OAS
         publish:
             rubygems:
-                token: $rubygems_token
+                token: $rubygems_auth_token
         codeSamples:
             registry:
                 location: registry.speakeasyapi.dev/spaire/spaire/spaire-api-ruby-code-samples

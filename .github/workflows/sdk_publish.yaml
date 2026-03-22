@@ -17,4 +17,7 @@ jobs:
     uses: speakeasy-api/sdk-generation-action/.github/workflows/sdk-publish.yaml@v15
     with:
       target: spaire
-    secrets: inherit
+    secrets:
+      github_access_token: ${{ secrets.GITHUB_TOKEN }}
+      rubygems_auth_token: ${{ secrets.RUBYGEMS_TOKEN }}
+      speakeasy_api_key: ${{ secrets.SPEAKEASY_API_KEY }}
