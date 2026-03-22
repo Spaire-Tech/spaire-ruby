@@ -1,0 +1,26 @@
+# typed: true
+# frozen_string_literal: true
+
+class OpenApiSDK::Models::Components::ProductPriceSeatTiersOutput
+  extend ::Crystalline::MetadataFields::ClassMethods
+end
+
+class OpenApiSDK::Models::Components::ProductPriceSeatTiersOutput
+  def tiers
+  end
+
+  def tiers=(str_)
+  end
+
+  def minimum_seats
+  end
+
+  def minimum_seats=(str_)
+  end
+
+  def maximum_seats
+  end
+
+  def maximum_seats=(str_)
+  end
+end

@@ -1,0 +1,9 @@
+# CustomerSubscriptionUpdateSeats
+
+
+## Fields
+
+| Field                                                                                                                | Type                                                                                                                 | Required                                                                                                             | Description                                                                                                          |
+| -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| `seats`                                                                                                              | *::Integer*                                                                                                          | :heavy_check_mark:                                                                                                   | Update the number of seats for this subscription.                                                                    |
+| `proration_behavior`                                                                                                 | [T.nilable(Models::Components::SubscriptionProrationBehavior)](../../models/shared/subscriptionprorationbehavior.md) | :heavy_minus_sign:                                                                                                   | Determine how to handle the proration billing. If not provided, will use the default organization setting.           |

@@ -1,0 +1,21 @@
+# CheckoutSortProperty
+
+## Example Usage
+
+```ruby
+require "spaire"
+
+value = CheckoutSortProperty::CREATED_AT
+```
+
+
+## Values
+
+| Name               | Value              |
+| ------------------ | ------------------ |
+| `CREATED_AT`       | created_at         |
+| `MINUS_CREATED_AT` | -created_at        |
+| `EXPIRES_AT`       | expires_at         |
+| `MINUS_EXPIRES_AT` | -expires_at        |
+| `STATUS`           | status             |
+| `MINUS_STATUS`     | -status            |

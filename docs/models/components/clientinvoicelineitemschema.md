@@ -1,0 +1,18 @@
+# ClientInvoiceLineItemSchema
+
+
+## Fields
+
+| Field                                                                | Type                                                                 | Required                                                             | Description                                                          |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| `id`                                                                 | *::String*                                                           | :heavy_check_mark:                                                   | The ID of the object.                                                |
+| `created_at`                                                         | [Date](https://ruby-doc.org/stdlib-2.6.1/libdoc/date/rdoc/Date.html) | :heavy_check_mark:                                                   | Creation timestamp of the object.                                    |
+| `modified_at`                                                        | [Date](https://ruby-doc.org/stdlib-2.6.1/libdoc/date/rdoc/Date.html) | :heavy_check_mark:                                                   | Last modification timestamp of the object.                           |
+| `client_invoice_id`                                                  | *::String*                                                           | :heavy_check_mark:                                                   | N/A                                                                  |
+| `stripe_invoice_item_id`                                             | *T.nilable(::String)*                                                | :heavy_check_mark:                                                   | N/A                                                                  |
+| `description`                                                        | *::String*                                                           | :heavy_check_mark:                                                   | N/A                                                                  |
+| `quantity`                                                           | *::Integer*                                                          | :heavy_check_mark:                                                   | N/A                                                                  |
+| `unit_amount`                                                        | *::Integer*                                                          | :heavy_check_mark:                                                   | N/A                                                                  |
+| `currency`                                                           | *::String*                                                           | :heavy_check_mark:                                                   | N/A                                                                  |
+| `amount`                                                             | *::Integer*                                                          | :heavy_check_mark:                                                   | N/A                                                                  |
+| `tax_amount`                                                         | *::Integer*                                                          | :heavy_check_mark:                                                   | N/A                                                                  |

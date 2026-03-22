@@ -1,0 +1,14 @@
+# typed: true
+# frozen_string_literal: true
+
+class OpenApiSDK::Models::Operations::CustomerPortalOrdersGetRequest
+  extend ::Crystalline::MetadataFields::ClassMethods
+end
+
+class OpenApiSDK::Models::Operations::CustomerPortalOrdersGetRequest
+  def id
+  end
+
+  def id=(str_)
+  end
+end
