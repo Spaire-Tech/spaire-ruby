@@ -3,17 +3,17 @@
   "info": {
     "summary": "Spaire HTTP and Webhooks API",
     "title": "Spaire API",
-    "description": "Read the docs at https://docs.spaire.sh/api",
+    "description": "Read the docs at https://docs.spairehq.com/api",
     "version": "0.1.0"
   },
   "servers": [
     {
-      "url": "https://api.spaire.sh",
+      "url": "https://api.spairehq.com",
       "description": "Production environment",
       "x-speakeasy-server-id": "production"
     },
     {
-      "url": "https://sandbox-api.spaire.sh",
+      "url": "https://sandbox-api.spairehq.com",
       "description": "Sandbox environment",
       "x-speakeasy-server-id": "sandbox"
     }
@@ -29943,7 +29943,7 @@
       },
       "pat": {
         "type": "http",
-        "description": "You can generate a **Personal Access Token** from your [settings](https://spaire.sh/settings).",
+        "description": "You can generate a **Personal Access Token** from your [settings](https://spairehq.com/settings).",
         "scheme": "bearer"
       },
       "customer_session": {
