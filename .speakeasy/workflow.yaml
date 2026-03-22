@@ -11,8 +11,6 @@ sources:
             - location: https://raw.githubusercontent.com/Spaire-Tech/polar/main/sdk/overlays/event_discriminator.yml
             - location: https://raw.githubusercontent.com/Spaire-Tech/polar/main/sdk/overlays/timezone_enum.yml
             - location: https://raw.githubusercontent.com/Spaire-Tech/polar/main/sdk/overlays/event_metadata.yml
-        registry:
-            location: registry.speakeasyapi.dev/spaire/spaire/spaire-oas
 targets:
     spaire:
         target: ruby
@@ -20,9 +18,3 @@ targets:
         publish:
             rubygems:
                 token: $rubygems_auth_token
-        codeSamples:
-            registry:
-                location: registry.speakeasyapi.dev/spaire/spaire/spaire-api-ruby-code-samples
-            labelOverride:
-                fixedValue: Ruby (SDK)
-            blocking: false
