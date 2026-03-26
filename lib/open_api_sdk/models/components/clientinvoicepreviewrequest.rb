@@ -6,30 +6,36 @@
 module OpenApiSDK
   module Models
     module Components
-
-      class ClientInvoiceCreate
+      # Request body for generating a real-time PDF preview without persisting.
+      class ClientInvoicePreviewRequest
         extend T::Sig
         include Crystalline::MetadataFields
 
-        # ID of the Spaire customer to invoice.
+        # Organization ID.
         field(
-          :customer_id,
+          :organization_id,
           ::String,
-          {'format_json': {'letter_case': ::OpenApiSDK::Utils.field_name("customer_id"), required: true}}
+          {'format_json': {'letter_case': ::OpenApiSDK::Utils.field_name("organization_id"), required: true}}
         )
-        # ISO 4217 currency code (e.g. 'usd').
+        # ISO 4217 currency code.
         field(
           :currency,
           ::String,
           {'format_json': {'letter_case': ::OpenApiSDK::Utils.field_name("currency"), required: true}}
         )
-        # Invoice line items. At least one required.
+        # Invoice line items.
         field(
           :line_items,
-          Crystalline::Array.new(Models::Components::ClientInvoiceLineItemCreate),
+          Crystalline::Array.new(Models::Components::ClientInvoiceLineItemPreview),
           {'format_json': {'letter_case': ::OpenApiSDK::Utils.field_name("line_items"), required: true}}
         )
-        # Payment due date. Determines days_until_due on the Stripe invoice.
+        # Optional customer ID to pull name/address from.
+        field(
+          :customer_id,
+          Crystalline::Nilable.new(::String),
+          {'format_json': {'letter_case': ::OpenApiSDK::Utils.field_name("customer_id")}}
+        )
+
         field(
           :due_date,
           Crystalline::Nilable.new(::Date),
@@ -40,41 +46,47 @@ module OpenApiSDK
             }
           }
         )
-        # Internal memo / invoice description.
+
         field(
           :memo,
           Crystalline::Nilable.new(::String),
           {'format_json': {'letter_case': ::OpenApiSDK::Utils.field_name("memo")}}
         )
-        # Purchase order number.
+
         field(
           :po_number,
           Crystalline::Nilable.new(::String),
           {'format_json': {'letter_case': ::OpenApiSDK::Utils.field_name("po_number")}}
         )
-        # Name shown in 'on behalf of' display on the invoice. Defaults to the organization name.
+
         field(
           :on_behalf_of_label,
           Crystalline::Nilable.new(::String),
           {'format_json': {'letter_case': ::OpenApiSDK::Utils.field_name("on_behalf_of_label")}}
         )
-        # Flat discount amount in the smallest currency unit (e.g. cents). Applied before tax.
+
         field(
           :discount_amount,
           Crystalline::Nilable.new(::Integer),
           {'format_json': {'letter_case': ::OpenApiSDK::Utils.field_name("discount_amount")}}
         )
-        # Label shown for the discount line on the invoice (e.g. 'Promo code').
+
         field(
           :discount_label,
           Crystalline::Nilable.new(::String),
           {'format_json': {'letter_case': ::OpenApiSDK::Utils.field_name("discount_label")}}
         )
-        # Whether to include a hosted payment link in the invoice email.
+
         field(
           :include_payment_link,
           Crystalline::Nilable.new(Crystalline::Boolean.new),
           {'format_json': {'letter_case': ::OpenApiSDK::Utils.field_name("include_payment_link")}}
+        )
+
+        field(
+          :checkout_link_url,
+          Crystalline::Nilable.new(::String),
+          {'format_json': {'letter_case': ::OpenApiSDK::Utils.field_name("checkout_link_url")}}
         )
         # Whether to show the organization logo on the PDF.
         field(
@@ -88,18 +100,55 @@ module OpenApiSDK
           Crystalline::Nilable.new(Crystalline::Boolean.new),
           {'format_json': {'letter_case': ::OpenApiSDK::Utils.field_name("show_mor_attribution")}}
         )
-        # Arbitrary key-value metadata to attach to the invoice.
+
         field(
-          :user_metadata,
-          Crystalline::Nilable.new(Crystalline::Hash.new(Symbol, ::Object)),
-          {'format_json': {'letter_case': ::OpenApiSDK::Utils.field_name("user_metadata")}}
+          :billing_name,
+          Crystalline::Nilable.new(::String),
+          {'format_json': {'letter_case': ::OpenApiSDK::Utils.field_name("billing_name")}}
+        )
+
+        field(
+          :billing_line1,
+          Crystalline::Nilable.new(::String),
+          {'format_json': {'letter_case': ::OpenApiSDK::Utils.field_name("billing_line1")}}
+        )
+
+        field(
+          :billing_line2,
+          Crystalline::Nilable.new(::String),
+          {'format_json': {'letter_case': ::OpenApiSDK::Utils.field_name("billing_line2")}}
+        )
+
+        field(
+          :billing_city,
+          Crystalline::Nilable.new(::String),
+          {'format_json': {'letter_case': ::OpenApiSDK::Utils.field_name("billing_city")}}
+        )
+
+        field(
+          :billing_state,
+          Crystalline::Nilable.new(::String),
+          {'format_json': {'letter_case': ::OpenApiSDK::Utils.field_name("billing_state")}}
+        )
+
+        field(
+          :billing_postal_code,
+          Crystalline::Nilable.new(::String),
+          {'format_json': {'letter_case': ::OpenApiSDK::Utils.field_name("billing_postal_code")}}
+        )
+
+        field(
+          :billing_country,
+          Crystalline::Nilable.new(::String),
+          {'format_json': {'letter_case': ::OpenApiSDK::Utils.field_name("billing_country")}}
         )
 
         sig {
           params(
-            customer_id: ::String,
+            organization_id: ::String,
             currency: ::String,
-            line_items: T::Array[Models::Components::ClientInvoiceLineItemCreate],
+            line_items: T::Array[Models::Components::ClientInvoiceLineItemPreview],
+            customer_id: T.nilable(::String),
             due_date: T.nilable(::Date),
             memo: T.nilable(::String),
             po_number: T.nilable(::String),
@@ -107,16 +156,24 @@ module OpenApiSDK
             discount_amount: T.nilable(::Integer),
             discount_label: T.nilable(::String),
             include_payment_link: T.nilable(T::Boolean),
+            checkout_link_url: T.nilable(::String),
             show_logo: T.nilable(T::Boolean),
             show_mor_attribution: T.nilable(T::Boolean),
-            user_metadata: T.nilable(T::Hash[Symbol, ::Object])
+            billing_name: T.nilable(::String),
+            billing_line1: T.nilable(::String),
+            billing_line2: T.nilable(::String),
+            billing_city: T.nilable(::String),
+            billing_state: T.nilable(::String),
+            billing_postal_code: T.nilable(::String),
+            billing_country: T.nilable(::String)
           )
             .void
         }
         def initialize(
-          customer_id:,
+          organization_id:,
           currency:,
           line_items:,
+          customer_id: nil,
           due_date: nil,
           memo: nil,
           po_number: nil,
@@ -124,13 +181,21 @@ module OpenApiSDK
           discount_amount: 0,
           discount_label: nil,
           include_payment_link: true,
+          checkout_link_url: nil,
           show_logo: true,
           show_mor_attribution: true,
-          user_metadata: nil
+          billing_name: nil,
+          billing_line1: nil,
+          billing_line2: nil,
+          billing_city: nil,
+          billing_state: nil,
+          billing_postal_code: nil,
+          billing_country: nil
         )
-          @customer_id = customer_id
+          @organization_id = organization_id
           @currency = currency
           @line_items = line_items
+          @customer_id = customer_id
           @due_date = due_date
           @memo = memo
           @po_number = po_number
@@ -138,17 +203,25 @@ module OpenApiSDK
           @discount_amount = discount_amount
           @discount_label = discount_label
           @include_payment_link = include_payment_link
+          @checkout_link_url = checkout_link_url
           @show_logo = show_logo
           @show_mor_attribution = show_mor_attribution
-          @user_metadata = user_metadata
+          @billing_name = billing_name
+          @billing_line1 = billing_line1
+          @billing_line2 = billing_line2
+          @billing_city = billing_city
+          @billing_state = billing_state
+          @billing_postal_code = billing_postal_code
+          @billing_country = billing_country
         end
 
         sig { params(other: T.untyped).returns(T::Boolean) }
         def ==(other)
           return false unless other.is_a?(self.class)
-          return false unless @customer_id == other.customer_id
+          return false unless @organization_id == other.organization_id
           return false unless @currency == other.currency
           return false unless @line_items == other.line_items
+          return false unless @customer_id == other.customer_id
           return false unless @due_date == other.due_date
           return false unless @memo == other.memo
           return false unless @po_number == other.po_number
@@ -156,9 +229,16 @@ module OpenApiSDK
           return false unless @discount_amount == other.discount_amount
           return false unless @discount_label == other.discount_label
           return false unless @include_payment_link == other.include_payment_link
+          return false unless @checkout_link_url == other.checkout_link_url
           return false unless @show_logo == other.show_logo
           return false unless @show_mor_attribution == other.show_mor_attribution
-          return false unless @user_metadata == other.user_metadata
+          return false unless @billing_name == other.billing_name
+          return false unless @billing_line1 == other.billing_line1
+          return false unless @billing_line2 == other.billing_line2
+          return false unless @billing_city == other.billing_city
+          return false unless @billing_state == other.billing_state
+          return false unless @billing_postal_code == other.billing_postal_code
+          return false unless @billing_country == other.billing_country
           true
         end
       end

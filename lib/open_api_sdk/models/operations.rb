@@ -139,6 +139,10 @@ module OpenApiSDK
         "open_api_sdk/models/operations/client_invoices_mark_client_invoice_paid_response.rb"
       )
       autoload(
+        :ClientInvoicesPreviewClientInvoicePdfResponse,
+        "open_api_sdk/models/operations/client_invoices_preview_client_invoice_pdf_response.rb"
+      )
+      autoload(
         :ClientInvoicesSendClientInvoiceRequest,
         "open_api_sdk/models/operations/client_invoices_send_client_invoice_request.rb"
       )
@@ -962,6 +966,10 @@ module OpenApiSDK
       )
       autoload :ProductsListRequest, "open_api_sdk/models/operations/products_list_request.rb"
       autoload :ProductsListResponse, "open_api_sdk/models/operations/products_list_response.rb"
+      autoload(
+        :ProductsProductsPreviewTaxResponse,
+        "open_api_sdk/models/operations/products_products_preview_tax_response.rb"
+      )
       autoload :ProductsUpdateBenefitsRequest, "open_api_sdk/models/operations/products_update_benefits_request.rb"
       autoload :ProductsUpdateBenefitsResponse, "open_api_sdk/models/operations/products_update_benefits_response.rb"
       autoload :ProductsUpdateRequest, "open_api_sdk/models/operations/products_update_request.rb"

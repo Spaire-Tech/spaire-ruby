@@ -6,6 +6,7 @@
 
 * [list_client_invoices](#list_client_invoices) - List Client Invoices
 * [create_client_invoice](#create_client_invoice) - Create Client Invoice
+* [preview_client_invoice_pdf](#preview_client_invoice_pdf) - Preview Client Invoice PDF
 * [get_client_invoice](#get_client_invoice) - Get Client Invoice
 * [download_client_invoice_pdf](#download_client_invoice_pdf) - Download Client Invoice PDF
 * [finalize_client_invoice](#finalize_client_invoice) - Finalize Client Invoice
@@ -95,6 +96,53 @@ end
 ### Response
 
 **[T.nilable(Models::Operations::ClientInvoicesCreateClientInvoiceResponse)](../../models/operations/clientinvoicescreateclientinvoiceresponse.md)**
+
+### Errors
+
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Models::Errors::HTTPValidationError | 422                                 | application/json                    |
+| Errors::APIError                    | 4XX, 5XX                            | \*/\*                               |
+
+## preview_client_invoice_pdf
+
+Generate a real PDF preview from form data without creating anything.
+
+**Scopes**: `client_invoices:read`
+
+### Example Usage
+
+<!-- UsageSnippet language="ruby" operationID="client_invoices:preview_client_invoice_pdf" method="post" path="/v1/client-invoices/preview-pdf" -->
+```ruby
+require 'spaire'
+
+Models = ::OpenApiSDK::Models
+s = ::OpenApiSDK::Spaire.new(
+  access_token: '<YOUR_BEARER_TOKEN_HERE>'
+)
+
+req = Models::Components::ClientInvoicePreviewRequest.new(
+  organization_id: '<value>',
+  currency: 'Baht',
+  line_items: []
+)
+res = s.client_invoices.preview_client_invoice_pdf(request: req)
+
+if res.status_code == 200
+  # handle response
+end
+
+```
+
+### Parameters
+
+| Parameter                                                                                             | Type                                                                                                  | Required                                                                                              | Description                                                                                           |
+| ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| `request`                                                                                             | [Models::Components::ClientInvoicePreviewRequest](../../models/shared/clientinvoicepreviewrequest.md) | :heavy_check_mark:                                                                                    | The request object to use for the request.                                                            |
+
+### Response
+
+**[T.nilable(Models::Operations::ClientInvoicesPreviewClientInvoicePdfResponse)](../../models/operations/clientinvoicespreviewclientinvoicepdfresponse.md)**
 
 ### Errors
 

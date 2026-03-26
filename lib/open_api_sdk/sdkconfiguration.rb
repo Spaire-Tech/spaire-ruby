@@ -16,10 +16,12 @@ module OpenApiSDK
 
   # Production environment
   SERVER_PRODUCTION = :production
-  SERVERS = {
-    production: "https://api.spairehq.com"
-  }.freeze
-  SERVERS = T.let(SERVERS, T::Hash[T.any(String, Symbol), String])
+  SERVERS = T.let(
+    {
+      production: "https://api.spairehq.com"
+    }.freeze,
+    T::Hash[T.any(String, Symbol), String]
+  )
   # Contains the list of servers available to the SDK
 
   class SDKConfiguration
@@ -90,9 +92,9 @@ module OpenApiSDK
 
       @language = "ruby"
       @openapi_doc_version = "0.1.0"
-      @sdk_version = "0.1.0"
-      @gen_version = "2.869.3"
-      @user_agent = "speakeasy-sdk/ruby 0.1.0 2.869.3 0.1.0 spaire"
+      @sdk_version = "0.1.1"
+      @gen_version = "2.869.25"
+      @user_agent = "speakeasy-sdk/ruby 0.1.1 2.869.25 0.1.0 spaire"
     end
 
     sig { returns([String, T::Hash[Symbol, String]]) }

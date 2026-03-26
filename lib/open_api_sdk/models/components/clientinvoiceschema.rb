@@ -85,6 +85,18 @@ module OpenApiSDK
           Crystalline::Boolean.new,
           {'format_json': {'letter_case': ::OpenApiSDK::Utils.field_name("include_payment_link"), required: true}}
         )
+
+        field(
+          :show_logo,
+          Crystalline::Boolean.new,
+          {'format_json': {'letter_case': ::OpenApiSDK::Utils.field_name("show_logo"), required: true}}
+        )
+
+        field(
+          :show_mor_attribution,
+          Crystalline::Boolean.new,
+          {'format_json': {'letter_case': ::OpenApiSDK::Utils.field_name("show_mor_attribution"), required: true}}
+        )
         # Last modification timestamp of the object.
         field(
           :modified_at,
@@ -189,6 +201,8 @@ module OpenApiSDK
             tax_amount: ::Integer,
             total_amount: ::Integer,
             include_payment_link: T::Boolean,
+            show_logo: T::Boolean,
+            show_mor_attribution: T::Boolean,
             modified_at: T.nilable(::DateTime),
             stripe_invoice_id: T.nilable(::String),
             memo: T.nilable(::String),
@@ -217,6 +231,8 @@ module OpenApiSDK
           tax_amount:,
           total_amount:,
           include_payment_link:,
+          show_logo:,
+          show_mor_attribution:,
           modified_at: nil,
           stripe_invoice_id: nil,
           memo: nil,
@@ -242,6 +258,8 @@ module OpenApiSDK
           @tax_amount = tax_amount
           @total_amount = total_amount
           @include_payment_link = include_payment_link
+          @show_logo = show_logo
+          @show_mor_attribution = show_mor_attribution
           @modified_at = modified_at
           @stripe_invoice_id = stripe_invoice_id
           @memo = memo
@@ -271,6 +289,8 @@ module OpenApiSDK
           return false unless @tax_amount == other.tax_amount
           return false unless @total_amount == other.total_amount
           return false unless @include_payment_link == other.include_payment_link
+          return false unless @show_logo == other.show_logo
+          return false unless @show_mor_attribution == other.show_mor_attribution
           return false unless @modified_at == other.modified_at
           return false unless @stripe_invoice_id == other.stripe_invoice_id
           return false unless @memo == other.memo

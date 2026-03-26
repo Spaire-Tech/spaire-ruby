@@ -1,15 +1,15 @@
 # typed: true
 # frozen_string_literal: true
 
-class OpenApiSDK::Models::Components::ClientInvoiceCreate
+class OpenApiSDK::Models::Components::ClientInvoicePreviewRequest
   extend ::Crystalline::MetadataFields::ClassMethods
 end
 
-class OpenApiSDK::Models::Components::ClientInvoiceCreate
-  def customer_id
+class OpenApiSDK::Models::Components::ClientInvoicePreviewRequest
+  def organization_id
   end
 
-  def customer_id=(str_)
+  def organization_id=(str_)
   end
 
   def currency
@@ -22,6 +22,12 @@ class OpenApiSDK::Models::Components::ClientInvoiceCreate
   end
 
   def line_items=(str_)
+  end
+
+  def customer_id
+  end
+
+  def customer_id=(str_)
   end
 
   def due_date
@@ -66,6 +72,12 @@ class OpenApiSDK::Models::Components::ClientInvoiceCreate
   def include_payment_link=(str_)
   end
 
+  def checkout_link_url
+  end
+
+  def checkout_link_url=(str_)
+  end
+
   def show_logo
   end
 
@@ -78,9 +90,45 @@ class OpenApiSDK::Models::Components::ClientInvoiceCreate
   def show_mor_attribution=(str_)
   end
 
-  def user_metadata
+  def billing_name
   end
 
-  def user_metadata=(str_)
+  def billing_name=(str_)
+  end
+
+  def billing_line1
+  end
+
+  def billing_line1=(str_)
+  end
+
+  def billing_line2
+  end
+
+  def billing_line2=(str_)
+  end
+
+  def billing_city
+  end
+
+  def billing_city=(str_)
+  end
+
+  def billing_state
+  end
+
+  def billing_state=(str_)
+  end
+
+  def billing_postal_code
+  end
+
+  def billing_postal_code=(str_)
+  end
+
+  def billing_country
+  end
+
+  def billing_country=(str_)
   end
 end

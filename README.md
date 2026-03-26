@@ -152,6 +152,7 @@ end
 
 * [list_client_invoices](docs/sdks/clientinvoices/README.md#list_client_invoices) - List Client Invoices
 * [create_client_invoice](docs/sdks/clientinvoices/README.md#create_client_invoice) - Create Client Invoice
+* [preview_client_invoice_pdf](docs/sdks/clientinvoices/README.md#preview_client_invoice_pdf) - Preview Client Invoice PDF
 * [get_client_invoice](docs/sdks/clientinvoices/README.md#get_client_invoice) - Get Client Invoice
 * [download_client_invoice_pdf](docs/sdks/clientinvoices/README.md#download_client_invoice_pdf) - Download Client Invoice PDF
 * [finalize_client_invoice](docs/sdks/clientinvoices/README.md#finalize_client_invoice) - Finalize Client Invoice
@@ -393,6 +394,10 @@ end
 * [get](docs/sdks/products/README.md#get) - Get Product
 * [update](docs/sdks/products/README.md#update) - Update Product
 * [update_benefits](docs/sdks/products/README.md#update_benefits) - Update Product Benefits
+
+#### [Products.Products](docs/sdks/spaireproducts/README.md)
+
+* [preview_tax](docs/sdks/spaireproducts/README.md#preview_tax) - Preview Tax
 
 ### [Refunds](docs/sdks/refunds/README.md)
 

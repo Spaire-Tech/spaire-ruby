@@ -13,6 +13,7 @@ module OpenApiSDK
   autoload :BenefitGrants, "open_api_sdk/benefit_grants"
   autoload :Webhooks, "open_api_sdk/webhooks"
   autoload :Products, "open_api_sdk/products"
+  autoload :SpaireProducts, "open_api_sdk/spaire_products"
   autoload :Orders, "open_api_sdk/orders"
   autoload :ClientInvoices, "open_api_sdk/client_invoices"
   autoload :Refunds, "open_api_sdk/refunds"

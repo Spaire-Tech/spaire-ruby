@@ -72,6 +72,18 @@ class OpenApiSDK::Models::Components::ClientInvoiceSchema
   def include_payment_link=(str_)
   end
 
+  def show_logo
+  end
+
+  def show_logo=(str_)
+  end
+
+  def show_mor_attribution
+  end
+
+  def show_mor_attribution=(str_)
+  end
+
   def modified_at
   end
 

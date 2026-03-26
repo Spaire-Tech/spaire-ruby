@@ -1,8 +1,18 @@
-speakeasyVersion: 1.759.0
-sources: {}
+speakeasyVersion: 1.759.3
+sources:
+    Spaire-OAS:
+        sourceNamespace: spaire-oas
+        sourceRevisionDigest: sha256:f9d98b30d8a24c9afe33107a73107eba7c66f00dff3802a42ec0ae3f5ce5f20c
+        sourceBlobDigest: sha256:5cd0b8ddabc7d907421bf94235ba20f148d007bc553e15b397bae8fb9e70f404
+        tags:
+            - latest
+            - 0.1.0
 targets:
     spaire:
         source: Spaire-OAS
+        sourceNamespace: spaire-oas
+        sourceRevisionDigest: sha256:f9d98b30d8a24c9afe33107a73107eba7c66f00dff3802a42ec0ae3f5ce5f20c
+        sourceBlobDigest: sha256:5cd0b8ddabc7d907421bf94235ba20f148d007bc553e15b397bae8fb9e70f404
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
@@ -17,8 +27,9 @@ workflow:
                 - location: https://raw.githubusercontent.com/Spaire-Tech/polar/main/sdk/overlays/event_discriminator.yml
                 - location: https://raw.githubusercontent.com/Spaire-Tech/polar/main/sdk/overlays/timezone_enum.yml
                 - location: https://raw.githubusercontent.com/Spaire-Tech/polar/main/sdk/overlays/event_metadata.yml
+                - location: https://raw.githubusercontent.com/Spaire-Tech/polar/main/sdk/overlays/rebrand.yml
             registry:
-                location: registry.speakeasyapi.dev/spaire/spaire/spaire-oas
+                location: registry.speakeasyapi.dev/spaire/spaire-workspace/spaire-oas
     targets:
         spaire:
             target: ruby
@@ -26,9 +37,3 @@ workflow:
             publish:
                 rubygems:
                     token: $rubygems_auth_token
-            codeSamples:
-                registry:
-                    location: registry.speakeasyapi.dev/spaire/spaire/spaire-api-ruby-code-samples
-                labelOverride:
-                    fixedValue: Ruby (SDK)
-                blocking: false

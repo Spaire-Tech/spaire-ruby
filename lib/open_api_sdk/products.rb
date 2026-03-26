@@ -17,10 +17,17 @@ module OpenApiSDK
 
   class Products
     extend T::Sig
+    attr_accessor :products
 
     sig { params(sdk_config: SDKConfiguration).void }
     def initialize(sdk_config)
       @sdk_configuration = sdk_config
+      init_sdks
+    end
+
+    sig { void }
+    def init_sdks
+      @products = ::OpenApiSDK::SpaireProducts.new(@sdk_configuration)
     end
 
     sig { params(base_url: String, url_variables: T.nilable(T::Hash[Symbol, T.any(String, T::Enum)])).returns(String) }

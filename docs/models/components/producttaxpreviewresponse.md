@@ -1,0 +1,16 @@
+# ProductTaxPreviewResponse
+
+Tax preview result for a product price.
+
+
+## Fields
+
+| Field                                                                                  | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `subtotal`                                                                             | *::Integer*                                                                            | :heavy_check_mark:                                                                     | N/A                                                                                    |
+| `tax_amount`                                                                           | *::Integer*                                                                            | :heavy_check_mark:                                                                     | N/A                                                                                    |
+| `total`                                                                                | *::Integer*                                                                            | :heavy_check_mark:                                                                     | N/A                                                                                    |
+| `currency`                                                                             | *::String*                                                                             | :heavy_check_mark:                                                                     | N/A                                                                                    |
+| `quantity`                                                                             | *::Integer*                                                                            | :heavy_check_mark:                                                                     | N/A                                                                                    |
+| `tax_rate`                                                                             | [T.nilable(Models::Components::TaxRatePreview)](../../models/shared/taxratepreview.md) | :heavy_minus_sign:                                                                     | N/A                                                                                    |
+| `taxability_reason`                                                                    | *T.nilable(::String)*                                                                  | :heavy_minus_sign:                                                                     | N/A                                                                                    |
