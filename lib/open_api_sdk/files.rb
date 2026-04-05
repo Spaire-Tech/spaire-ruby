@@ -253,7 +253,8 @@ module OpenApiSDK
         request: T.any(
           Models::Components::DownloadableFileCreate,
           Models::Components::ProductMediaFileCreate,
-          Models::Components::OrganizationAvatarFileCreate
+          Models::Components::OrganizationAvatarFileCreate,
+          Models::Components::StorefrontHeaderFileCreate
         ),
         timeout_ms: T.nilable(Integer),
         http_headers: T.nilable(T::Hash[T.any(String, Symbol), String])
@@ -550,7 +551,8 @@ module OpenApiSDK
               {
                 "downloadable" => Models::Components::DownloadableFileRead,
                 "product_media" => Models::Components::ProductMediaFileRead,
-                "organization_avatar" => Models::Components::OrganizationAvatarFileRead
+                "organization_avatar" => Models::Components::OrganizationAvatarFileRead,
+                "storefront_header" => Models::Components::StorefrontHeaderFileRead
               }
             )
           )
@@ -985,7 +987,8 @@ module OpenApiSDK
               {
                 "downloadable" => Models::Components::DownloadableFileRead,
                 "product_media" => Models::Components::ProductMediaFileRead,
-                "organization_avatar" => Models::Components::OrganizationAvatarFileRead
+                "organization_avatar" => Models::Components::OrganizationAvatarFileRead,
+                "storefront_header" => Models::Components::StorefrontHeaderFileRead
               }
             )
           )

@@ -16,6 +16,17 @@ module OpenApiSDK
         field :slug, ::String, {'format_json': {'letter_case': ::OpenApiSDK::Utils.field_name("slug"), required: true}}
 
         field(
+          :default_tax_behavior,
+          Crystalline::Nilable.new(Models::Components::TaxBehaviorOption),
+          {
+            'format_json': {
+              'letter_case': ::OpenApiSDK::Utils.field_name("default_tax_behavior"),
+              'decoder': ::OpenApiSDK::Utils.open_enum_from_string(Models::Components::TaxBehaviorOption, true)
+            }
+          }
+        )
+
+        field(
           :avatar_url,
           Crystalline::Nilable.new(::String),
           {'format_json': {'letter_case': ::OpenApiSDK::Utils.field_name("avatar_url")}}
@@ -75,10 +86,17 @@ module OpenApiSDK
           {'format_json': {'letter_case': ::OpenApiSDK::Utils.field_name("customer_portal_settings")}}
         )
 
+        field(
+          :storefront_settings,
+          Crystalline::Nilable.new(Models::Components::OrganizationStorefrontSettings),
+          {'format_json': {'letter_case': ::OpenApiSDK::Utils.field_name("storefront_settings")}}
+        )
+
         sig {
           params(
             name: ::String,
             slug: ::String,
+            default_tax_behavior: T.nilable(Models::Components::TaxBehaviorOption),
             avatar_url: T.nilable(::String),
             email: T.nilable(::String),
             website: T.nilable(::String),
@@ -88,13 +106,15 @@ module OpenApiSDK
             subscription_settings: T.nilable(Models::Components::OrganizationSubscriptionSettings),
             notification_settings: T.nilable(Models::Components::OrganizationNotificationSettings),
             customer_email_settings: T.nilable(Models::Components::OrganizationCustomerEmailSettings),
-            customer_portal_settings: T.nilable(Models::Components::OrganizationCustomerPortalSettings)
+            customer_portal_settings: T.nilable(Models::Components::OrganizationCustomerPortalSettings),
+            storefront_settings: T.nilable(Models::Components::OrganizationStorefrontSettings)
           )
             .void
         }
         def initialize(
           name:,
           slug:,
+          default_tax_behavior: nil,
           avatar_url: nil,
           email: nil,
           website: nil,
@@ -104,10 +124,12 @@ module OpenApiSDK
           subscription_settings: nil,
           notification_settings: nil,
           customer_email_settings: nil,
-          customer_portal_settings: nil
+          customer_portal_settings: nil,
+          storefront_settings: nil
         )
           @name = name
           @slug = slug
+          @default_tax_behavior = default_tax_behavior
           @avatar_url = avatar_url
           @email = email
           @website = website
@@ -118,6 +140,7 @@ module OpenApiSDK
           @notification_settings = notification_settings
           @customer_email_settings = customer_email_settings
           @customer_portal_settings = customer_portal_settings
+          @storefront_settings = storefront_settings
         end
 
         sig { params(other: T.untyped).returns(T::Boolean) }
@@ -125,6 +148,7 @@ module OpenApiSDK
           return false unless other.is_a?(self.class)
           return false unless @name == other.name
           return false unless @slug == other.slug
+          return false unless @default_tax_behavior == other.default_tax_behavior
           return false unless @avatar_url == other.avatar_url
           return false unless @email == other.email
           return false unless @website == other.website
@@ -135,6 +159,7 @@ module OpenApiSDK
           return false unless @notification_settings == other.notification_settings
           return false unless @customer_email_settings == other.customer_email_settings
           return false unless @customer_portal_settings == other.customer_portal_settings
+          return false unless @storefront_settings == other.storefront_settings
           true
         end
       end

@@ -13,6 +13,7 @@ module OpenApiSDK
           DOWNLOADABLE = new("downloadable")
           PRODUCT_MEDIA = new("product_media")
           ORGANIZATION_AVATAR = new("organization_avatar")
+          STOREFRONT_HEADER = new("storefront_header")
         end
 
         open!

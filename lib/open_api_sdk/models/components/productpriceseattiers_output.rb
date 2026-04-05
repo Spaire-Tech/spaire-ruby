@@ -27,6 +27,17 @@ module OpenApiSDK
           ::Integer,
           {'format_json': {'letter_case': ::OpenApiSDK::Utils.field_name("minimum_seats"), required: true}}
         )
+
+        field(
+          :seat_tier_type,
+          Crystalline::Nilable.new(Models::Components::SeatTierType),
+          {
+            'format_json': {
+              'letter_case': ::OpenApiSDK::Utils.field_name("seat_tier_type"),
+              'decoder': ::OpenApiSDK::Utils.open_enum_from_string(Models::Components::SeatTierType, true)
+            }
+          }
+        )
         # Maximum number of seats allowed for purchase, derived from last tier. None for unlimited.
         field(
           :maximum_seats,
@@ -38,13 +49,15 @@ module OpenApiSDK
           params(
             tiers: T::Array[Models::Components::ProductPriceSeatTier],
             minimum_seats: ::Integer,
+            seat_tier_type: T.nilable(Models::Components::SeatTierType),
             maximum_seats: T.nilable(::Integer)
           )
             .void
         }
-        def initialize(tiers:, minimum_seats:, maximum_seats: nil)
+        def initialize(tiers:, minimum_seats:, seat_tier_type: nil, maximum_seats: nil)
           @tiers = tiers
           @minimum_seats = minimum_seats
+          @seat_tier_type = seat_tier_type
           @maximum_seats = maximum_seats
         end
 
@@ -53,6 +66,7 @@ module OpenApiSDK
           return false unless other.is_a?(self.class)
           return false unless @tiers == other.tiers
           return false unless @minimum_seats == other.minimum_seats
+          return false unless @seat_tier_type == other.seat_tier_type
           return false unless @maximum_seats == other.maximum_seats
           true
         end

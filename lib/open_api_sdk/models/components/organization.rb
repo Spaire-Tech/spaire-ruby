@@ -82,6 +82,18 @@ module OpenApiSDK
         )
 
         field(
+          :default_tax_behavior,
+          Models::Components::TaxBehaviorOption,
+          {
+            'format_json': {
+              'letter_case': ::OpenApiSDK::Utils.field_name("default_tax_behavior"),
+              required: true,
+              'decoder': ::OpenApiSDK::Utils.open_enum_from_string(Models::Components::TaxBehaviorOption, false)
+            }
+          }
+        )
+
+        field(
           :subscription_settings,
           Models::Components::OrganizationSubscriptionSettings,
           {'format_json': {'letter_case': ::OpenApiSDK::Utils.field_name("subscription_settings"), required: true}}
@@ -152,6 +164,12 @@ module OpenApiSDK
           Crystalline::Nilable.new(Models::Components::OrganizationFeatureSettings),
           {'format_json': {'letter_case': ::OpenApiSDK::Utils.field_name("feature_settings"), required: true}}
         )
+        # Storefront settings
+        field(
+          :storefront_settings,
+          Crystalline::Nilable.new(Models::Components::OrganizationStorefrontSettings),
+          {'format_json': {'letter_case': ::OpenApiSDK::Utils.field_name("storefront_settings")}}
+        )
 
         sig {
           params(
@@ -164,6 +182,7 @@ module OpenApiSDK
             socials: T::Array[Models::Components::OrganizationSocialLink],
             status: Models::Components::OrganizationStatus,
             default_presentment_currency: Models::Components::PresentmentCurrency,
+            default_tax_behavior: Models::Components::TaxBehaviorOption,
             subscription_settings: Models::Components::OrganizationSubscriptionSettings,
             notification_settings: Models::Components::OrganizationNotificationSettings,
             customer_email_settings: Models::Components::OrganizationCustomerEmailSettings,
@@ -173,7 +192,8 @@ module OpenApiSDK
             email: T.nilable(::String),
             website: T.nilable(::String),
             details_submitted_at: T.nilable(::DateTime),
-            feature_settings: T.nilable(Models::Components::OrganizationFeatureSettings)
+            feature_settings: T.nilable(Models::Components::OrganizationFeatureSettings),
+            storefront_settings: T.nilable(Models::Components::OrganizationStorefrontSettings)
           )
             .void
         }
@@ -187,6 +207,7 @@ module OpenApiSDK
           socials:,
           status:,
           default_presentment_currency:,
+          default_tax_behavior:,
           subscription_settings:,
           notification_settings:,
           customer_email_settings:,
@@ -196,7 +217,8 @@ module OpenApiSDK
           email: nil,
           website: nil,
           details_submitted_at: nil,
-          feature_settings: nil
+          feature_settings: nil,
+          storefront_settings: nil
         )
           @created_at = created_at
           @id = id
@@ -207,6 +229,7 @@ module OpenApiSDK
           @socials = socials
           @status = status
           @default_presentment_currency = default_presentment_currency
+          @default_tax_behavior = default_tax_behavior
           @subscription_settings = subscription_settings
           @notification_settings = notification_settings
           @customer_email_settings = customer_email_settings
@@ -217,6 +240,7 @@ module OpenApiSDK
           @website = website
           @details_submitted_at = details_submitted_at
           @feature_settings = feature_settings
+          @storefront_settings = storefront_settings
         end
 
         sig { params(other: T.untyped).returns(T::Boolean) }
@@ -231,6 +255,7 @@ module OpenApiSDK
           return false unless @socials == other.socials
           return false unless @status == other.status
           return false unless @default_presentment_currency == other.default_presentment_currency
+          return false unless @default_tax_behavior == other.default_tax_behavior
           return false unless @subscription_settings == other.subscription_settings
           return false unless @notification_settings == other.notification_settings
           return false unless @customer_email_settings == other.customer_email_settings
@@ -241,6 +266,7 @@ module OpenApiSDK
           return false unless @website == other.website
           return false unless @details_submitted_at == other.details_submitted_at
           return false unless @feature_settings == other.feature_settings
+          return false unless @storefront_settings == other.storefront_settings
           true
         end
       end

@@ -27,15 +27,34 @@ module OpenApiSDK
             }
           }
         )
+        # The tax behavior of the price. If not set, it will default to the organization's default tax behavior.
+        field(
+          :tax_behavior,
+          Crystalline::Nilable.new(Models::Components::TaxBehaviorOption),
+          {
+            'format_json': {
+              'letter_case': ::OpenApiSDK::Utils.field_name("tax_behavior"),
+              'decoder': ::OpenApiSDK::Utils.open_enum_from_string(Models::Components::TaxBehaviorOption, true)
+            }
+          }
+        )
 
-        sig { params(amount_type: ::String, price_currency: T.nilable(Models::Components::PresentmentCurrency)).void }
-        def initialize(amount_type: "free", price_currency: nil)
+        sig {
+          params(
+            amount_type: ::String,
+            price_currency: T.nilable(Models::Components::PresentmentCurrency),
+            tax_behavior: T.nilable(Models::Components::TaxBehaviorOption)
+          )
+            .void
+        }
+        def initialize(amount_type: "free", price_currency: nil, tax_behavior: nil)
           unless amount_type == "free"
             raise ArgumentError, "Invalid value for amount_type"
           end
 
           @amount_type = "free"
           @price_currency = price_currency
+          @tax_behavior = tax_behavior
         end
 
         sig { params(other: T.untyped).returns(T::Boolean) }
@@ -43,6 +62,7 @@ module OpenApiSDK
           return false unless other.is_a?(self.class)
           return false unless @amount_type == other.amount_type
           return false unless @price_currency == other.price_currency
+          return false unless @tax_behavior == other.tax_behavior
           true
         end
       end

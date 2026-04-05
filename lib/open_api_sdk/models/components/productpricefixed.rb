@@ -97,6 +97,18 @@ module OpenApiSDK
           ::String,
           {'format_json': {'letter_case': ::OpenApiSDK::Utils.field_name("amount_type"), required: true}}
         )
+        # The tax behavior of the price. If null, it defaults to the organization's default tax behavior.
+        field(
+          :tax_behavior,
+          Crystalline::Nilable.new(Models::Components::TaxBehaviorOption),
+          {
+            'format_json': {
+              'letter_case': ::OpenApiSDK::Utils.field_name("tax_behavior"),
+              required: true,
+              'decoder': ::OpenApiSDK::Utils.open_enum_from_string(Models::Components::TaxBehaviorOption, false)
+            }
+          }
+        )
         # @deprecated true: This will be removed in a future release, please migrate away from it as soon as possible.
         field(
           :recurring_interval,
@@ -125,6 +137,7 @@ module OpenApiSDK
             price_amount: ::Integer,
             modified_at: T.nilable(::DateTime),
             amount_type: ::String,
+            tax_behavior: T.nilable(Models::Components::TaxBehaviorOption),
             recurring_interval: T.nilable(Models::Components::SubscriptionRecurringInterval)
           )
             .void
@@ -140,6 +153,7 @@ module OpenApiSDK
           price_amount:,
           modified_at: nil,
           amount_type: "fixed",
+          tax_behavior: nil,
           recurring_interval: nil
         )
           @created_at = created_at
@@ -156,6 +170,7 @@ module OpenApiSDK
           end
 
           @amount_type = "fixed"
+          @tax_behavior = tax_behavior
           @recurring_interval = recurring_interval
         end
 
@@ -172,6 +187,7 @@ module OpenApiSDK
           return false unless @price_amount == other.price_amount
           return false unless @modified_at == other.modified_at
           return false unless @amount_type == other.amount_type
+          return false unless @tax_behavior == other.tax_behavior
           return false unless @recurring_interval == other.recurring_interval
           true
         end

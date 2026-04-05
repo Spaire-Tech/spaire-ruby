@@ -19,3 +19,4 @@ custom = FileServiceTypes.deserialize("custom_value")
 | `DOWNLOADABLE`        | downloadable          |
 | `PRODUCT_MEDIA`       | product_media         |
 | `ORGANIZATION_AVATAR` | organization_avatar   |
+| `STOREFRONT_HEADER`   | storefront_header     |

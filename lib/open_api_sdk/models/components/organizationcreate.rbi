@@ -18,6 +18,12 @@ class OpenApiSDK::Models::Components::OrganizationCreate
   def slug=(str_)
   end
 
+  def default_tax_behavior
+  end
+
+  def default_tax_behavior=(str_)
+  end
+
   def avatar_url
   end
 
@@ -76,5 +82,11 @@ class OpenApiSDK::Models::Components::OrganizationCreate
   end
 
   def customer_portal_settings=(str_)
+  end
+
+  def storefront_settings
+  end
+
+  def storefront_settings=(str_)
   end
 end

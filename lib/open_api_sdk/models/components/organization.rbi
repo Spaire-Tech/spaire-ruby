@@ -60,6 +60,12 @@ class OpenApiSDK::Models::Components::Organization
   def default_presentment_currency=(str_)
   end
 
+  def default_tax_behavior
+  end
+
+  def default_tax_behavior=(str_)
+  end
+
   def subscription_settings
   end
 
@@ -118,5 +124,11 @@ class OpenApiSDK::Models::Components::Organization
   end
 
   def feature_settings=(str_)
+  end
+
+  def storefront_settings
+  end
+
+  def storefront_settings=(str_)
   end
 end

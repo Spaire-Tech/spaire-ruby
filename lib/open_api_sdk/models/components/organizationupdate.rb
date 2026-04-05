@@ -57,6 +57,17 @@ module OpenApiSDK
             }
           }
         )
+        # Default tax behavior applied on products.
+        field(
+          :default_tax_behavior,
+          Crystalline::Nilable.new(Models::Components::TaxBehaviorOption),
+          {
+            'format_json': {
+              'letter_case': ::OpenApiSDK::Utils.field_name("default_tax_behavior"),
+              'decoder': ::OpenApiSDK::Utils.open_enum_from_string(Models::Components::TaxBehaviorOption, true)
+            }
+          }
+        )
 
         field(
           :feature_settings,
@@ -88,6 +99,12 @@ module OpenApiSDK
           {'format_json': {'letter_case': ::OpenApiSDK::Utils.field_name("customer_portal_settings")}}
         )
 
+        field(
+          :storefront_settings,
+          Crystalline::Nilable.new(Models::Components::OrganizationStorefrontSettings),
+          {'format_json': {'letter_case': ::OpenApiSDK::Utils.field_name("storefront_settings")}}
+        )
+
         sig {
           params(
             name: T.nilable(::String),
@@ -97,11 +114,13 @@ module OpenApiSDK
             socials: T.nilable(T::Array[Models::Components::OrganizationSocialLink]),
             details: T.nilable(Models::Components::OrganizationDetails),
             default_presentment_currency: T.nilable(Models::Components::PresentmentCurrency),
+            default_tax_behavior: T.nilable(Models::Components::TaxBehaviorOption),
             feature_settings: T.nilable(Models::Components::OrganizationFeatureSettings),
             subscription_settings: T.nilable(Models::Components::OrganizationSubscriptionSettings),
             notification_settings: T.nilable(Models::Components::OrganizationNotificationSettings),
             customer_email_settings: T.nilable(Models::Components::OrganizationCustomerEmailSettings),
-            customer_portal_settings: T.nilable(Models::Components::OrganizationCustomerPortalSettings)
+            customer_portal_settings: T.nilable(Models::Components::OrganizationCustomerPortalSettings),
+            storefront_settings: T.nilable(Models::Components::OrganizationStorefrontSettings)
           )
             .void
         }
@@ -113,11 +132,13 @@ module OpenApiSDK
           socials: nil,
           details: nil,
           default_presentment_currency: nil,
+          default_tax_behavior: nil,
           feature_settings: nil,
           subscription_settings: nil,
           notification_settings: nil,
           customer_email_settings: nil,
-          customer_portal_settings: nil
+          customer_portal_settings: nil,
+          storefront_settings: nil
         )
           @name = name
           @avatar_url = avatar_url
@@ -126,11 +147,13 @@ module OpenApiSDK
           @socials = socials
           @details = details
           @default_presentment_currency = default_presentment_currency
+          @default_tax_behavior = default_tax_behavior
           @feature_settings = feature_settings
           @subscription_settings = subscription_settings
           @notification_settings = notification_settings
           @customer_email_settings = customer_email_settings
           @customer_portal_settings = customer_portal_settings
+          @storefront_settings = storefront_settings
         end
 
         sig { params(other: T.untyped).returns(T::Boolean) }
@@ -143,11 +166,13 @@ module OpenApiSDK
           return false unless @socials == other.socials
           return false unless @details == other.details
           return false unless @default_presentment_currency == other.default_presentment_currency
+          return false unless @default_tax_behavior == other.default_tax_behavior
           return false unless @feature_settings == other.feature_settings
           return false unless @subscription_settings == other.subscription_settings
           return false unless @notification_settings == other.notification_settings
           return false unless @customer_email_settings == other.customer_email_settings
           return false unless @customer_portal_settings == other.customer_portal_settings
+          return false unless @storefront_settings == other.storefront_settings
           true
         end
       end
