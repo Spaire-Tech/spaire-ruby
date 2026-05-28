@@ -83,6 +83,12 @@ module OpenApiSDK
         )
 
         field(
+          :avatar_url,
+          Crystalline::Nilable.new(::String),
+          {'format_json': {'letter_case': ::OpenApiSDK::Utils.field_name("avatar_url")}}
+        )
+
+        field(
           :default_payment_method_id,
           Crystalline::Nilable.new(::String),
           {'format_json': {'letter_case': ::OpenApiSDK::Utils.field_name("default_payment_method_id")}}
@@ -111,6 +117,7 @@ module OpenApiSDK
             billing_name: T.nilable(::String),
             billing_address: T.nilable(Models::Components::Address),
             tax_id: T.nilable(T::Array[T.any(::String, Models::Components::TaxIDFormat)]),
+            avatar_url: T.nilable(::String),
             default_payment_method_id: T.nilable(::String),
             type: T.nilable(Models::Components::CustomerType)
           )
@@ -127,6 +134,7 @@ module OpenApiSDK
           billing_name: nil,
           billing_address: nil,
           tax_id: nil,
+          avatar_url: nil,
           default_payment_method_id: nil,
           type: nil
         )
@@ -140,6 +148,7 @@ module OpenApiSDK
           @billing_name = billing_name
           @billing_address = billing_address
           @tax_id = tax_id
+          @avatar_url = avatar_url
           @default_payment_method_id = default_payment_method_id
           @type = type
         end
@@ -157,6 +166,7 @@ module OpenApiSDK
           return false unless @billing_name == other.billing_name
           return false unless @billing_address == other.billing_address
           return false unless @tax_id == other.tax_id
+          return false unless @avatar_url == other.avatar_url
           return false unless @default_payment_method_id == other.default_payment_method_id
           return false unless @type == other.type
           true

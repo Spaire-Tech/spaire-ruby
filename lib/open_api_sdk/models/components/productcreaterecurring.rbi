@@ -48,6 +48,12 @@ class OpenApiSDK::Models::Components::ProductCreateRecurring
   def description=(str_)
   end
 
+  def category
+  end
+
+  def category=(str_)
+  end
+
   def medias
   end
 

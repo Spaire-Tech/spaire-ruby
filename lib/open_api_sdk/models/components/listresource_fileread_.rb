@@ -17,9 +17,12 @@ module OpenApiSDK
             Crystalline::DiscriminatedUnion.new(
               "service",
               {
+                "community_post_image" => Models::Components::CommunityPostImageFileRead,
                 "downloadable" => Models::Components::DownloadableFileRead,
                 "organization_avatar" => Models::Components::OrganizationAvatarFileRead,
-                "product_media" => Models::Components::ProductMediaFileRead
+                "product_media" => Models::Components::ProductMediaFileRead,
+                "storefront_header" => Models::Components::StorefrontHeaderFileRead,
+                "storefront_link" => Models::Components::StorefrontLinkFileRead
               }
             )
           ),
@@ -38,7 +41,10 @@ module OpenApiSDK
               T.any(
                 Models::Components::DownloadableFileRead,
                 Models::Components::ProductMediaFileRead,
-                Models::Components::OrganizationAvatarFileRead
+                Models::Components::OrganizationAvatarFileRead,
+                Models::Components::StorefrontHeaderFileRead,
+                Models::Components::StorefrontLinkFileRead,
+                Models::Components::CommunityPostImageFileRead
               )
             ],
             pagination: Models::Components::Pagination

@@ -42,12 +42,6 @@ class OpenApiSDK::Models::Components::CheckoutLinkUpdate
   def allow_discount_codes=(str_)
   end
 
-  def require_billing_address
-  end
-
-  def require_billing_address=(str_)
-  end
-
   def discount_id
   end
 

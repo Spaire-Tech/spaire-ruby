@@ -22,15 +22,34 @@ module OpenApiSDK
           {'format_json': {'letter_case': ::OpenApiSDK::Utils.field_name("tiers"), required: true}}
         )
 
-        sig { params(tiers: T::Array[Models::Components::ProductPriceSeatTier]).void }
-        def initialize(tiers:)
+        field(
+          :seat_tier_type,
+          Crystalline::Nilable.new(Models::Components::SeatTierType),
+          {
+            'format_json': {
+              'letter_case': ::OpenApiSDK::Utils.field_name("seat_tier_type"),
+              'decoder': ::OpenApiSDK::Utils.open_enum_from_string(Models::Components::SeatTierType, true)
+            }
+          }
+        )
+
+        sig {
+          params(
+            tiers: T::Array[Models::Components::ProductPriceSeatTier],
+            seat_tier_type: T.nilable(Models::Components::SeatTierType)
+          )
+            .void
+        }
+        def initialize(tiers:, seat_tier_type: nil)
           @tiers = tiers
+          @seat_tier_type = seat_tier_type
         end
 
         sig { params(other: T.untyped).returns(T::Boolean) }
         def ==(other)
           return false unless other.is_a?(self.class)
           return false unless @tiers == other.tiers
+          return false unless @seat_tier_type == other.seat_tier_type
           true
         end
       end

@@ -61,6 +61,17 @@ module OpenApiSDK
           Crystalline::Nilable.new(::String),
           {'format_json': {'letter_case': ::OpenApiSDK::Utils.field_name("description")}}
         )
+        # The digital product category.
+        field(
+          :category,
+          Crystalline::Nilable.new(Models::Components::ProductCategory),
+          {
+            'format_json': {
+              'letter_case': ::OpenApiSDK::Utils.field_name("category"),
+              'decoder': ::OpenApiSDK::Utils.open_enum_from_string(Models::Components::ProductCategory, true)
+            }
+          }
+        )
         # The recurring interval of the product. If `None`, the product is a one-time purchase. **Can only be set on legacy recurring products. Once set, it can't be changed.**
         field(
           :recurring_interval,
@@ -137,6 +148,7 @@ module OpenApiSDK
             trial_interval_count: T.nilable(::Integer),
             name: T.nilable(::String),
             description: T.nilable(::String),
+            category: T.nilable(Models::Components::ProductCategory),
             recurring_interval: T.nilable(Models::Components::SubscriptionRecurringInterval),
             recurring_interval_count: T.nilable(::Integer),
             is_archived: T.nilable(T::Boolean),
@@ -166,6 +178,7 @@ module OpenApiSDK
           trial_interval_count: nil,
           name: nil,
           description: nil,
+          category: nil,
           recurring_interval: nil,
           recurring_interval_count: nil,
           is_archived: nil,
@@ -179,6 +192,7 @@ module OpenApiSDK
           @trial_interval_count = trial_interval_count
           @name = name
           @description = description
+          @category = category
           @recurring_interval = recurring_interval
           @recurring_interval_count = recurring_interval_count
           @is_archived = is_archived
@@ -196,6 +210,7 @@ module OpenApiSDK
           return false unless @trial_interval_count == other.trial_interval_count
           return false unless @name == other.name
           return false unless @description == other.description
+          return false unless @category == other.category
           return false unless @recurring_interval == other.recurring_interval
           return false unless @recurring_interval_count == other.recurring_interval_count
           return false unless @is_archived == other.is_archived

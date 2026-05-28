@@ -22,3 +22,4 @@ custom = BenefitType.deserialize("custom_value")
 | `DOWNLOADABLES`     | downloadables       |
 | `LICENSE_KEYS`      | license_keys        |
 | `METER_CREDIT`      | meter_credit        |
+| `COURSE_ACCESS`     | course_access       |

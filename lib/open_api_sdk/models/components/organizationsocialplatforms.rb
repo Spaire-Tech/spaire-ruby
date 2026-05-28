@@ -17,6 +17,16 @@ module OpenApiSDK
           YOUTUBE = new("youtube")
           TIKTOK = new("tiktok")
           LINKEDIN = new("linkedin")
+          WHATSAPP = new("whatsapp")
+          SPOTIFY = new("spotify")
+          THREADS = new("threads")
+          SOUNDCLOUD = new("soundcloud")
+          SNAPCHAT = new("snapchat")
+          PINTEREST = new("pinterest")
+          PATREON = new("patreon")
+          TWITCH = new("twitch")
+          APPLE_MUSIC = new("apple_music")
+          WEBSITE = new("website")
           OTHER = new("other")
         end
 

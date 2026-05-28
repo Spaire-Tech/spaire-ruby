@@ -60,6 +60,12 @@ class OpenApiSDK::Models::Components::LegacyRecurringProductPriceFree
   def amount_type=(str_)
   end
 
+  def tax_behavior
+  end
+
+  def tax_behavior=(str_)
+  end
+
   def type
   end
 

@@ -1,0 +1,17 @@
+# CommunityPostMediaRead
+
+
+## Fields
+
+| Field                                                             | Type                                                              | Required                                                          | Description                                                       |
+| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `id`                                                              | *::String*                                                        | :heavy_check_mark:                                                | N/A                                                               |
+| `media_type`                                                      | [Models::Components::MediaType](../../models/shared/mediatype.md) | :heavy_check_mark:                                                | N/A                                                               |
+| `position`                                                        | *::Integer*                                                       | :heavy_check_mark:                                                | N/A                                                               |
+| `file_id`                                                         | *T.nilable(::String)*                                             | :heavy_minus_sign:                                                | N/A                                                               |
+| `public_url`                                                      | *T.nilable(::String)*                                             | :heavy_minus_sign:                                                | N/A                                                               |
+| `mux_playback_id`                                                 | *T.nilable(::String)*                                             | :heavy_minus_sign:                                                | N/A                                                               |
+| `playback_url`                                                    | *T.nilable(::String)*                                             | :heavy_minus_sign:                                                | N/A                                                               |
+| `mux_status`                                                      | *T.nilable(::String)*                                             | :heavy_minus_sign:                                                | N/A                                                               |
+| `duration_seconds`                                                | *T.nilable(::Integer)*                                            | :heavy_minus_sign:                                                | N/A                                                               |
+| `thumbnail_url`                                                   | *T.nilable(::String)*                                             | :heavy_minus_sign:                                                | N/A                                                               |

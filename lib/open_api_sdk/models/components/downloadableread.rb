@@ -25,11 +25,86 @@ module OpenApiSDK
           {'format_json': {'letter_case': ::OpenApiSDK::Utils.field_name("file"), required: true}}
         )
 
-        sig { params(id: ::String, benefit_id: ::String, file: Models::Components::FileDownload).void }
-        def initialize(id:, benefit_id:, file:)
+        field(
+          :product_id,
+          Crystalline::Nilable.new(::String),
+          {'format_json': {'letter_case': ::OpenApiSDK::Utils.field_name("product_id")}}
+        )
+
+        field(
+          :product_name,
+          Crystalline::Nilable.new(::String),
+          {'format_json': {'letter_case': ::OpenApiSDK::Utils.field_name("product_name")}}
+        )
+
+        field(
+          :product_category,
+          Crystalline::Nilable.new(Models::Components::ProductCategory),
+          {
+            'format_json': {
+              'letter_case': ::OpenApiSDK::Utils.field_name("product_category"),
+              'decoder': ::OpenApiSDK::Utils.open_enum_from_string(Models::Components::ProductCategory, true)
+            }
+          }
+        )
+
+        field(
+          :product_thumbnail_url,
+          Crystalline::Nilable.new(::String),
+          {'format_json': {'letter_case': ::OpenApiSDK::Utils.field_name("product_thumbnail_url")}}
+        )
+
+        field(
+          :downloaded_count,
+          Crystalline::Nilable.new(::Integer),
+          {'format_json': {'letter_case': ::OpenApiSDK::Utils.field_name("downloaded_count")}}
+        )
+
+        field(
+          :last_downloaded_at,
+          Crystalline::Nilable.new(::DateTime),
+          {
+            'format_json': {
+              'letter_case': ::OpenApiSDK::Utils.field_name("last_downloaded_at"),
+              'decoder': ::OpenApiSDK::Utils.datetime_from_iso_format(true)
+            }
+          }
+        )
+
+        sig {
+          params(
+            id: ::String,
+            benefit_id: ::String,
+            file: Models::Components::FileDownload,
+            product_id: T.nilable(::String),
+            product_name: T.nilable(::String),
+            product_category: T.nilable(Models::Components::ProductCategory),
+            product_thumbnail_url: T.nilable(::String),
+            downloaded_count: T.nilable(::Integer),
+            last_downloaded_at: T.nilable(::DateTime)
+          )
+            .void
+        }
+        def initialize(
+          id:,
+          benefit_id:,
+          file:,
+          product_id: nil,
+          product_name: nil,
+          product_category: nil,
+          product_thumbnail_url: nil,
+          downloaded_count: 0,
+          last_downloaded_at: nil
+        )
           @id = id
           @benefit_id = benefit_id
           @file = file
+          @product_id = product_id
+          @product_name = product_name
+          @product_category = product_category
+          @product_thumbnail_url = product_thumbnail_url
+          @downloaded_count = downloaded_count
+          @last_downloaded_at = last_downloaded_at
         end
 
         sig { params(other: T.untyped).returns(T::Boolean) }
@@ -38,6 +113,12 @@ module OpenApiSDK
           return false unless @id == other.id
           return false unless @benefit_id == other.benefit_id
           return false unless @file == other.file
+          return false unless @product_id == other.product_id
+          return false unless @product_name == other.product_name
+          return false unless @product_category == other.product_category
+          return false unless @product_thumbnail_url == other.product_thumbnail_url
+          return false unless @downloaded_count == other.downloaded_count
+          return false unless @last_downloaded_at == other.last_downloaded_at
           true
         end
       end

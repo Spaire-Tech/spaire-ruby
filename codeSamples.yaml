@@ -1,0 +1,1331 @@
+overlay: 1.0.0
+info:
+  title: CodeSamples overlay for ruby target
+  version: 0.0.0
+actions:
+  - target: $["paths"]["/v1/benefit-grants/"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\n\nreq = Models::Operations::BenefitGrantsListRequest.new(\n  organization_id: '1dbfc517-0bbf-4301-9ba8-555ca42b9737'\n)\nres = s.benefit_grants.list(request: req)\n\nunless res.list_resource_benefit_grant.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/benefits/"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\n\nreq = Models::Operations::BenefitsListRequest.new(\n  organization_id: '1dbfc517-0bbf-4301-9ba8-555ca42b9737'\n)\nres = s.benefits.list(request: req)\n\nunless res.list_resource_benefit.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/benefits/"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\n\nreq = Models::Components::BenefitLicenseKeysCreate.new(\n  type: 'license_keys',\n  description: 'mature emergent at outside arrogantly gadzooks zealous equatorial notwithstanding',\n  properties: Models::Components::BenefitLicenseKeysCreateProperties.new\n)\nres = s.benefits.create(request: req)\n\nunless res.benefit.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/benefits/{id}"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.benefits.delete(id: '<value>')\n\nif res.status_code == 200\n  # handle response\nend"
+  - target: $["paths"]["/v1/benefits/{id}"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.benefits.get(id: '<value>')\n\nunless res.benefit.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/benefits/{id}"]["patch"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.benefits.update(id: '<value>', body: Models::Components::BenefitMeterCreditUpdate.new(\n  type: 'meter_credit'\n))\n\nunless res.benefit.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/benefits/{id}/grants"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\n\nreq = Models::Operations::BenefitsGrantsRequest.new(\n  id: '<value>'\n)\nres = s.benefits.grants(request: req)\n\nunless res.list_resource_benefit_grant.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/checkout-links/"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\n\nreq = Models::Operations::CheckoutLinksListRequest.new(\n  organization_id: '1dbfc517-0bbf-4301-9ba8-555ca42b9737'\n)\nres = s.checkout_links.list(request: req)\n\nunless res.list_resource_checkout_link.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/checkout-links/"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\n\nreq = Models::Components::CheckoutLinkCreateProductPrice.new(\n  payment_processor: 'stripe',\n  allow_discount_codes: true,\n  product_price_id: '<value>'\n)\nres = s.checkout_links.create(request: req)\n\nunless res.checkout_link.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/checkout-links/{id}"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.checkout_links.delete(id: '<value>')\n\nif res.status_code == 200\n  # handle response\nend"
+  - target: $["paths"]["/v1/checkout-links/{id}"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.checkout_links.get(id: '<value>')\n\nunless res.checkout_link.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/checkout-links/{id}"]["patch"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.checkout_links.update(id: '<value>', body: Models::Components::CheckoutLinkUpdate.new)\n\nunless res.checkout_link.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/checkouts/"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\n\nreq = Models::Operations::CheckoutsListRequest.new(\n  organization_id: '1dbfc517-0bbf-4301-9ba8-555ca42b9737'\n)\nres = s.checkouts.list(request: req)\n\nunless res.list_resource_checkout.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/checkouts/"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\n\nreq = Models::Components::CheckoutCreate.new(\n  locale: 'en',\n  customer_name: 'John Doe',\n  customer_billing_address: Models::Components::AddressInput.new(\n    country: Models::Components::CountryAlpha2Input::US\n  ),\n  products: [\n    '<value 1>',\n    '<value 2>',\n    '<value 3>',\n  ]\n)\nres = s.checkouts.create(request: req)\n\nunless res.checkout.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/checkouts/client/{client_secret}"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\nres = s.checkouts.client_get(client_secret: '<value>')\n\nunless res.checkout_public.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/checkouts/{id}"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.checkouts.get(id: '<value>')\n\nunless res.checkout.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/client-invoices/"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.client_invoices.list_client_invoices(page: 1, limit: 10)\n\nunless res.list_resource_client_invoice_schema.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/client-invoices/"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\n\nreq = Models::Components::ClientInvoiceCreate.new(\n  customer_id: '<value>',\n  currency: 'Gibraltar Pound',\n  line_items: []\n)\nres = s.client_invoices.create_client_invoice(request: req)\n\nunless res.client_invoice_schema.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/client-invoices/preview-pdf"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\n\nreq = Models::Components::ClientInvoicePreviewRequest.new(\n  organization_id: '<value>',\n  currency: 'Baht',\n  line_items: []\n)\nres = s.client_invoices.preview_client_invoice_pdf(request: req)\n\nif res.status_code == 200\n  # handle response\nend"
+  - target: $["paths"]["/v1/client-invoices/{id}"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.client_invoices.get_client_invoice(id: '<value>')\n\nunless res.client_invoice_schema.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/client-invoices/{id}/finalize"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.client_invoices.finalize_client_invoice(id: '<value>')\n\nunless res.client_invoice_schema.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/client-invoices/{id}/mark-paid"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.client_invoices.mark_client_invoice_paid(id: '<value>')\n\nunless res.client_invoice_schema.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/client-invoices/{id}/pdf"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.client_invoices.download_client_invoice_pdf(id: '<value>')\n\nif res.status_code == 200\n  # handle response\nend"
+  - target: $["paths"]["/v1/client-invoices/{id}/send"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.client_invoices.send_client_invoice(id: '<value>')\n\nunless res.client_invoice_schema.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/client-invoices/{id}/void"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.client_invoices.void_client_invoice(id: '<value>')\n\nunless res.client_invoice_schema.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/community/public/events/{event_id}"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\nres = s.community.get_event_public(event_id: '<value>')\n\nunless res.community_event_public.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/community/public/events/{event_id}/ics"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\nres = s.community.download_event_ics(event_id: '<value>')\n\nif res.status_code == 200\n  # handle response\nend"
+  - target: $["paths"]["/v1/custom-fields/"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\n\nreq = Models::Operations::CustomFieldsListRequest.new(\n  organization_id: '1dbfc517-0bbf-4301-9ba8-555ca42b9737'\n)\nres = s.custom_fields.list(request: req)\n\nunless res.list_resource_custom_field.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/custom-fields/"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\n\nreq = Models::Components::CustomFieldCreateSelect.new(\n  type: 'select',\n  slug: '<value>',\n  name: '<value>',\n  properties: Models::Components::CustomFieldSelectProperties.new(\n    options: []\n  )\n)\nres = s.custom_fields.create(request: req)\n\nunless res.custom_field.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/custom-fields/{id}"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.custom_fields.delete(id: '<value>')\n\nif res.status_code == 200\n  # handle response\nend"
+  - target: $["paths"]["/v1/custom-fields/{id}"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.custom_fields.get(id: '<value>')\n\nunless res.custom_field.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/custom-fields/{id}"]["patch"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.custom_fields.update(id: '<value>', body: Models::Components::CustomFieldUpdateDate.new(\n  type: 'date'\n))\n\nunless res.custom_field.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-meters/"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\n\nreq = Models::Operations::CustomerMetersListRequest.new(\n  organization_id: '1dbfc517-0bbf-4301-9ba8-555ca42b9737'\n)\nres = s.customer_meters.list(request: req)\n\nunless res.list_resource_customer_meter.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-meters/{id}"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.customer_meters.get(id: '<value>')\n\nunless res.customer_meter.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/benefit-grants/"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\n\nreq = Models::Operations::CustomerPortalBenefitGrantsListRequest.new\nres = s.customer_portal.benefit_grants.list(request: req, security: Models::Operations::CustomerPortalBenefitGrantsListSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n))\n\nunless res.list_resource_customer_benefit_grant.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/benefit-grants/{id}"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\nres = s.customer_portal.benefit_grants.get(security: Models::Operations::CustomerPortalBenefitGrantsGetSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n), id: '<value>')\n\nunless res.customer_benefit_grant.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/benefit-grants/{id}"]["patch"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\nres = s.customer_portal.benefit_grants.update(security: Models::Operations::CustomerPortalBenefitGrantsUpdateSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n), id: '<value>', body: Models::Components::CustomerBenefitGrantLicenseKeysUpdate.new(\n  benefit_type: 'license_keys'\n))\n\nunless res.customer_benefit_grant.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/community/courses"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\nres = s.customer_portal_community.list_customer_communities(security: Models::Operations::CustomerPortalCommunityListCustomerCommunitiesSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n))\n\nunless res.response_customer_portal_community_list_customer_communities.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/community/{course_id}/activities"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\nres = s.customer_portal_community.list_activities_customer(security: Models::Operations::CustomerPortalCommunityListActivitiesCustomerSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n), course_id: '<value>')\n\nunless res.response_customer_portal_community_list_activities_customer.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/community/{course_id}/activities/{activity_id}/submissions"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\nres = s.customer_portal_community.list_submissions_customer(security: Models::Operations::CustomerPortalCommunityListSubmissionsCustomerSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n), course_id: '<value>', activity_id: '<value>')\n\nunless res.response_customer_portal_community_list_submissions_customer.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/community/{course_id}/activities/{activity_id}/submissions"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\nres = s.customer_portal_community.submit_activity_customer(security: Models::Operations::CustomerPortalCommunitySubmitActivityCustomerSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n), course_id: '<value>', activity_id: '<value>', body: Models::Components::CommunityActivitySubmissionCreate.new(\n  submission_type: Models::Components::CommunityActivitySubmissionCreateSubmissionType::TEXT\n))\n\nunless res.community_activity_submission_read.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/community/{course_id}/activities/{activity_id}/submissions/{submission_id}/comments"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\nres = s.customer_portal_community.list_submission_comments_customer(security: Models::Operations::CustomerPortalCommunityListSubmissionCommentsCustomerSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n), course_id: '<value>', activity_id: '<value>', submission_id: '<value>')\n\nunless res.response_customer_portal_community_list_submission_comments_customer.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/community/{course_id}/activities/{activity_id}/submissions/{submission_id}/comments"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\nres = s.customer_portal_community.create_submission_comment_customer(security: Models::Operations::CustomerPortalCommunityCreateSubmissionCommentCustomerSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n), course_id: '<value>', activity_id: '<value>', submission_id: '<value>', body: Models::Components::CommunityActivitySubmissionCommentCreate.new(\n  body: '<value>'\n))\n\nunless res.community_activity_submission_comment_read.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/community/{course_id}/comments/{comment_id}"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\nres = s.customer_portal_community.delete_comment_customer(security: Models::Operations::CustomerPortalCommunityDeleteCommentCustomerSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n), course_id: '<value>', comment_id: '<value>')\n\nif res.status_code == 200\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/community/{course_id}/comments/{comment_id}/react"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\nres = s.customer_portal_community.react_to_comment_customer(security: Models::Operations::CustomerPortalCommunityReactToCommentCustomerSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n), course_id: '<value>', comment_id: '<value>', body: Models::Components::CommunityReactionToggle.new(\n  emoji: Models::Components::CommunityReactionToggleEmoji::CLAP\n))\n\nunless res.community_reaction_toggle_result.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/community/{course_id}/events"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\nres = s.customer_portal_community.list_events_customer(security: Models::Operations::CustomerPortalCommunityListEventsCustomerSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n), course_id: '<value>')\n\nunless res.response_customer_portal_community_list_events_customer.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/community/{course_id}/events/{event_id}/rsvp"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\nres = s.customer_portal_community.unrsvp_event_customer(security: Models::Operations::CustomerPortalCommunityUnrsvpEventCustomerSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n), course_id: '<value>', event_id: '<value>')\n\nunless res.community_event_rsvp_result.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/community/{course_id}/events/{event_id}/rsvp"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\nres = s.customer_portal_community.rsvp_event_customer(security: Models::Operations::CustomerPortalCommunityRsvpEventCustomerSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n), course_id: '<value>', event_id: '<value>')\n\nunless res.community_event_rsvp_result.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/community/{course_id}/feed"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\n\nreq = Models::Operations::CustomerPortalCommunityListFeedCustomerRequest.new(\n  course_id: '<value>'\n)\nres = s.customer_portal_community.list_feed_customer(request: req, security: Models::Operations::CustomerPortalCommunityListFeedCustomerSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n))\n\nunless res.list_resource_with_cursor_pagination_community_post_read.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/community/{course_id}/media/mux-upload"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\nres = s.customer_portal_community.create_video_upload_customer(security: Models::Operations::CustomerPortalCommunityCreateVideoUploadCustomerSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n), course_id: '<value>')\n\nunless res.community_post_video_upload_result.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/community/{course_id}/media/upload"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\nres = s.customer_portal_community.upload_post_image(security: Models::Operations::CustomerPortalCommunityUploadPostImageSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n), course_id: '<value>', body: Models::Components::BodyCustomerPortalCommunityUploadPostImage.new(\n  file: Models::Components::File.new(\n    file_name: 'example.file',\n    content: File.binread('example.file')\n  )\n))\n\nunless res.community_post_image_upload_result.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/community/{course_id}/members"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\nres = s.customer_portal_community.list_members_customer(security: Models::Operations::CustomerPortalCommunityListMembersCustomerSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n), course_id: '<value>')\n\nunless res.response_customer_portal_community_list_members_customer.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/community/{course_id}/posts"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\nres = s.customer_portal_community.create_post_customer(security: Models::Operations::CustomerPortalCommunityCreatePostCustomerSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n), course_id: '<value>', body: Models::Components::CommunityPostCreate.new(\n  body: '<value>'\n))\n\nunless res.community_post_read.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/community/{course_id}/posts/{post_id}"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\nres = s.customer_portal_community.delete_post_customer(security: Models::Operations::CustomerPortalCommunityDeletePostCustomerSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n), course_id: '<value>', post_id: '<value>')\n\nif res.status_code == 200\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/community/{course_id}/posts/{post_id}/comments"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\nres = s.customer_portal_community.list_comments_customer(security: Models::Operations::CustomerPortalCommunityListCommentsCustomerSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n), course_id: '<value>', post_id: '<value>')\n\nunless res.response_customer_portal_community_list_comments_customer.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/community/{course_id}/posts/{post_id}/comments"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\nres = s.customer_portal_community.create_comment_customer(security: Models::Operations::CustomerPortalCommunityCreateCommentCustomerSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n), course_id: '<value>', post_id: '<value>', body: Models::Components::CommunityCommentCreate.new(\n  content: '<value>'\n))\n\nunless res.community_comment_read.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/community/{course_id}/posts/{post_id}/react"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\nres = s.customer_portal_community.react_to_post_customer(security: Models::Operations::CustomerPortalCommunityReactToPostCustomerSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n), course_id: '<value>', post_id: '<value>', body: Models::Components::CommunityReactionToggle.new(\n  emoji: Models::Components::CommunityReactionToggleEmoji::FIRE\n))\n\nunless res.community_reaction_toggle_result.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/community/{course_id}/settings"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\nres = s.customer_portal_community.get_settings_customer(security: Models::Operations::CustomerPortalCommunityGetSettingsCustomerSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n), course_id: '<value>')\n\nunless res.community_settings_read.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/community/{course_id}/tags"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\nres = s.customer_portal_community.list_tags_customer(security: Models::Operations::CustomerPortalCommunityListTagsCustomerSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n), course_id: '<value>')\n\nunless res.response_customer_portal_community_list_tags_customer.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/courses/"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\nres = s.customer_portal.customer_portal_courses.list_enrolled_courses(security: Models::Operations::CustomerPortalCustomerPortalCoursesListEnrolledCoursesSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n))\n\nunless res.response_customer_portal_customer_portal_courses_list_enrolled_courses.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/courses/by-product/{product_id}/landing"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\nres = s.customer_portal.customer_portal_courses.get_course_landing_by_product(security: Models::Operations::CustomerPortalCustomerPortalCoursesGetCourseLandingByProductSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n), product_id: 'c30fb729-8a95-4c59-a144-5a18f9daaf92')\n\nunless res.response_customer_portal_customer_portal_courses_get_course_landing_by_product.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/courses/{course_id}"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\nres = s.customer_portal.customer_portal_courses.get_enrolled_course(security: Models::Operations::CustomerPortalCustomerPortalCoursesGetEnrolledCourseSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n), course_id: 'e9c5c2a0-5829-4a61-8ab0-55e843213527')\n\nunless res.response_customer_portal_customer_portal_courses_get_enrolled_course.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/courses/{course_id}/landing"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\nres = s.customer_portal.customer_portal_courses.get_course_landing(security: Models::Operations::CustomerPortalCustomerPortalCoursesGetCourseLandingSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n), course_id: '263dfc69-0ef8-4886-bb01-80f12ea707a0')\n\nunless res.response_customer_portal_customer_portal_courses_get_course_landing.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/courses/{course_id}/lessons/{lesson_id}/can-access"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\nres = s.customer_portal.customer_portal_courses.check_lesson_access(security: Models::Operations::CustomerPortalCustomerPortalCoursesCheckLessonAccessSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n), course_id: '5ff4eb74-b328-481e-92e0-722a4e2fa32d', lesson_id: 'cd9c0c32-3af9-4d5b-833d-e23277a06400')\n\nunless res.response_customer_portal_customer_portal_courses_check_lesson_access.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/courses/{course_id}/lessons/{lesson_id}/comments"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\nres = s.customer_portal.customer_portal_courses.list_lesson_comments(security: Models::Operations::CustomerPortalCustomerPortalCoursesListLessonCommentsSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n), course_id: '4aad0495-0617-4cb1-adaa-36cc95cec77b', lesson_id: '5d447346-fd57-4110-84b8-650f99e1d55f')\n\nunless res.response_customer_portal_customer_portal_courses_list_lesson_comments.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/courses/{course_id}/lessons/{lesson_id}/comments"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\nres = s.customer_portal.customer_portal_courses.create_lesson_comment(security: Models::Operations::CustomerPortalCustomerPortalCoursesCreateLessonCommentSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n), course_id: 'd3f379b4-ad3b-46f6-91f6-0a7a4752eda2', lesson_id: 'edfabd54-0b69-4b54-ad39-2f33ca938050', body: Models::Components::LessonCommentCreate.new(\n  content: '<value>'\n))\n\nunless res.lesson_comment_read.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/courses/{course_id}/lessons/{lesson_id}/comments/{comment_id}"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\nres = s.customer_portal.customer_portal_courses.delete_lesson_comment(security: Models::Operations::CustomerPortalCustomerPortalCoursesDeleteLessonCommentSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n), course_id: '70a972f8-8dd4-49ea-8689-c10cde15258f', lesson_id: '3a2ada11-da6e-4303-8e43-e65ad159de87', comment_id: '7d01cfdc-232e-4016-833b-6087f2e47467')\n\nif res.status_code == 200\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/courses/{course_id}/lessons/{lesson_id}/complete"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\nres = s.customer_portal.customer_portal_courses.mark_lesson_complete(security: Models::Operations::CustomerPortalCustomerPortalCoursesMarkLessonCompleteSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n), course_id: '2d6587d5-a241-42d7-9537-d9a3636bda80', lesson_id: '0e1d8490-d280-4eb7-a500-044c4d22938e')\n\nif res.status_code == 200\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/courses/{course_id}/lessons/{lesson_id}/notes"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\nres = s.customer_portal.customer_portal_courses.delete_lesson_note(security: Models::Operations::CustomerPortalCustomerPortalCoursesDeleteLessonNoteSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n), course_id: 'bc45e5b2-3fdc-4bc9-8f2e-6357f61366ee', lesson_id: '74f4c43f-ef88-4d4d-a749-1cf5ba81413a')\n\nif res.status_code == 200\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/courses/{course_id}/lessons/{lesson_id}/notes"]["put"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\nres = s.customer_portal.customer_portal_courses.upsert_lesson_note(security: Models::Operations::CustomerPortalCustomerPortalCoursesUpsertLessonNoteSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n), course_id: '13333c47-5821-4b9d-aa36-c6574a708bef', lesson_id: 'fb93fecc-3375-4183-a3f0-eef7c36cd0b4', body: Models::Components::CourseNoteUpsert.new(\n  content: '<value>'\n))\n\nunless res.course_note_read.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/courses/{course_id}/lessons/{lesson_id}/playback-url"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\nres = s.customer_portal.customer_portal_courses.mint_lesson_playback_url(security: Models::Operations::CustomerPortalCustomerPortalCoursesMintLessonPlaybackUrlSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n), course_id: '17e9d5b6-9a99-481e-906a-97a63b2a1d55', lesson_id: '6f60753f-3c0c-49d4-9ebe-46546035dc62')\n\nunless res.response_customer_portal_customer_portal_courses_mint_lesson_playback_url.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/courses/{course_id}/lessons/{lesson_id}/quiz-attempt"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\nres = s.customer_portal.customer_portal_courses.submit_quiz_attempt(security: Models::Operations::CustomerPortalCustomerPortalCoursesSubmitQuizAttemptSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n), course_id: '73e2ab1a-6c6f-43c3-8356-4674c5b1a32a', lesson_id: '3b167bc7-f952-44b9-a198-01c7f356fdaa', body: Models::Components::QuizAttemptSubmission.new(\n  answers: []\n))\n\nunless res.quiz_attempt_result.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/courses/{course_id}/notes"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\nres = s.customer_portal.customer_portal_courses.list_course_notes(security: Models::Operations::CustomerPortalCustomerPortalCoursesListCourseNotesSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n), course_id: 'b41e3867-1bf8-40f7-ab26-94bb53146aae')\n\nunless res.response_customer_portal_customer_portal_courses_list_course_notes.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/courses/{course_id}/progress"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\nres = s.customer_portal.customer_portal_courses.get_course_progress(security: Models::Operations::CustomerPortalCustomerPortalCoursesGetCourseProgressSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n), course_id: '3fe5c667-8964-460f-98d5-ebe0d038b675')\n\nunless res.course_progress_read.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/customer-session/introspect"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\nres = s.customer_portal.customer_session.introspect(security: Models::Operations::CustomerPortalCustomerSessionIntrospectSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n))\n\nunless res.customer_customer_session.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/customer-session/user"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\nres = s.customer_portal.customer_session.get_authenticated_user(security: Models::Operations::CustomerPortalCustomerSessionGetAuthenticatedUserSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n))\n\nunless res.portal_authenticated_user.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/customers/me"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\nres = s.customer_portal.customers.get(security: Models::Operations::CustomerPortalCustomersGetSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n))\n\nunless res.customer_portal_customer.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/customers/me"]["patch"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\n\nreq = Models::Components::CustomerPortalCustomerUpdate.new(\n  billing_address: Models::Components::AddressInput.new(\n    country: Models::Components::CountryAlpha2Input::US\n  )\n)\nres = s.customer_portal.customers.update(request: req, security: Models::Operations::CustomerPortalCustomersUpdateSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n))\n\nunless res.customer_portal_customer.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/customers/me/payment-methods"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\nres = s.customer_portal.customers.list_payment_methods(security: Models::Operations::CustomerPortalCustomersListPaymentMethodsSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n), page: 1, limit: 10)\n\nunless res.list_resource_customer_payment_method.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/customers/me/payment-methods"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\n\nreq = Models::Components::CustomerPaymentMethodCreate.new(\n  confirmation_token_id: '<id>',\n  set_default: false,\n  return_url: 'https://yearly-custom.net/'\n)\nres = s.customer_portal.customers.add_payment_method(request: req, security: Models::Operations::CustomerPortalCustomersAddPaymentMethodSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n))\n\nunless res.customer_payment_method_create_response.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/customers/me/payment-methods/confirm"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\n\nreq = Models::Components::CustomerPaymentMethodConfirm.new(\n  setup_intent_id: '<id>',\n  set_default: true\n)\nres = s.customer_portal.customers.confirm_payment_method(request: req, security: Models::Operations::CustomerPortalCustomersConfirmPaymentMethodSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n))\n\nunless res.customer_payment_method_create_response.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/customers/me/payment-methods/{id}"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\nres = s.customer_portal.customers.delete_payment_method(security: Models::Operations::CustomerPortalCustomersDeletePaymentMethodSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n), id: '<value>')\n\nif res.status_code == 200\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/customers/me/profile"]["patch"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\n\nreq = Models::Components::CustomerPortalCustomerProfileUpdate.new\nres = s.customer_portal.customers.update_profile(request: req, security: Models::Operations::CustomerPortalCustomersUpdateProfileSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n))\n\nunless res.customer_portal_customer.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/downloadables/"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\nres = s.customer_portal.downloadables.list(security: Models::Operations::CustomerPortalDownloadablesListSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n), page: 1, limit: 10)\n\nunless res.list_resource_downloadable_read.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/license-keys/"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\nres = s.customer_portal.license_keys.list(security: Models::Operations::CustomerPortalLicenseKeysListSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n), page: 1, limit: 10)\n\nunless res.list_resource_license_key_read.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/license-keys/activate"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\n\nreq = Models::Components::LicenseKeyActivate.new(\n  key: '<key>',\n  organization_id: '<value>',\n  label: '<value>'\n)\nres = s.customer_portal.license_keys.activate(request: req)\n\nunless res.license_key_activation_read.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/license-keys/deactivate"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\n\nreq = Models::Components::LicenseKeyDeactivate.new(\n  key: '<key>',\n  organization_id: '<value>',\n  activation_id: '<value>'\n)\nres = s.customer_portal.license_keys.deactivate(request: req)\n\nif res.status_code == 200\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/license-keys/validate"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\n\nreq = Models::Components::LicenseKeyValidate.new(\n  key: '<key>',\n  organization_id: '<value>'\n)\nres = s.customer_portal.license_keys.validate(request: req)\n\nunless res.validated_license_key.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/license-keys/{id}"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\nres = s.customer_portal.license_keys.get(security: Models::Operations::CustomerPortalLicenseKeysGetSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n), id: '<value>')\n\nunless res.license_key_with_activations.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/members"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.customer_portal.members.list_members\n\nunless res.response_customer_portal_members_list_members.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/members"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\n\nreq = Models::Components::CustomerPortalMemberCreate.new(\n  email: 'Domenica.Schamberger@yahoo.com'\n)\nres = s.customer_portal.members.add_member(request: req)\n\nunless res.customer_portal_member.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/members/{id}"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.customer_portal.members.remove_member(id: 'b61c5e87-cda5-4b14-93ee-71a695f42d9d')\n\nif res.status_code == 200\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/members/{id}"]["patch"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.customer_portal.members.update_member(id: '8319ae11-ed5f-4642-81e4-4b40731df195', body: Models::Components::CustomerPortalMemberUpdate.new)\n\nunless res.customer_portal_member.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/meters/"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\n\nreq = Models::Operations::CustomerPortalCustomerMetersListRequest.new\nres = s.customer_portal.customer_meters.list(request: req, security: Models::Operations::CustomerPortalCustomerMetersListSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n))\n\nunless res.list_resource_customer_customer_meter.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/meters/{id}"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\nres = s.customer_portal.customer_meters.get(security: Models::Operations::CustomerPortalCustomerMetersGetSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n), id: '<value>')\n\nunless res.customer_customer_meter.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/notifications/"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\nres = s.customer_portal_notifications.list_notifications(security: Models::Operations::CustomerPortalNotificationsListNotificationsSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n))\n\nunless res.response_customer_portal_notifications_list_notifications.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/notifications/preferences"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\nres = s.customer_portal_notifications.get_preferences(security: Models::Operations::CustomerPortalNotificationsGetPreferencesSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n))\n\nunless res.customer_notification_preferences_read.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/notifications/preferences"]["patch"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\n\nreq = Models::Components::CustomerNotificationPreferencesUpdate.new\nres = s.customer_portal_notifications.update_preferences(request: req, security: Models::Operations::CustomerPortalNotificationsUpdatePreferencesSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n))\n\nunless res.customer_notification_preferences_read.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/notifications/read-all"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\nres = s.customer_portal_notifications.mark_all_read(security: Models::Operations::CustomerPortalNotificationsMarkAllReadSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n))\n\nif res.status_code == 200\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/notifications/unread-count"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\nres = s.customer_portal_notifications.unread_count(security: Models::Operations::CustomerPortalNotificationsUnreadCountSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n))\n\nunless res.unread_count_read.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/notifications/{notification_id}/read"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\nres = s.customer_portal_notifications.mark_read(security: Models::Operations::CustomerPortalNotificationsMarkReadSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n), notification_id: '<value>')\n\nif res.status_code == 200\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/orders/"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\n\nreq = Models::Operations::CustomerPortalOrdersListRequest.new\nres = s.customer_portal.orders.list(request: req, security: Models::Operations::CustomerPortalOrdersListSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n))\n\nunless res.list_resource_customer_order.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/orders/{id}"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\nres = s.customer_portal.orders.get(security: Models::Operations::CustomerPortalOrdersGetSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n), id: '<value>')\n\nunless res.customer_order.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/orders/{id}"]["patch"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\nres = s.customer_portal.orders.update(security: Models::Operations::CustomerPortalOrdersUpdateSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n), id: '<value>', body: Models::Components::CustomerOrderUpdate.new(\n  billing_address: Models::Components::AddressInput.new(\n    country: Models::Components::CountryAlpha2Input::US\n  )\n))\n\nunless res.customer_order.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/orders/{id}/confirm-payment"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\nres = s.customer_portal.orders.confirm_retry_payment(security: Models::Operations::CustomerPortalOrdersConfirmRetryPaymentSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n), id: '<value>', body: Models::Components::CustomerOrderConfirmPayment.new)\n\nunless res.customer_order_payment_confirmation.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/orders/{id}/invoice"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\nres = s.customer_portal.orders.invoice(security: Models::Operations::CustomerPortalOrdersInvoiceSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n), id: '<value>')\n\nunless res.customer_order_invoice.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/orders/{id}/payment-status"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\nres = s.customer_portal.orders.get_payment_status(security: Models::Operations::CustomerPortalOrdersGetPaymentStatusSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n), id: '<value>')\n\nunless res.customer_order_payment_status.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/organizations/{slug}"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\nres = s.customer_portal.organizations.get(slug: '<value>')\n\nunless res.customer_organization_data.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/seats"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\nres = s.customer_portal.seats.list_seats(security: Models::Operations::CustomerPortalSeatsListSeatsSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n))\n\nunless res.seats_list.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/seats"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\n\nreq = Models::Components::SeatAssign.new\nres = s.customer_portal.seats.assign_seat(request: req, security: Models::Operations::CustomerPortalSeatsAssignSeatSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n))\n\nunless res.customer_seat.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/seats/subscriptions"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\nres = s.customer_portal.seats.list_claimed_subscriptions(security: Models::Operations::CustomerPortalSeatsListClaimedSubscriptionsSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n))\n\nunless res.response_customer_portal_seats_list_claimed_subscriptions.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/seats/{seat_id}"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\nres = s.customer_portal.seats.revoke_seat(security: Models::Operations::CustomerPortalSeatsRevokeSeatSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n), seat_id: '<value>')\n\nunless res.customer_seat.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/seats/{seat_id}/resend"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\nres = s.customer_portal.seats.resend_invitation(security: Models::Operations::CustomerPortalSeatsResendInvitationSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n), seat_id: '<value>')\n\nunless res.customer_seat.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/subscriptions/"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\n\nreq = Models::Operations::CustomerPortalSubscriptionsListRequest.new\nres = s.customer_portal.subscriptions.list(request: req, security: Models::Operations::CustomerPortalSubscriptionsListSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n))\n\nunless res.list_resource_customer_subscription.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/subscriptions/{id}"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\nres = s.customer_portal.subscriptions.cancel(security: Models::Operations::CustomerPortalSubscriptionsCancelSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n), id: '<value>')\n\nunless res.customer_subscription.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/subscriptions/{id}"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\nres = s.customer_portal.subscriptions.get(security: Models::Operations::CustomerPortalSubscriptionsGetSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n), id: '<value>')\n\nunless res.customer_subscription.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/subscriptions/{id}"]["patch"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\nres = s.customer_portal.subscriptions.update(security: Models::Operations::CustomerPortalSubscriptionsUpdateSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n), id: '<value>', body: Models::Components::CustomerSubscriptionCancel.new)\n\nunless res.customer_subscription.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/wallets/"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\nres = s.customer_portal.wallets.list(security: Models::Operations::CustomerPortalWalletsListSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n), page: 1, limit: 10)\n\nunless res.list_resource_customer_wallet.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-portal/wallets/{id}"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\nres = s.customer_portal.wallets.get(security: Models::Operations::CustomerPortalWalletsGetSecurity.new(\n  customer_session: '<YOUR_BEARER_TOKEN_HERE>'\n), id: '<value>')\n\nunless res.customer_wallet.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-seats"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.customer_seats.list_seats\n\nunless res.seats_list.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-seats"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\n\nreq = Models::Components::SeatAssign.new\nres = s.customer_seats.assign_seat(request: req)\n\nunless res.customer_seat.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-seats/claim"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\n\nreq = Models::Components::SeatClaim.new(\n  invitation_token: '<value>'\n)\nres = s.customer_seats.claim_seat(request: req)\n\nunless res.customer_seat_claim_response.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-seats/claim/{invitation_token}"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\nres = s.customer_seats.get_claim_info(invitation_token: '<value>')\n\nunless res.seat_claim_info.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-seats/{seat_id}"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.customer_seats.revoke_seat(seat_id: '<value>')\n\nunless res.customer_seat.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-seats/{seat_id}/resend"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.customer_seats.resend_invitation(seat_id: '<value>')\n\nunless res.customer_seat.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customer-sessions/"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\n\nreq = Models::Components::CustomerSessionCustomerExternalIDCreate.new(\n  return_url: 'https://example.com/account',\n  external_customer_id: '<id>'\n)\nres = s.customer_sessions.create(request: req)\n\nunless res.customer_session.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customers/"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\n\nreq = Models::Operations::CustomersListRequest.new(\n  organization_id: '1dbfc517-0bbf-4301-9ba8-555ca42b9737'\n)\nres = s.customers.list(request: req)\n\nunless res.list_resource_customer_with_members.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customers/"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\n\nreq = Models::Components::CustomerCreate.new(\n  external_id: 'usr_1337',\n  email: 'customer@example.com',\n  name: 'John Doe',\n  billing_address: Models::Components::AddressInput.new(\n    country: Models::Components::CountryAlpha2Input::US\n  ),\n  tax_id: [\n    '911144442',\n    'us_ein',\n  ],\n  type: Models::Components::CustomerType::INDIVIDUAL,\n  organization_id: '1dbfc517-0bbf-4301-9ba8-555ca42b9737',\n  owner: Models::Components::OwnerCreate.new(\n    email: 'member@example.com',\n    name: 'Jane Doe',\n    external_id: 'usr_1337'\n  )\n)\nres = s.customers.create(request: req)\n\nunless res.customer_with_members.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customers/export"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.customers.export(organization_id: '1dbfc517-0bbf-4301-9ba8-555ca42b9737')\n\nunless res.any.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customers/external/{external_id}"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.customers.delete_external(external_id: '<id>', anonymize: false)\n\nif res.status_code == 200\n  # handle response\nend"
+  - target: $["paths"]["/v1/customers/external/{external_id}"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.customers.get_external(external_id: '<id>')\n\nunless res.customer_with_members.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customers/external/{external_id}"]["patch"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.customers.update_external(external_id: '<id>', body: Models::Components::CustomerUpdateExternalID.new(\n  email: 'customer@example.com',\n  name: 'John Doe',\n  billing_address: nil,\n  tax_id: [\n    '911144442',\n    'us_ein',\n  ]\n))\n\nunless res.customer_with_members.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customers/external/{external_id}/state"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.customers.get_state_external(external_id: '<id>')\n\nunless res.customer_state.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customers/{id}"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.customers.delete(id: '<value>', anonymize: false)\n\nif res.status_code == 200\n  # handle response\nend"
+  - target: $["paths"]["/v1/customers/{id}"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.customers.get(id: '<value>')\n\nunless res.customer_with_members.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customers/{id}"]["patch"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.customers.update(id: '<value>', body: Models::Components::CustomerUpdate.new(\n  email: 'customer@example.com',\n  name: 'John Doe',\n  billing_address: Models::Components::AddressInput.new(\n    country: Models::Components::CountryAlpha2Input::US\n  ),\n  tax_id: [\n    '911144442',\n    'us_ein',\n  ],\n  external_id: 'usr_1337',\n  type: Models::Components::CustomerType::INDIVIDUAL\n))\n\nunless res.customer_with_members.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/customers/{id}/state"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.customers.get_state(id: '<value>')\n\nunless res.customer_state.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/discounts/"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\n\nreq = Models::Operations::DiscountsListRequest.new(\n  organization_id: '1dbfc517-0bbf-4301-9ba8-555ca42b9737'\n)\nres = s.discounts.list(request: req)\n\nunless res.list_resource_discount.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/discounts/"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\n\nreq = Models::Components::DiscountPercentageOnceForeverDurationCreate.new(\n  duration: Models::Components::DiscountDuration::ONCE,\n  type: Models::Components::DiscountType::FIXED,\n  basis_points: 449_604,\n  name: '<value>',\n  organization_id: '1dbfc517-0bbf-4301-9ba8-555ca42b9737'\n)\nres = s.discounts.create(request: req)\n\nunless res.discount.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/discounts/{id}"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.discounts.delete(id: '<value>')\n\nif res.status_code == 200\n  # handle response\nend"
+  - target: $["paths"]["/v1/discounts/{id}"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.discounts.get(id: '<value>')\n\nunless res.discount.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/discounts/{id}"]["patch"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.discounts.update(id: '<value>', body: Models::Components::DiscountUpdate.new)\n\nunless res.discount.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/disputes/"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\n\nreq = Models::Operations::DisputesListRequest.new(\n  organization_id: '1dbfc517-0bbf-4301-9ba8-555ca42b9737'\n)\nres = s.disputes.list(request: req)\n\nunless res.list_resource_dispute.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/disputes/{id}"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.disputes.get(id: '<value>')\n\nunless res.dispute.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/event-types/"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\n\nreq = Models::Operations::EventTypesListRequest.new(\n  organization_id: '1dbfc517-0bbf-4301-9ba8-555ca42b9737'\n)\nres = s.event_types.list(request: req)\n\nunless res.list_resource_event_type_with_stats.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/event-types/{id}"]["patch"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.event_types.update(id: '<value>', body: Models::Components::EventTypeUpdate.new(\n  label: '<value>'\n))\n\nunless res.event_type.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/events/"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\n\nreq = Models::Operations::EventsListRequest.new(\n  organization_id: '1dbfc517-0bbf-4301-9ba8-555ca42b9737'\n)\nres = s.events.list(request: req)\n\nunless res.response_events_list.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/events/ingest"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\n\nreq = Models::Components::EventsIngest.new(\n  events: []\n)\nres = s.events.ingest(request: req)\n\nunless res.events_ingest_response.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/events/names"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\n\nreq = Models::Operations::EventsListNamesRequest.new(\n  organization_id: '1dbfc517-0bbf-4301-9ba8-555ca42b9737'\n)\nres = s.events.list_names(request: req)\n\nunless res.list_resource_event_name.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/events/{id}"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.events.get(id: '<value>')\n\nunless res.event.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/files/"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.files.list(organization_id: '1dbfc517-0bbf-4301-9ba8-555ca42b9737', page: 1, limit: 10)\n\nunless res.list_resource_file_read.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/files/"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\n\nreq = Models::Components::DownloadableFileCreate.new(\n  name: '<value>',\n  mime_type: '<value>',\n  size: 612_128,\n  upload: Models::Components::S3FileCreateMultipart.new(\n    parts: []\n  ),\n  service: 'downloadable'\n)\nres = s.files.create(request: req)\n\nunless res.file_upload.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/files/{id}"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.files.delete(id: '<value>')\n\nif res.status_code == 200\n  # handle response\nend"
+  - target: $["paths"]["/v1/files/{id}"]["patch"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.files.update(id: '<value>', body: Models::Components::FilePatch.new)\n\nunless res.response_files_update.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/files/{id}/uploaded"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.files.uploaded(id: '<value>', body: Models::Components::FileUploadCompleted.new(\n  id: '<id>',\n  path: '/boot',\n  parts: [\n    Models::Components::S3FileUploadCompletedPart.new(\n      number: 979_613,\n      checksum_etag: '<value>',\n      checksum_sha256_base64: '<value>'\n    ),\n  ]\n))\n\nunless res.response_files_uploaded.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/license-keys/"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.license_keys.list(organization_id: '1dbfc517-0bbf-4301-9ba8-555ca42b9737', page: 1, limit: 10)\n\nunless res.list_resource_license_key_read.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/license-keys/activate"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\n\nreq = Models::Components::LicenseKeyActivate.new(\n  key: '<key>',\n  organization_id: '<value>',\n  label: '<value>'\n)\nres = s.license_keys.activate(request: req)\n\nunless res.license_key_activation_read.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/license-keys/deactivate"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\n\nreq = Models::Components::LicenseKeyDeactivate.new(\n  key: '<key>',\n  organization_id: '<value>',\n  activation_id: '<value>'\n)\nres = s.license_keys.deactivate(request: req)\n\nif res.status_code == 200\n  # handle response\nend"
+  - target: $["paths"]["/v1/license-keys/validate"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\n\nreq = Models::Components::LicenseKeyValidate.new(\n  key: '<key>',\n  organization_id: '<value>'\n)\nres = s.license_keys.validate(request: req)\n\nunless res.validated_license_key.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/license-keys/{id}"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.license_keys.get(id: '<value>')\n\nunless res.license_key_with_activations.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/license-keys/{id}"]["patch"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.license_keys.update(id: '<value>', body: Models::Components::LicenseKeyUpdate.new)\n\nunless res.license_key_read.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/license-keys/{id}/activations/{activation_id}"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.license_keys.get_activation(id: '<value>', activation_id: '<value>')\n\nunless res.license_key_activation_read.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/member-sessions/"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\n\nreq = Models::Components::MemberSessionCreate.new(\n  member_id: '<value>',\n  return_url: 'https://example.com/account'\n)\nres = s.member_sessions.create(request: req)\n\nunless res.member_session.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/members/"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\n\nreq = Models::Operations::MembersListMembersRequest.new\nres = s.members.list_members(request: req)\n\nunless res.list_resource_member.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/members/"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\n\nreq = Models::Components::MemberCreate.new(\n  customer_id: '<value>',\n  email: 'member@example.com',\n  name: 'Jane Doe',\n  external_id: 'usr_1337'\n)\nres = s.members.create_member(request: req)\n\nunless res.member.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/members/{id}"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.members.delete_member(id: '913247e9-8f2b-4bd1-a47e-9842d173a7cb')\n\nif res.status_code == 200\n  # handle response\nend"
+  - target: $["paths"]["/v1/members/{id}"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.members.get_member(id: '572bebad-ee17-4d04-a50f-6596a7d92cf3')\n\nunless res.member.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/members/{id}"]["patch"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.members.update_member(id: 'ab9b628a-6dbd-4f07-bcd6-163a8b5b7de4', body: Models::Components::MemberUpdate.new(\n  name: 'Jane Doe'\n))\n\nunless res.member.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/meters/"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\n\nreq = Models::Operations::MetersListRequest.new(\n  organization_id: '1dbfc517-0bbf-4301-9ba8-555ca42b9737'\n)\nres = s.meters.list(request: req)\n\nunless res.list_resource_meter.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/meters/"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\n\nreq = Models::Components::MeterCreate.new(\n  name: '<value>',\n  filter: Models::Components::Filter.new(\n    conjunction: Models::Components::FilterConjunction::OR,\n    clauses: []\n  ),\n  aggregation: Models::Components::CountAggregation.new,\n  organization_id: '1dbfc517-0bbf-4301-9ba8-555ca42b9737'\n)\nres = s.meters.create(request: req)\n\nunless res.meter.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/meters/{id}"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.meters.get(id: '<value>')\n\nunless res.meter.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/meters/{id}"]["patch"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.meters.update(id: '<value>', body: Models::Components::MeterUpdate.new)\n\nunless res.meter.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/meters/{id}/quantities"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\n\nreq = Models::Operations::MetersQuantitiesRequest.new(\n  id: '<value>',\n  start_timestamp: DateTime.iso8601('2026-11-25T04:37:16.823Z'),\n  end_timestamp: DateTime.iso8601('2026-11-26T17:06:00.727Z'),\n  interval: Models::Components::TimeInterval::DAY\n)\nres = s.meters.quantities(request: req)\n\nunless res.meter_quantities.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/metrics/"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\n\nreq = Models::Operations::MetricsGetRequest.new(\n  start_date: Date.parse('2026-03-14'),\n  end_date: Date.parse('2026-03-18'),\n  interval: Models::Components::TimeInterval::HOUR,\n  organization_id: nil\n)\nres = s.metrics.get(request: req)\n\nunless res.metrics_response.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/metrics/limits"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.metrics.limits\n\nunless res.metrics_limits.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/oauth2/authorize"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.oauth2.authorize\n\nunless res.response_oauth2_authorize.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/oauth2/introspect"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\n\nreq = Models::Components::IntrospectTokenRequest.new(\n  token: '<value>',\n  client_id: '<id>',\n  client_secret: '<value>'\n)\nres = s.oauth2.introspect(request: req)\n\nunless res.introspect_token_response.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/oauth2/register"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\n\nreq = Models::Components::OAuth2ClientConfiguration.new(\n  redirect_uris: [\n    'https://impolite-hippodrome.com/',\n    'https://acidic-tomography.net/',\n  ],\n  client_name: '<value>'\n)\nres = s.oauth2.clients.create(request: req)\n\nunless res.any.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/oauth2/register/{client_id}"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.oauth2.clients.delete(client_id: '<id>')\n\nunless res.any.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/oauth2/register/{client_id}"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.oauth2.clients.get(client_id: '<id>')\n\nunless res.any.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/oauth2/register/{client_id}"]["put"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.oauth2.clients.update(client_id: '<id>', body: Models::Components::OAuth2ClientConfigurationUpdate.new(\n  redirect_uris: [\n    'https://classic-cantaloupe.org',\n    'https://corrupt-status.biz/',\n  ],\n  client_name: '<value>',\n  client_id: '<id>'\n))\n\nunless res.any.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/oauth2/revoke"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\n\nreq = Models::Components::RevokeTokenRequest.new(\n  token: '<value>',\n  client_id: '<id>',\n  client_secret: '<value>'\n)\nres = s.oauth2.revoke(request: req)\n\nunless res.revoke_token_response.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/oauth2/token"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new\n\nreq = Models::Components::AuthorizationCodeTokenRequest.new(\n  grant_type: 'authorization_code',\n  client_id: '<id>',\n  client_secret: '<value>',\n  code: '<value>',\n  redirect_uri: 'https://memorable-season.name'\n)\nres = s.oauth2.token(request: req)\n\nunless res.token_response.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/oauth2/userinfo"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.oauth2.userinfo\n\nunless res.response_oauth2_userinfo.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/orders/"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\n\nreq = Models::Operations::OrdersListRequest.new(\n  organization_id: '1dbfc517-0bbf-4301-9ba8-555ca42b9737'\n)\nres = s.orders.list(request: req)\n\nunless res.list_resource_order.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/orders/export"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.orders.export(organization_id: nil)\n\nunless res.any.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/orders/{id}"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.orders.get(id: '<value>')\n\nunless res.order.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/orders/{id}"]["patch"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.orders.update(id: '<value>', body: Models::Components::OrderUpdate.new(\n  billing_address: Models::Components::AddressInput.new(\n    country: Models::Components::CountryAlpha2Input::US\n  )\n))\n\nunless res.order.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/orders/{id}/invoice"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.orders.invoice(id: '<value>')\n\nunless res.order_invoice.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/organization-access-tokens/"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.organization_access_tokens.list(organization_id: '1dbfc517-0bbf-4301-9ba8-555ca42b9737', page: 1, limit: 10)\n\nunless res.list_resource_organization_access_token.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/organization-access-tokens/"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\n\nreq = Models::Components::OrganizationAccessTokenCreate.new(\n  comment: 'The Football Is Good For Training And Recreational Purposes',\n  scopes: []\n)\nres = s.organization_access_tokens.create(request: req)\n\nunless res.organization_access_token_create_response.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/organization-access-tokens/{id}"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.organization_access_tokens.delete(id: '<value>')\n\nif res.status_code == 200\n  # handle response\nend"
+  - target: $["paths"]["/v1/organization-access-tokens/{id}"]["patch"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.organization_access_tokens.update(id: '<value>', body: Models::Components::OrganizationAccessTokenUpdate.new)\n\nunless res.organization_access_token.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/organizations/"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.organizations.list(page: 1, limit: 10)\n\nunless res.list_resource_organization.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/organizations/"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\n\nreq = Models::Components::OrganizationCreate.new(\n  name: '<value>',\n  slug: '<value>'\n)\nres = s.organizations.create(request: req)\n\nunless res.organization.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/organizations/{id}"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.organizations.get(id: '1dbfc517-0bbf-4301-9ba8-555ca42b9737')\n\nunless res.organization.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/organizations/{id}"]["patch"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.organizations.update(id: '1dbfc517-0bbf-4301-9ba8-555ca42b9737', body: Models::Components::OrganizationUpdate.new)\n\nunless res.organization.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/payments/"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\n\nreq = Models::Operations::PaymentsListRequest.new(\n  organization_id: '1dbfc517-0bbf-4301-9ba8-555ca42b9737'\n)\nres = s.payments.list(request: req)\n\nunless res.list_resource.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/payments/{id}"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.payments.get(id: '<value>')\n\nunless res.payment.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/products/"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\n\nreq = Models::Operations::ProductsListRequest.new(\n  organization_id: nil\n)\nres = s.products.list(request: req)\n\nunless res.list_resource_product.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/products/"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\n\nreq = Models::Components::ProductCreateOneTime.new(\n  name: '<value>',\n  prices: [\n    Models::Components::ProductPriceCustomCreate.new(\n      amount_type: 'custom',\n      minimum_amount: 50\n    ),\n  ],\n  organization_id: '1dbfc517-0bbf-4301-9ba8-555ca42b9737'\n)\nres = s.products.create(request: req)\n\nunless res.product.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/products/tax-preview"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\n\nreq = Models::Components::ProductTaxPreviewRequest.new(\n  amount: 428_098,\n  currency: 'Kina',\n  country: 'Guatemala'\n)\nres = s.products.products.preview_tax(request: req)\n\nunless res.product_tax_preview_response.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/products/{id}"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.products.get(id: '<value>')\n\nunless res.product.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/products/{id}"]["patch"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.products.update(id: '<value>', body: Models::Components::ProductUpdate.new)\n\nunless res.product.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/products/{id}/benefits"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.products.update_benefits(id: '<value>', body: Models::Components::ProductBenefitsUpdate.new(\n  benefits: [\n    '<value 1>',\n    '<value 2>',\n    '<value 3>',\n  ]\n))\n\nunless res.product.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/refunds/"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\n\nreq = Models::Operations::RefundsListRequest.new(\n  organization_id: '1dbfc517-0bbf-4301-9ba8-555ca42b9737'\n)\nres = s.refunds.list(request: req)\n\nunless res.list_resource_refund.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/refunds/"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\n\nreq = Models::Components::RefundCreate.new(\n  order_id: '<value>',\n  reason: Models::Components::RefundReason::SERVICE_DISRUPTION,\n  amount: 90\n)\nres = s.refunds.create(request: req)\n\nunless res.refund.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/subscriptions/"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\n\nreq = Models::Operations::SubscriptionsListRequest.new(\n  organization_id: '1dbfc517-0bbf-4301-9ba8-555ca42b9737'\n)\nres = s.subscriptions.list(request: req)\n\nunless res.list_resource_subscription.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/subscriptions/"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\n\nreq = Models::Components::SubscriptionCreateCustomer.new(\n  product_id: 'd8dd2de1-21b7-4a41-8bc3-ce909c0cfe23',\n  customer_id: '992fae2a-2a17-4b7a-8d9e-e287cf90131b'\n)\nres = s.subscriptions.create(request: req)\n\nunless res.subscription.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/subscriptions/export"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.subscriptions.export(organization_id: '1dbfc517-0bbf-4301-9ba8-555ca42b9737')\n\nunless res.any.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/subscriptions/{id}"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.subscriptions.revoke(id: '<value>')\n\nunless res.subscription.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/subscriptions/{id}"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.subscriptions.get(id: '<value>')\n\nunless res.subscription.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/subscriptions/{id}"]["patch"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.subscriptions.update(id: '<value>', body: Models::Components::SubscriptionUpdateTrial.new(\n  trial_end: DateTime.iso8601('2024-12-03T14:44:14.136Z')\n))\n\nunless res.subscription.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/webhooks/deliveries"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\n\nreq = Models::Operations::WebhooksListWebhookDeliveriesRequest.new\nres = s.webhooks.list_webhook_deliveries(request: req)\n\nunless res.list_resource_webhook_delivery.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/webhooks/endpoints"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.webhooks.list_webhook_endpoints(organization_id: '1dbfc517-0bbf-4301-9ba8-555ca42b9737', page: 1, limit: 10)\n\nunless res.list_resource_webhook_endpoint.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/webhooks/endpoints"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\n\nreq = Models::Components::WebhookEndpointCreate.new(\n  url: 'https://webhook.site/cb791d80-f26e-4f8c-be88-6e56054192b0',\n  format: Models::Components::WebhookFormat::SLACK,\n  events: [\n    Models::Components::WebhookEventType::SUBSCRIPTION_ACTIVE,\n  ],\n  organization_id: '1dbfc517-0bbf-4301-9ba8-555ca42b9737'\n)\nres = s.webhooks.create_webhook_endpoint(request: req)\n\nunless res.webhook_endpoint.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/webhooks/endpoints/{id}"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.webhooks.delete_webhook_endpoint(id: '<value>')\n\nif res.status_code == 200\n  # handle response\nend"
+  - target: $["paths"]["/v1/webhooks/endpoints/{id}"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.webhooks.get_webhook_endpoint(id: '<value>')\n\nunless res.webhook_endpoint.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/webhooks/endpoints/{id}"]["patch"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.webhooks.update_webhook_endpoint(id: '<value>', body: Models::Components::WebhookEndpointUpdate.new(\n  url: 'https://webhook.site/cb791d80-f26e-4f8c-be88-6e56054192b0'\n))\n\nunless res.webhook_endpoint.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/webhooks/endpoints/{id}/secret"]["patch"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.webhooks.reset_webhook_endpoint_secret(id: '<value>')\n\nunless res.webhook_endpoint.nil?\n  # handle response\nend"
+  - target: $["paths"]["/v1/webhooks/events/{id}/redeliver"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "ruby"
+          "label": "Ruby (SDK)"
+          "source": "require 'spaire'\n\nModels = ::OpenApiSDK::Models\ns = ::OpenApiSDK::Spaire.new(\n  access_token: '<YOUR_BEARER_TOKEN_HERE>'\n)\nres = s.webhooks.redeliver_webhook_event(id: '<value>')\n\nunless res.any.nil?\n  # handle response\nend"

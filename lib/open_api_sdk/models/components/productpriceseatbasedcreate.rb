@@ -6,7 +6,10 @@
 module OpenApiSDK
   module Models
     module Components
-      # Schema to create a seat-based price with volume-based tiers.
+      # Schema to create a seat-based price with tiered pricing.
+      #
+      # Supports volume pricing (all seats at matching tier's rate) and
+      # graduated pricing (each tier's range priced independently).
       class ProductPriceSeatBasedCreate
         extend T::Sig
         include Crystalline::MetadataFields
@@ -38,16 +41,28 @@ module OpenApiSDK
             }
           }
         )
+        # The tax behavior of the price. If not set, it will default to the organization's default tax behavior.
+        field(
+          :tax_behavior,
+          Crystalline::Nilable.new(Models::Components::TaxBehaviorOption),
+          {
+            'format_json': {
+              'letter_case': ::OpenApiSDK::Utils.field_name("tax_behavior"),
+              'decoder': ::OpenApiSDK::Utils.open_enum_from_string(Models::Components::TaxBehaviorOption, true)
+            }
+          }
+        )
 
         sig {
           params(
             seat_tiers: Models::Components::ProductPriceSeatTiersInput,
             amount_type: ::String,
-            price_currency: T.nilable(Models::Components::PresentmentCurrency)
+            price_currency: T.nilable(Models::Components::PresentmentCurrency),
+            tax_behavior: T.nilable(Models::Components::TaxBehaviorOption)
           )
             .void
         }
-        def initialize(seat_tiers:, amount_type: "seat_based", price_currency: nil)
+        def initialize(seat_tiers:, amount_type: "seat_based", price_currency: nil, tax_behavior: nil)
           @seat_tiers = seat_tiers
           unless amount_type == "seat_based"
             raise ArgumentError, "Invalid value for amount_type"
@@ -55,6 +70,7 @@ module OpenApiSDK
 
           @amount_type = "seat_based"
           @price_currency = price_currency
+          @tax_behavior = tax_behavior
         end
 
         sig { params(other: T.untyped).returns(T::Boolean) }
@@ -63,6 +79,7 @@ module OpenApiSDK
           return false unless @seat_tiers == other.seat_tiers
           return false unless @amount_type == other.amount_type
           return false unless @price_currency == other.price_currency
+          return false unless @tax_behavior == other.tax_behavior
           true
         end
       end

@@ -75,7 +75,6 @@ s = ::OpenApiSDK::Spaire.new(
 req = Models::Components::CheckoutLinkCreateProductPrice.new(
   payment_processor: 'stripe',
   allow_discount_codes: true,
-  require_billing_address: false,
   product_price_id: '<value>'
 )
 res = s.checkout_links.create(request: req)

@@ -103,12 +103,6 @@ module OpenApiSDK
           Crystalline::Nilable.new(Crystalline::Boolean.new),
           {'format_json': {'letter_case': ::OpenApiSDK::Utils.field_name("allow_discount_codes")}}
         )
-        # Whether to require the customer to fill their full billing address, instead of just the country. Customers in the US will always be required to fill their full address, regardless of this setting. If you preset the billing address, this setting will be automatically set to `true`.
-        field(
-          :require_billing_address,
-          Crystalline::Nilable.new(Crystalline::Boolean.new),
-          {'format_json': {'letter_case': ::OpenApiSDK::Utils.field_name("require_billing_address")}}
-        )
 
         field(
           :amount,
@@ -252,7 +246,6 @@ module OpenApiSDK
             trial_interval_count: T.nilable(::Integer),
             discount_id: T.nilable(::String),
             allow_discount_codes: T.nilable(T::Boolean),
-            require_billing_address: T.nilable(T::Boolean),
             amount: T.nilable(::Integer),
             seats: T.nilable(::Integer),
             locale: T.nilable(::String),
@@ -297,7 +290,6 @@ module OpenApiSDK
           trial_interval_count: nil,
           discount_id: nil,
           allow_discount_codes: true,
-          require_billing_address: false,
           amount: nil,
           seats: nil,
           locale: nil,
@@ -326,7 +318,6 @@ module OpenApiSDK
           @trial_interval_count = trial_interval_count
           @discount_id = discount_id
           @allow_discount_codes = allow_discount_codes
-          @require_billing_address = require_billing_address
           @amount = amount
           @seats = seats
           @locale = locale
@@ -359,7 +350,6 @@ module OpenApiSDK
           return false unless @trial_interval_count == other.trial_interval_count
           return false unless @discount_id == other.discount_id
           return false unless @allow_discount_codes == other.allow_discount_codes
-          return false unless @require_billing_address == other.require_billing_address
           return false unless @amount == other.amount
           return false unless @seats == other.seats
           return false unless @locale == other.locale

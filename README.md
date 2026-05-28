@@ -160,6 +160,11 @@ end
 * [mark_client_invoice_paid](docs/sdks/clientinvoices/README.md#mark_client_invoice_paid) - Mark Client Invoice as Paid
 * [void_client_invoice](docs/sdks/clientinvoices/README.md#void_client_invoice) - Void Client Invoice
 
+### [Community](docs/sdks/community/README.md)
+
+* [get_event_public](docs/sdks/community/README.md#get_event_public) - Get Community Event (Public Share)
+* [download_event_ics](docs/sdks/community/README.md#download_event_ics) - Download Event Calendar File (.ics)
+
 ### [CustomFields](docs/sdks/customfields/README.md)
 
 * [list](docs/sdks/customfields/README.md#list) - List Custom Fields
@@ -184,6 +189,24 @@ end
 * [list](docs/sdks/spairecustomermeters/README.md#list) - List Meters
 * [get](docs/sdks/spairecustomermeters/README.md#get) - Get Customer Meter
 
+### [CustomerPortal.CustomerPortalCourses](docs/sdks/customerportalcourses/README.md)
+
+* [list_enrolled_courses](docs/sdks/customerportalcourses/README.md#list_enrolled_courses) - List Enrolled Courses
+* [get_enrolled_course](docs/sdks/customerportalcourses/README.md#get_enrolled_course) - Get Enrolled Course
+* [submit_quiz_attempt](docs/sdks/customerportalcourses/README.md#submit_quiz_attempt) - Submit Quiz Attempt
+* [mint_lesson_playback_url](docs/sdks/customerportalcourses/README.md#mint_lesson_playback_url) - Mint Lesson Playback URL
+* [mark_lesson_complete](docs/sdks/customerportalcourses/README.md#mark_lesson_complete) - Mark Lesson Complete
+* [get_course_progress](docs/sdks/customerportalcourses/README.md#get_course_progress) - Get Course Progress
+* [get_course_landing](docs/sdks/customerportalcourses/README.md#get_course_landing) - Get Course Landing Page
+* [get_course_landing_by_product](docs/sdks/customerportalcourses/README.md#get_course_landing_by_product) - Get Course Landing Page by Product
+* [check_lesson_access](docs/sdks/customerportalcourses/README.md#check_lesson_access) - Check Lesson Access
+* [list_lesson_comments](docs/sdks/customerportalcourses/README.md#list_lesson_comments) - List Lesson Comments
+* [create_lesson_comment](docs/sdks/customerportalcourses/README.md#create_lesson_comment) - Create Lesson Comment
+* [delete_lesson_comment](docs/sdks/customerportalcourses/README.md#delete_lesson_comment) - Delete Lesson Comment
+* [list_course_notes](docs/sdks/customerportalcourses/README.md#list_course_notes) - List All Notes for Course
+* [upsert_lesson_note](docs/sdks/customerportalcourses/README.md#upsert_lesson_note) - Upsert Lesson Note
+* [delete_lesson_note](docs/sdks/customerportalcourses/README.md#delete_lesson_note) - Delete Lesson Note
+
 ### [CustomerPortal.CustomerSession](docs/sdks/customersession/README.md)
 
 * [introspect](docs/sdks/customersession/README.md#introspect) - Introspect Customer Session
@@ -193,6 +216,7 @@ end
 
 * [get](docs/sdks/spairecustomers/README.md#get) - Get Customer
 * [update](docs/sdks/spairecustomers/README.md#update) - Update Customer
+* [update_profile](docs/sdks/spairecustomers/README.md#update_profile) - Update Customer Profile
 * [list_payment_methods](docs/sdks/spairecustomers/README.md#list_payment_methods) - List Customer Payment Methods
 * [add_payment_method](docs/sdks/spairecustomers/README.md#add_payment_method) - Add Customer Payment Method
 * [confirm_payment_method](docs/sdks/spairecustomers/README.md#confirm_payment_method) - Confirm Customer Payment Method
@@ -249,6 +273,40 @@ end
 
 * [list](docs/sdks/wallets/README.md#list) - List Wallets
 * [get](docs/sdks/wallets/README.md#get) - Get Wallet
+
+### [CustomerPortalCommunity](docs/sdks/customerportalcommunity/README.md)
+
+* [list_customer_communities](docs/sdks/customerportalcommunity/README.md#list_customer_communities) - List Communities Available to Customer
+* [get_settings_customer](docs/sdks/customerportalcommunity/README.md#get_settings_customer) - Get Community Settings (Customer Portal)
+* [list_members_customer](docs/sdks/customerportalcommunity/README.md#list_members_customer) - List Community Members
+* [list_tags_customer](docs/sdks/customerportalcommunity/README.md#list_tags_customer) - List Community Tags
+* [list_feed_customer](docs/sdks/customerportalcommunity/README.md#list_feed_customer) - List Community Feed (Customer Portal)
+* [create_video_upload_customer](docs/sdks/customerportalcommunity/README.md#create_video_upload_customer) - Create Community Post Video Upload
+* [upload_post_image](docs/sdks/customerportalcommunity/README.md#upload_post_image) - Upload Community Post Image
+* [create_post_customer](docs/sdks/customerportalcommunity/README.md#create_post_customer) - Create Community Post
+* [delete_post_customer](docs/sdks/customerportalcommunity/README.md#delete_post_customer) - Delete Own Community Post
+* [list_comments_customer](docs/sdks/customerportalcommunity/README.md#list_comments_customer) - List Community Post Comments
+* [create_comment_customer](docs/sdks/customerportalcommunity/README.md#create_comment_customer) - Create Comment on Community Post
+* [delete_comment_customer](docs/sdks/customerportalcommunity/README.md#delete_comment_customer) - Delete Own Comment
+* [react_to_post_customer](docs/sdks/customerportalcommunity/README.md#react_to_post_customer) - Toggle Reaction on Community Post
+* [react_to_comment_customer](docs/sdks/customerportalcommunity/README.md#react_to_comment_customer) - Toggle Reaction on Community Comment
+* [list_activities_customer](docs/sdks/customerportalcommunity/README.md#list_activities_customer) - List Community Activities (Customer Portal)
+* [list_submissions_customer](docs/sdks/customerportalcommunity/README.md#list_submissions_customer) - List Submissions for Activity (Customer Portal)
+* [submit_activity_customer](docs/sdks/customerportalcommunity/README.md#submit_activity_customer) - Submit to Community Activity
+* [list_submission_comments_customer](docs/sdks/customerportalcommunity/README.md#list_submission_comments_customer) - List Submission Comments (Customer Portal)
+* [create_submission_comment_customer](docs/sdks/customerportalcommunity/README.md#create_submission_comment_customer) - Comment on a Submission (Customer Portal)
+* [list_events_customer](docs/sdks/customerportalcommunity/README.md#list_events_customer) - List Community Events (Customer Portal)
+* [rsvp_event_customer](docs/sdks/customerportalcommunity/README.md#rsvp_event_customer) - RSVP to Community Event
+* [unrsvp_event_customer](docs/sdks/customerportalcommunity/README.md#unrsvp_event_customer) - Cancel RSVP to Community Event
+
+### [CustomerPortalNotifications](docs/sdks/customerportalnotifications/README.md)
+
+* [list_notifications](docs/sdks/customerportalnotifications/README.md#list_notifications) - List Customer Notifications
+* [unread_count](docs/sdks/customerportalnotifications/README.md#unread_count) - Unread Notification Count
+* [mark_read](docs/sdks/customerportalnotifications/README.md#mark_read) - Mark Notification Read
+* [mark_all_read](docs/sdks/customerportalnotifications/README.md#mark_all_read) - Mark All Notifications Read
+* [get_preferences](docs/sdks/customerportalnotifications/README.md#get_preferences) - Get Notification Preferences
+* [update_preferences](docs/sdks/customerportalnotifications/README.md#update_preferences) - Update Notification Preferences
 
 ### [CustomerSeats](docs/sdks/customerseats/README.md)
 

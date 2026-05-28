@@ -63,6 +63,10 @@ value = AvailableScope::OPENID
 | `REFUNDS_READ`                     | refunds:read                       |
 | `REFUNDS_WRITE`                    | refunds:write                      |
 | `PAYMENTS_READ`                    | payments:read                      |
+| `EMAIL_SUBSCRIBERS_READ`           | email_subscribers:read             |
+| `EMAIL_SUBSCRIBERS_WRITE`          | email_subscribers:write            |
+| `EMAIL_BROADCASTS_READ`            | email_broadcasts:read              |
+| `EMAIL_BROADCASTS_WRITE`           | email_broadcasts:write             |
 | `METRICS_READ`                     | metrics:read                       |
 | `WEBHOOKS_READ`                    | webhooks:read                      |
 | `WEBHOOKS_WRITE`                   | webhooks:write                     |

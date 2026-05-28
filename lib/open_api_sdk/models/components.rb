@@ -16,6 +16,7 @@ module OpenApiSDK
       autoload :Amount, "open_api_sdk/models/components/amount.rb"
       autoload :AttachedCustomField, "open_api_sdk/models/components/attachedcustomfield.rb"
       autoload :AttachedCustomFieldCreate, "open_api_sdk/models/components/attachedcustomfieldcreate.rb"
+      autoload :Author, "open_api_sdk/models/components/author.rb"
       autoload :AuthorizationCodeTokenRequest, "open_api_sdk/models/components/authorizationcodetokenrequest.rb"
       autoload :AuthorizeOrganization, "open_api_sdk/models/components/authorizeorganization.rb"
       autoload :AuthorizeResponseOrganization, "open_api_sdk/models/components/authorizeresponseorganization.rb"
@@ -35,6 +36,8 @@ module OpenApiSDK
       autoload :BalanceRefundMetadata, "open_api_sdk/models/components/balancerefundmetadata.rb"
       autoload :BalanceRefundReversalEvent, "open_api_sdk/models/components/balancerefundreversalevent.rb"
       autoload :Benefit, "open_api_sdk/models/components/benefit.rb"
+      autoload :BenefitCourseAccess, "open_api_sdk/models/components/benefitcourseaccess.rb"
+      autoload :BenefitCourseAccessProperties, "open_api_sdk/models/components/benefitcourseaccessproperties.rb"
       autoload :BenefitCreate, "open_api_sdk/models/components/benefitcreate.rb"
       autoload :BenefitCustom, "open_api_sdk/models/components/benefitcustom.rb"
       autoload :BenefitCustomCreate, "open_api_sdk/models/components/benefitcustomcreate.rb"
@@ -106,14 +109,11 @@ module OpenApiSDK
       )
       autoload :BenefitGrant, "open_api_sdk/models/components/benefitgrant.rb"
       autoload :BenefitGrantCustomProperties, "open_api_sdk/models/components/benefitgrantcustomproperties.rb"
-      autoload :BenefitGrantCustomWebhook, "open_api_sdk/models/components/benefitgrantcustomwebhook.rb"
       autoload :BenefitGrantDiscordProperties, "open_api_sdk/models/components/benefitgrantdiscordproperties.rb"
-      autoload :BenefitGrantDiscordWebhook, "open_api_sdk/models/components/benefitgrantdiscordwebhook.rb"
       autoload(
         :BenefitGrantDownloadablesProperties,
         "open_api_sdk/models/components/benefitgrantdownloadablesproperties.rb"
       )
-      autoload :BenefitGrantDownloadablesWebhook, "open_api_sdk/models/components/benefitgrantdownloadableswebhook.rb"
       autoload :BenefitGrantError, "open_api_sdk/models/components/benefitgranterror.rb"
       autoload(
         :BenefitGrantGitHubRepositoryProperties,
@@ -123,17 +123,10 @@ module OpenApiSDK
         :BenefitGrantGitHubRepositoryPropertiesPermission,
         "open_api_sdk/models/components/benefitgrantgithubrepositoryproperties_permission.rb"
       )
-      autoload(
-        :BenefitGrantGitHubRepositoryWebhook,
-        "open_api_sdk/models/components/benefitgrantgithubrepositorywebhook.rb"
-      )
       autoload :BenefitGrantLicenseKeysProperties, "open_api_sdk/models/components/benefitgrantlicensekeysproperties.rb"
-      autoload :BenefitGrantLicenseKeysWebhook, "open_api_sdk/models/components/benefitgrantlicensekeyswebhook.rb"
       autoload :BenefitGrantMetadata, "open_api_sdk/models/components/benefitgrantmetadata.rb"
       autoload :BenefitGrantMeterCreditProperties, "open_api_sdk/models/components/benefitgrantmetercreditproperties.rb"
-      autoload :BenefitGrantMeterCreditWebhook, "open_api_sdk/models/components/benefitgrantmetercreditwebhook.rb"
       autoload :BenefitGrantSortProperty, "open_api_sdk/models/components/benefitgrantsortproperty.rb"
-      autoload :BenefitGrantWebhook, "open_api_sdk/models/components/benefitgrantwebhook.rb"
       autoload :BenefitGrantedEvent, "open_api_sdk/models/components/benefitgrantedevent.rb"
       autoload(
         :BenefitLicenseKeyActivationCreateProperties,
@@ -184,6 +177,11 @@ module OpenApiSDK
       autoload :BenefitType, "open_api_sdk/models/components/benefittype.rb"
       autoload :BenefitUpdatedEvent, "open_api_sdk/models/components/benefitupdatedevent.rb"
       autoload :BillingAddressFieldMode, "open_api_sdk/models/components/billingaddressfieldmode.rb"
+      autoload :BodyFormat, "open_api_sdk/models/components/body_format.rb"
+      autoload(
+        :BodyCustomerPortalCommunityUploadPostImage,
+        "open_api_sdk/models/components/body_customer_portal_community_upload_post_image.rb"
+      )
       autoload :CanceledSubscriptions, "open_api_sdk/models/components/canceled_subscriptions.rb"
       autoload(
         :CanceledSubscriptionsCustomerService,
@@ -208,6 +206,7 @@ module OpenApiSDK
       autoload :CardPayment, "open_api_sdk/models/components/cardpayment.rb"
       autoload :CardPaymentMetadata, "open_api_sdk/models/components/cardpaymentmetadata.rb"
       autoload :Cashflow, "open_api_sdk/models/components/cashflow.rb"
+      autoload :ChannelKind, "open_api_sdk/models/components/channel_kind.rb"
       autoload :Checkout, "open_api_sdk/models/components/checkout.rb"
       autoload :CheckoutBillingAddressFields, "open_api_sdk/models/components/checkoutbillingaddressfields.rb"
       autoload :CheckoutCreate, "open_api_sdk/models/components/checkoutcreate.rb"
@@ -287,6 +286,89 @@ module OpenApiSDK
         "open_api_sdk/models/components/committed_monthly_recurring_revenue.rb"
       )
       autoload :CommittedSubscriptions, "open_api_sdk/models/components/committed_subscriptions.rb"
+      autoload :CommunityActivityHost, "open_api_sdk/models/components/communityactivityhost.rb"
+      autoload :CommunityActivityRead, "open_api_sdk/models/components/communityactivityread.rb"
+      autoload :CommunityActivityReadStatus, "open_api_sdk/models/components/communityactivityread_status.rb"
+      autoload(
+        :CommunityActivityReadSubmissionType,
+        "open_api_sdk/models/components/communityactivityread_submission_type.rb"
+      )
+      autoload(
+        :CommunityActivitySubmissionCommentAuthor,
+        "open_api_sdk/models/components/communityactivitysubmissioncommentauthor.rb"
+      )
+      autoload(
+        :CommunityActivitySubmissionCommentAuthorKind,
+        "open_api_sdk/models/components/communityactivitysubmissioncommentauthor_kind.rb"
+      )
+      autoload(
+        :CommunityActivitySubmissionCommentCreate,
+        "open_api_sdk/models/components/communityactivitysubmissioncommentcreate.rb"
+      )
+      autoload(
+        :CommunityActivitySubmissionCommentRead,
+        "open_api_sdk/models/components/communityactivitysubmissioncommentread.rb"
+      )
+      autoload :CommunityActivitySubmissionCreate, "open_api_sdk/models/components/communityactivitysubmissioncreate.rb"
+      autoload(
+        :CommunityActivitySubmissionCreateSubmissionType,
+        "open_api_sdk/models/components/communityactivitysubmissioncreate_submission_type.rb"
+      )
+      autoload(
+        :CommunityActivitySubmissionCreateVisibility,
+        "open_api_sdk/models/components/communityactivitysubmissioncreate_visibility.rb"
+      )
+      autoload :CommunityActivitySubmissionRead, "open_api_sdk/models/components/communityactivitysubmissionread.rb"
+      autoload(
+        :CommunityActivitySubmissionReadSubmissionType,
+        "open_api_sdk/models/components/communityactivitysubmissionread_submission_type.rb"
+      )
+      autoload :CommunityAuthorInstructor, "open_api_sdk/models/components/communityauthorinstructor.rb"
+      autoload :CommunityAuthorStudent, "open_api_sdk/models/components/communityauthorstudent.rb"
+      autoload :CommunityCommentCreate, "open_api_sdk/models/components/communitycommentcreate.rb"
+      autoload :CommunityCommentRead, "open_api_sdk/models/components/communitycommentread.rb"
+      autoload :CommunityCommentReadAuthor, "open_api_sdk/models/components/communitycommentread_author.rb"
+      autoload :CommunityCourseSummary, "open_api_sdk/models/components/communitycoursesummary.rb"
+      autoload :CommunityEventHost, "open_api_sdk/models/components/communityeventhost.rb"
+      autoload :CommunityEventPublic, "open_api_sdk/models/components/communityeventpublic.rb"
+      autoload :CommunityEventPublicType, "open_api_sdk/models/components/communityeventpublic_type.rb"
+      autoload :CommunityEventRead, "open_api_sdk/models/components/communityeventread.rb"
+      autoload :CommunityEventReadType, "open_api_sdk/models/components/communityeventread_type.rb"
+      autoload :CommunityEventRsvpResult, "open_api_sdk/models/components/communityeventrsvpresult.rb"
+      autoload :CommunityLessonChip, "open_api_sdk/models/components/communitylessonchip.rb"
+      autoload :CommunityMemberRead, "open_api_sdk/models/components/communitymemberread.rb"
+      autoload :CommunityMemberReadKind, "open_api_sdk/models/components/communitymemberread_kind.rb"
+      autoload :CommunityModuleChip, "open_api_sdk/models/components/communitymodulechip.rb"
+      autoload :CommunityPostActivityPin, "open_api_sdk/models/components/communitypostactivitypin.rb"
+      autoload :CommunityPostCreate, "open_api_sdk/models/components/communitypostcreate.rb"
+      autoload :CommunityPostCreateBodyFormat, "open_api_sdk/models/components/communitypostcreate_body_format.rb"
+      autoload :CommunityPostImageFileCreate, "open_api_sdk/models/components/communitypostimagefilecreate.rb"
+      autoload :CommunityPostImageFileRead, "open_api_sdk/models/components/communitypostimagefileread.rb"
+      autoload :CommunityPostImageUploadResult, "open_api_sdk/models/components/communitypostimageuploadresult.rb"
+      autoload :CommunityPostMediaCreate, "open_api_sdk/models/components/communitypostmediacreate.rb"
+      autoload(
+        :CommunityPostMediaCreateMediaType,
+        "open_api_sdk/models/components/communitypostmediacreate_media_type.rb"
+      )
+      autoload :CommunityPostMediaRead, "open_api_sdk/models/components/communitypostmediaread.rb"
+      autoload :CommunityPostRead, "open_api_sdk/models/components/communitypostread.rb"
+      autoload :CommunityPostReadType, "open_api_sdk/models/components/communitypostread_type.rb"
+      autoload :CommunityPostSortProperty, "open_api_sdk/models/components/communitypostsortproperty.rb"
+      autoload :CommunityPostVideoUploadResult, "open_api_sdk/models/components/communitypostvideouploadresult.rb"
+      autoload :CommunityReactionSummaryEntry, "open_api_sdk/models/components/communityreactionsummaryentry.rb"
+      autoload :CommunityReactionToggle, "open_api_sdk/models/components/communityreactiontoggle.rb"
+      autoload :CommunityReactionToggleResult, "open_api_sdk/models/components/communityreactiontoggleresult.rb"
+      autoload(
+        :CommunityReactionToggleResultEmoji,
+        "open_api_sdk/models/components/communityreactiontoggleresult_emoji.rb"
+      )
+      autoload :CommunityReactionToggleEmoji, "open_api_sdk/models/components/communityreactiontoggle_emoji.rb"
+      autoload :CommunitySettingsRead, "open_api_sdk/models/components/communitysettingsread.rb"
+      autoload(
+        :CommunitySettingsReadCommentsMode,
+        "open_api_sdk/models/components/communitysettingsread_comments_mode.rb"
+      )
+      autoload :CommunityTagRead, "open_api_sdk/models/components/communitytagread.rb"
       autoload :CostPerUser, "open_api_sdk/models/components/cost_per_user.rb"
       autoload :CostMetadataInput, "open_api_sdk/models/components/costmetadata_input.rb"
       autoload :CostMetadataOutput, "open_api_sdk/models/components/costmetadata_output.rb"
@@ -294,6 +376,9 @@ module OpenApiSDK
       autoload :CountAggregation, "open_api_sdk/models/components/countaggregation.rb"
       autoload :CountryAlpha2, "open_api_sdk/models/components/countryalpha2.rb"
       autoload :CountryAlpha2Input, "open_api_sdk/models/components/countryalpha2input.rb"
+      autoload :CourseNoteRead, "open_api_sdk/models/components/coursenoteread.rb"
+      autoload :CourseNoteUpsert, "open_api_sdk/models/components/coursenoteupsert.rb"
+      autoload :CourseProgressRead, "open_api_sdk/models/components/courseprogressread.rb"
       autoload :CumulativeCosts, "open_api_sdk/models/components/cumulative_costs.rb"
       autoload :CumulativeRevenue, "open_api_sdk/models/components/cumulative_revenue.rb"
       autoload :CursorPagination, "open_api_sdk/models/components/cursorpagination.rb"
@@ -392,6 +477,15 @@ module OpenApiSDK
       autoload :CustomerDeletedMetadata, "open_api_sdk/models/components/customerdeletedmetadata.rb"
       autoload :CustomerMeter, "open_api_sdk/models/components/customermeter.rb"
       autoload :CustomerMeterSortProperty, "open_api_sdk/models/components/customermetersortproperty.rb"
+      autoload(
+        :CustomerNotificationPreferencesRead,
+        "open_api_sdk/models/components/customernotificationpreferencesread.rb"
+      )
+      autoload(
+        :CustomerNotificationPreferencesUpdate,
+        "open_api_sdk/models/components/customernotificationpreferencesupdate.rb"
+      )
+      autoload :CustomerNotificationRead, "open_api_sdk/models/components/customernotificationread.rb"
       autoload :CustomerOrder, "open_api_sdk/models/components/customerorder.rb"
       autoload :CustomerOrderConfirmPayment, "open_api_sdk/models/components/customerorderconfirmpayment.rb"
       autoload :CustomerOrderInvoice, "open_api_sdk/models/components/customerorderinvoice.rb"
@@ -424,6 +518,10 @@ module OpenApiSDK
         "open_api_sdk/models/components/customerpaymentmethodcreatesucceededresponse.rb"
       )
       autoload :CustomerPortalCustomer, "open_api_sdk/models/components/customerportalcustomer.rb"
+      autoload(
+        :CustomerPortalCustomerProfileUpdate,
+        "open_api_sdk/models/components/customerportalcustomerprofileupdate.rb"
+      )
       autoload :CustomerPortalCustomerUpdate, "open_api_sdk/models/components/customerportalcustomerupdate.rb"
       autoload :CustomerPortalCustomerTaxId, "open_api_sdk/models/components/customerportalcustomer_tax_id.rb"
       autoload :CustomerPortalMember, "open_api_sdk/models/components/customerportalmember.rb"
@@ -553,6 +651,7 @@ module OpenApiSDK
       autoload :DownloadableFileCreate, "open_api_sdk/models/components/downloadablefilecreate.rb"
       autoload :DownloadableFileRead, "open_api_sdk/models/components/downloadablefileread.rb"
       autoload :DownloadableRead, "open_api_sdk/models/components/downloadableread.rb"
+      autoload :Emoji, "open_api_sdk/models/components/emoji.rb"
       autoload :Event, "open_api_sdk/models/components/event.rb"
       autoload :EventCreateCustomer, "open_api_sdk/models/components/eventcreatecustomer.rb"
       autoload :EventCreateExternalCustomer, "open_api_sdk/models/components/eventcreateexternalcustomer.rb"
@@ -569,6 +668,8 @@ module OpenApiSDK
       autoload :EventsIngest, "open_api_sdk/models/components/eventsingest.rb"
       autoload :EventsIngestResponse, "open_api_sdk/models/components/eventsingestresponse.rb"
       autoload :ExistingProductPrice, "open_api_sdk/models/components/existingproductprice.rb"
+      autoload :FeaturedMode, "open_api_sdk/models/components/featured_mode.rb"
+      autoload :File, "open_api_sdk/models/components/file.rb"
       autoload :FileCreate, "open_api_sdk/models/components/filecreate.rb"
       autoload :FileDownload, "open_api_sdk/models/components/filedownload.rb"
       autoload :FilePatch, "open_api_sdk/models/components/filepatch.rb"
@@ -590,11 +691,15 @@ module OpenApiSDK
         "open_api_sdk/models/components/introspecttokenrequest_token_type_hint.rb"
       )
       autoload :IntrospectTokenResponse, "open_api_sdk/models/components/introspecttokenresponse.rb"
+      autoload :Kind, "open_api_sdk/models/components/kind.rb"
       autoload :LLMMetadata, "open_api_sdk/models/components/llmmetadata.rb"
       autoload :LegacyRecurringProductPrice, "open_api_sdk/models/components/legacyrecurringproductprice.rb"
       autoload :LegacyRecurringProductPriceCustom, "open_api_sdk/models/components/legacyrecurringproductpricecustom.rb"
       autoload :LegacyRecurringProductPriceFixed, "open_api_sdk/models/components/legacyrecurringproductpricefixed.rb"
       autoload :LegacyRecurringProductPriceFree, "open_api_sdk/models/components/legacyrecurringproductpricefree.rb"
+      autoload :LessonCommentAuthor, "open_api_sdk/models/components/lessoncommentauthor.rb"
+      autoload :LessonCommentCreate, "open_api_sdk/models/components/lessoncommentcreate.rb"
+      autoload :LessonCommentRead, "open_api_sdk/models/components/lessoncommentread.rb"
       autoload :LicenseKeyActivate, "open_api_sdk/models/components/licensekeyactivate.rb"
       autoload :LicenseKeyActivateConditions, "open_api_sdk/models/components/licensekeyactivate_conditions.rb"
       autoload :LicenseKeyActivateMeta, "open_api_sdk/models/components/licensekeyactivate_meta.rb"
@@ -609,6 +714,12 @@ module OpenApiSDK
       autoload :LicenseKeyUpdate, "open_api_sdk/models/components/licensekeyupdate.rb"
       autoload :LicenseKeyValidate, "open_api_sdk/models/components/licensekeyvalidate.rb"
       autoload :LicenseKeyWithActivations, "open_api_sdk/models/components/licensekeywithactivations.rb"
+      autoload :LinksLayout, "open_api_sdk/models/components/links_layout.rb"
+      autoload :LinksPosition, "open_api_sdk/models/components/links_position.rb"
+      autoload(
+        :ListResourceWithCursorPaginationCommunityPostRead,
+        "open_api_sdk/models/components/listresourcewithcursorpagination_communitypostread_.rb"
+      )
       autoload(
         :ListResourceWithCursorPaginationEvent,
         "open_api_sdk/models/components/listresourcewithcursorpagination_event_.rb"
@@ -656,6 +767,7 @@ module OpenApiSDK
       autoload :ListResourceWebhookEndpoint, "open_api_sdk/models/components/listresource_webhookendpoint_.rb"
       autoload :ListResource, "open_api_sdk/models/components/listresource_.rb"
       autoload :Ltv, "open_api_sdk/models/components/ltv.rb"
+      autoload :MediaType, "open_api_sdk/models/components/media_type.rb"
       autoload :Member, "open_api_sdk/models/components/member.rb"
       autoload :MemberCreate, "open_api_sdk/models/components/membercreate.rb"
       autoload :MemberRole, "open_api_sdk/models/components/memberrole.rb"
@@ -869,6 +981,7 @@ module OpenApiSDK
       autoload :OrganizationSocialPlatforms, "open_api_sdk/models/components/organizationsocialplatforms.rb"
       autoload :OrganizationSortProperty, "open_api_sdk/models/components/organizationsortproperty.rb"
       autoload :OrganizationStatus, "open_api_sdk/models/components/organizationstatus.rb"
+      autoload :OrganizationStorefrontSettings, "open_api_sdk/models/components/organizationstorefrontsettings.rb"
       autoload :OrganizationSubscriptionSettings, "open_api_sdk/models/components/organizationsubscriptionsettings.rb"
       autoload :OrganizationUpdate, "open_api_sdk/models/components/organizationupdate.rb"
       autoload :OwnerCreate, "open_api_sdk/models/components/ownercreate.rb"
@@ -886,6 +999,7 @@ module OpenApiSDK
       autoload :Product, "open_api_sdk/models/components/product.rb"
       autoload :ProductBenefitsUpdate, "open_api_sdk/models/components/productbenefitsupdate.rb"
       autoload :ProductBillingType, "open_api_sdk/models/components/productbillingtype.rb"
+      autoload :ProductCategory, "open_api_sdk/models/components/productcategory.rb"
       autoload :ProductCreate, "open_api_sdk/models/components/productcreate.rb"
       autoload :ProductCreateOneTime, "open_api_sdk/models/components/productcreateonetime.rb"
       autoload :ProductCreateOneTimeMetadata, "open_api_sdk/models/components/productcreateonetime_metadata.rb"
@@ -921,6 +1035,10 @@ module OpenApiSDK
       autoload :ProductVisibility, "open_api_sdk/models/components/productvisibility.rb"
       autoload :Properties, "open_api_sdk/models/components/properties.rb"
       autoload :PropertyAggregation, "open_api_sdk/models/components/propertyaggregation.rb"
+      autoload :QuizAnswerResult, "open_api_sdk/models/components/quizanswerresult.rb"
+      autoload :QuizAnswerSubmission, "open_api_sdk/models/components/quizanswersubmission.rb"
+      autoload :QuizAttemptResult, "open_api_sdk/models/components/quizattemptresult.rb"
+      autoload :QuizAttemptSubmission, "open_api_sdk/models/components/quizattemptsubmission.rb"
       autoload :RefreshTokenRequest, "open_api_sdk/models/components/refreshtokenrequest.rb"
       autoload :Refund, "open_api_sdk/models/components/refund.rb"
       autoload :RefundCreate, "open_api_sdk/models/components/refundcreate.rb"
@@ -946,10 +1064,18 @@ module OpenApiSDK
       autoload :SeatClaim, "open_api_sdk/models/components/seatclaim.rb"
       autoload :SeatClaimInfo, "open_api_sdk/models/components/seatclaiminfo.rb"
       autoload :SeatStatus, "open_api_sdk/models/components/seatstatus.rb"
+      autoload :SeatTierType, "open_api_sdk/models/components/seattiertype.rb"
       autoload :SeatsList, "open_api_sdk/models/components/seatslist.rb"
       autoload :Security, "open_api_sdk/models/components/security.rb"
+      autoload :SpaceItem, "open_api_sdk/models/components/spaceitem.rb"
       autoload :Status, "open_api_sdk/models/components/status.rb"
+      autoload :StorefrontHeaderFileCreate, "open_api_sdk/models/components/storefrontheaderfilecreate.rb"
+      autoload :StorefrontHeaderFileRead, "open_api_sdk/models/components/storefrontheaderfileread.rb"
+      autoload :StorefrontLink, "open_api_sdk/models/components/storefrontlink.rb"
+      autoload :StorefrontLinkFileCreate, "open_api_sdk/models/components/storefrontlinkfilecreate.rb"
+      autoload :StorefrontLinkFileRead, "open_api_sdk/models/components/storefrontlinkfileread.rb"
       autoload :SubType, "open_api_sdk/models/components/subtype.rb"
+      autoload :SubmissionType, "open_api_sdk/models/components/submission_type.rb"
       autoload :Subscription, "open_api_sdk/models/components/subscription.rb"
       autoload(
         :SubscriptionBillingPeriodUpdatedEvent,
@@ -1003,46 +1129,29 @@ module OpenApiSDK
       autoload :SubscriptionPrices, "open_api_sdk/models/components/subscription_prices.rb"
       autoload :SucceededCheckouts, "open_api_sdk/models/components/succeeded_checkouts.rb"
       autoload :SystemEvent, "open_api_sdk/models/components/systemevent.rb"
+      autoload :TaxBehaviorOption, "open_api_sdk/models/components/taxbehavioroption.rb"
       autoload :TaxIDFormat, "open_api_sdk/models/components/taxidformat.rb"
       autoload :TaxRatePreview, "open_api_sdk/models/components/taxratepreview.rb"
+      autoload :ThumbnailSize, "open_api_sdk/models/components/thumbnail_size.rb"
       autoload :TimeInterval, "open_api_sdk/models/components/timeinterval.rb"
       autoload :Timeframe, "open_api_sdk/models/components/timeframe.rb"
       autoload :TokenEndpointAuthMethod, "open_api_sdk/models/components/token_endpoint_auth_method.rb"
       autoload :TokenType, "open_api_sdk/models/components/token_type.rb"
       autoload :TokenResponse, "open_api_sdk/models/components/tokenresponse.rb"
       autoload :TrialInterval, "open_api_sdk/models/components/trialinterval.rb"
+      autoload :Type, "open_api_sdk/models/components/type.rb"
       autoload :UniqueAggregation, "open_api_sdk/models/components/uniqueaggregation.rb"
       autoload :UnitAmount, "open_api_sdk/models/components/unit_amount.rb"
+      autoload :UnreadCountRead, "open_api_sdk/models/components/unreadcountread.rb"
       autoload :UserEvent, "open_api_sdk/models/components/userevent.rb"
       autoload :UserInfoOrganization, "open_api_sdk/models/components/userinfoorganization.rb"
       autoload :UserInfoUser, "open_api_sdk/models/components/userinfouser.rb"
       autoload :ValidatedLicenseKey, "open_api_sdk/models/components/validatedlicensekey.rb"
       autoload :ValidationError, "open_api_sdk/models/components/validationerror.rb"
       autoload :Value, "open_api_sdk/models/components/value.rb"
+      autoload :Visibility, "open_api_sdk/models/components/visibility.rb"
       autoload :WebTokenRequest, "open_api_sdk/models/components/webtokenrequest.rb"
       autoload :WebTokenRequestSubType, "open_api_sdk/models/components/webtokenrequest_sub_type.rb"
-      autoload :WebhookBenefitCreatedPayload, "open_api_sdk/models/components/webhookbenefitcreatedpayload.rb"
-      autoload :WebhookBenefitGrantCreatedPayload, "open_api_sdk/models/components/webhookbenefitgrantcreatedpayload.rb"
-      autoload :WebhookBenefitGrantCycledPayload, "open_api_sdk/models/components/webhookbenefitgrantcycledpayload.rb"
-      autoload :WebhookBenefitGrantRevokedPayload, "open_api_sdk/models/components/webhookbenefitgrantrevokedpayload.rb"
-      autoload :WebhookBenefitGrantUpdatedPayload, "open_api_sdk/models/components/webhookbenefitgrantupdatedpayload.rb"
-      autoload :WebhookBenefitUpdatedPayload, "open_api_sdk/models/components/webhookbenefitupdatedpayload.rb"
-      autoload :WebhookCheckoutCreatedPayload, "open_api_sdk/models/components/webhookcheckoutcreatedpayload.rb"
-      autoload :WebhookCheckoutExpiredPayload, "open_api_sdk/models/components/webhookcheckoutexpiredpayload.rb"
-      autoload :WebhookCheckoutUpdatedPayload, "open_api_sdk/models/components/webhookcheckoutupdatedpayload.rb"
-      autoload :WebhookCustomerCreatedPayload, "open_api_sdk/models/components/webhookcustomercreatedpayload.rb"
-      autoload :WebhookCustomerDeletedPayload, "open_api_sdk/models/components/webhookcustomerdeletedpayload.rb"
-      autoload(
-        :WebhookCustomerSeatAssignedPayload,
-        "open_api_sdk/models/components/webhookcustomerseatassignedpayload.rb"
-      )
-      autoload :WebhookCustomerSeatClaimedPayload, "open_api_sdk/models/components/webhookcustomerseatclaimedpayload.rb"
-      autoload :WebhookCustomerSeatRevokedPayload, "open_api_sdk/models/components/webhookcustomerseatrevokedpayload.rb"
-      autoload(
-        :WebhookCustomerStateChangedPayload,
-        "open_api_sdk/models/components/webhookcustomerstatechangedpayload.rb"
-      )
-      autoload :WebhookCustomerUpdatedPayload, "open_api_sdk/models/components/webhookcustomerupdatedpayload.rb"
       autoload :WebhookDelivery, "open_api_sdk/models/components/webhookdelivery.rb"
       autoload :WebhookEndpoint, "open_api_sdk/models/components/webhookendpoint.rb"
       autoload :WebhookEndpointCreate, "open_api_sdk/models/components/webhookendpointcreate.rb"
@@ -1050,33 +1159,10 @@ module OpenApiSDK
       autoload :WebhookEvent, "open_api_sdk/models/components/webhookevent.rb"
       autoload :WebhookEventType, "open_api_sdk/models/components/webhookeventtype.rb"
       autoload :WebhookFormat, "open_api_sdk/models/components/webhookformat.rb"
-      autoload :WebhookMemberCreatedPayload, "open_api_sdk/models/components/webhookmembercreatedpayload.rb"
-      autoload :WebhookMemberDeletedPayload, "open_api_sdk/models/components/webhookmemberdeletedpayload.rb"
-      autoload :WebhookMemberUpdatedPayload, "open_api_sdk/models/components/webhookmemberupdatedpayload.rb"
-      autoload :WebhookOrderCreatedPayload, "open_api_sdk/models/components/webhookordercreatedpayload.rb"
-      autoload :WebhookOrderPaidPayload, "open_api_sdk/models/components/webhookorderpaidpayload.rb"
-      autoload :WebhookOrderRefundedPayload, "open_api_sdk/models/components/webhookorderrefundedpayload.rb"
-      autoload :WebhookOrderUpdatedPayload, "open_api_sdk/models/components/webhookorderupdatedpayload.rb"
-      autoload :WebhookOrganizationUpdatedPayload, "open_api_sdk/models/components/webhookorganizationupdatedpayload.rb"
-      autoload :WebhookProductCreatedPayload, "open_api_sdk/models/components/webhookproductcreatedpayload.rb"
-      autoload :WebhookProductUpdatedPayload, "open_api_sdk/models/components/webhookproductupdatedpayload.rb"
-      autoload :WebhookRefundCreatedPayload, "open_api_sdk/models/components/webhookrefundcreatedpayload.rb"
-      autoload :WebhookRefundUpdatedPayload, "open_api_sdk/models/components/webhookrefundupdatedpayload.rb"
-      autoload :WebhookSubscriptionActivePayload, "open_api_sdk/models/components/webhooksubscriptionactivepayload.rb"
-      autoload(
-        :WebhookSubscriptionCanceledPayload,
-        "open_api_sdk/models/components/webhooksubscriptioncanceledpayload.rb"
-      )
-      autoload :WebhookSubscriptionCreatedPayload, "open_api_sdk/models/components/webhooksubscriptioncreatedpayload.rb"
-      autoload :WebhookSubscriptionPastDuePayload, "open_api_sdk/models/components/webhooksubscriptionpastduepayload.rb"
-      autoload :WebhookSubscriptionRevokedPayload, "open_api_sdk/models/components/webhooksubscriptionrevokedpayload.rb"
-      autoload(
-        :WebhookSubscriptionUncanceledPayload,
-        "open_api_sdk/models/components/webhooksubscriptionuncanceledpayload.rb"
-      )
-      autoload :WebhookSubscriptionUpdatedPayload, "open_api_sdk/models/components/webhooksubscriptionupdatedpayload.rb"
       autoload :Aggregation, "open_api_sdk/models/components/aggregation.rb"
+      autoload :BlockOrder, "open_api_sdk/models/components/block_order.rb"
       autoload :Clauses, "open_api_sdk/models/components/clauses.rb"
+      autoload :CommentsMode, "open_api_sdk/models/components/comments_mode.rb"
       autoload :Conditions, "open_api_sdk/models/components/conditions.rb"
       autoload :CustomFieldData, "open_api_sdk/models/components/custom_field_data.rb"
       autoload :CustomerMetadata, "open_api_sdk/models/components/customer_metadata.rb"
@@ -1085,6 +1171,7 @@ module OpenApiSDK
       autoload :Loc, "open_api_sdk/models/components/loc.rb"
       autoload :Meta, "open_api_sdk/models/components/meta.rb"
       autoload :Metadata, "open_api_sdk/models/components/metadata.rb"
+      autoload :PinType, "open_api_sdk/models/components/pin_type.rb"
       autoload :Prices, "open_api_sdk/models/components/prices.rb"
       autoload :SwitchingFrom, "open_api_sdk/models/components/switching_from.rb"
       autoload :TaxId, "open_api_sdk/models/components/tax_id.rb"

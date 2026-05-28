@@ -66,6 +66,12 @@ class OpenApiSDK::Models::Components::CustomerPortalCustomer
   def tax_id=(str_)
   end
 
+  def avatar_url
+  end
+
+  def avatar_url=(str_)
+  end
+
   def default_payment_method_id
   end
 

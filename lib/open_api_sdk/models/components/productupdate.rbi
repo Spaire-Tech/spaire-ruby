@@ -36,6 +36,12 @@ class OpenApiSDK::Models::Components::ProductUpdate
   def description=(str_)
   end
 
+  def category
+  end
+
+  def category=(str_)
+  end
+
   def recurring_interval
   end
 

@@ -1,9 +1,9 @@
-speakeasyVersion: 1.759.3
+speakeasyVersion: 1.768.2
 sources:
     Spaire-OAS:
         sourceNamespace: spaire-oas
-        sourceRevisionDigest: sha256:f9d98b30d8a24c9afe33107a73107eba7c66f00dff3802a42ec0ae3f5ce5f20c
-        sourceBlobDigest: sha256:5cd0b8ddabc7d907421bf94235ba20f148d007bc553e15b397bae8fb9e70f404
+        sourceRevisionDigest: sha256:705fc62ce4a56534a02e27165cd9e34efd17de7cde085ad8bd49b75ad01f78c3
+        sourceBlobDigest: sha256:b5e53c0cebfaadfb2ffdbdeab1abdfac0249203d296c369c300dbeba488d9ea8
         tags:
             - latest
             - 0.1.0
@@ -11,8 +11,10 @@ targets:
     spaire:
         source: Spaire-OAS
         sourceNamespace: spaire-oas
-        sourceRevisionDigest: sha256:f9d98b30d8a24c9afe33107a73107eba7c66f00dff3802a42ec0ae3f5ce5f20c
-        sourceBlobDigest: sha256:5cd0b8ddabc7d907421bf94235ba20f148d007bc553e15b397bae8fb9e70f404
+        sourceRevisionDigest: sha256:705fc62ce4a56534a02e27165cd9e34efd17de7cde085ad8bd49b75ad01f78c3
+        sourceBlobDigest: sha256:b5e53c0cebfaadfb2ffdbdeab1abdfac0249203d296c369c300dbeba488d9ea8
+        codeSamplesNamespace: spaire-oas-ruby-code-samples
+        codeSamplesRevisionDigest: sha256:78a3c08c7651eb04125c7f5409ceb3831dcef90dc879b9e8f91e5f22eb316304
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
@@ -37,3 +39,9 @@ workflow:
             publish:
                 rubygems:
                     token: $rubygems_auth_token
+            codeSamples:
+                output: codeSamples.yaml
+                registry:
+                    location: registry.speakeasyapi.dev/spaire/spaire-workspace/spaire-oas-ruby-code-samples
+                labelOverride:
+                    fixedValue: Ruby (SDK)

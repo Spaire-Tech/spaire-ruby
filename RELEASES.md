@@ -19,3 +19,13 @@ Based on:
 - [ruby v0.1.1] .
 ### Releases
 - [Ruby Gems v0.1.1] https://rubygems.org/gems/spaire/versions/0.1.1 - .
+
+## 2026-05-28 02:38:19
+### Changes
+Based on:
+- OpenAPI Doc  
+- Speakeasy CLI 1.768.2 (2.889.1) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [ruby v0.2.0] .
+### Releases
+- [Ruby Gems v0.2.0] https://rubygems.org/gems/spaire/versions/0.2.0 - .

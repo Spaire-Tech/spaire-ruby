@@ -23,6 +23,12 @@ module OpenApiSDK
           Crystalline::Nilable.new(Crystalline::Boolean.new),
           {'format_json': {'letter_case': ::OpenApiSDK::Utils.field_name("seat_based_pricing_enabled")}}
         )
+        # When true, the course lesson player hides Spaire branding. Requires the white_label_course_player tier feature (Scale).
+        field(
+          :course_player_white_label,
+          Crystalline::Nilable.new(Crystalline::Boolean.new),
+          {'format_json': {'letter_case': ::OpenApiSDK::Utils.field_name("course_player_white_label")}}
+        )
         # If this organization has RevOps enabled
         field(
           :revops_enabled,
@@ -64,6 +70,7 @@ module OpenApiSDK
           params(
             issue_funding_enabled: T.nilable(T::Boolean),
             seat_based_pricing_enabled: T.nilable(T::Boolean),
+            course_player_white_label: T.nilable(T::Boolean),
             revops_enabled: T.nilable(T::Boolean),
             wallets_enabled: T.nilable(T::Boolean),
             member_model_enabled: T.nilable(T::Boolean),
@@ -76,6 +83,7 @@ module OpenApiSDK
         def initialize(
           issue_funding_enabled: false,
           seat_based_pricing_enabled: false,
+          course_player_white_label: false,
           revops_enabled: false,
           wallets_enabled: false,
           member_model_enabled: false,
@@ -85,6 +93,7 @@ module OpenApiSDK
         )
           @issue_funding_enabled = issue_funding_enabled
           @seat_based_pricing_enabled = seat_based_pricing_enabled
+          @course_player_white_label = course_player_white_label
           @revops_enabled = revops_enabled
           @wallets_enabled = wallets_enabled
           @member_model_enabled = member_model_enabled
@@ -98,6 +107,7 @@ module OpenApiSDK
           return false unless other.is_a?(self.class)
           return false unless @issue_funding_enabled == other.issue_funding_enabled
           return false unless @seat_based_pricing_enabled == other.seat_based_pricing_enabled
+          return false unless @course_player_white_label == other.course_player_white_label
           return false unless @revops_enabled == other.revops_enabled
           return false unless @wallets_enabled == other.wallets_enabled
           return false unless @member_model_enabled == other.member_model_enabled
