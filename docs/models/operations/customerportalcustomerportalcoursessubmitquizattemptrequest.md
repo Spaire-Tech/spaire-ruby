@@ -1,0 +1,10 @@
+# CustomerPortalCustomerPortalCoursesSubmitQuizAttemptRequest
+
+
+## Fields
+
+| Field                                                                                     | Type                                                                                      | Required                                                                                  | Description                                                                               |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `course_id`                                                                               | *::String*                                                                                | :heavy_check_mark:                                                                        | N/A                                                                                       |
+| `lesson_id`                                                                               | *::String*                                                                                | :heavy_check_mark:                                                                        | N/A                                                                                       |
+| `body`                                                                                    | [Models::Components::QuizAttemptSubmission](../../models/shared/quizattemptsubmission.md) | :heavy_check_mark:                                                                        | N/A                                                                                       |

@@ -80,6 +80,24 @@ module OpenApiSDK
           Crystalline::Nilable.new(Models::Components::CustomerOrganizationFeatureSettings),
           {'format_json': {'letter_case': ::OpenApiSDK::Utils.field_name("organization_features")}}
         )
+        # Image shown on the left panel of the customer portal sign-in screen. Configured from the course builder's Auth tab and applies to the whole organization's portal sign-in. When unset, the portal falls back to the organization's most recent course thumbnail.
+        field(
+          :customer_portal_sign_in_image_url,
+          Crystalline::Nilable.new(::String),
+          {'format_json': {'letter_case': ::OpenApiSDK::Utils.field_name("customer_portal_sign_in_image_url")}}
+        )
+        # CSS object-position (e.g. '50% 30%') for the customer portal sign-in image, set by dragging to reposition in the Auth tab.
+        field(
+          :customer_portal_sign_in_image_position,
+          Crystalline::Nilable.new(::String),
+          {'format_json': {'letter_case': ::OpenApiSDK::Utils.field_name("customer_portal_sign_in_image_position")}}
+        )
+        # Creator-chosen appearance for the customer portal sign-in screen: 'light' or 'dark'. Null is treated as 'light'.
+        field(
+          :customer_portal_sign_in_theme,
+          Crystalline::Nilable.new(::String),
+          {'format_json': {'letter_case': ::OpenApiSDK::Utils.field_name("customer_portal_sign_in_theme")}}
+        )
 
         sig {
           params(
@@ -92,7 +110,10 @@ module OpenApiSDK
             customer_portal_settings: Models::Components::OrganizationCustomerPortalSettings,
             modified_at: T.nilable(::DateTime),
             avatar_url: T.nilable(::String),
-            organization_features: T.nilable(Models::Components::CustomerOrganizationFeatureSettings)
+            organization_features: T.nilable(Models::Components::CustomerOrganizationFeatureSettings),
+            customer_portal_sign_in_image_url: T.nilable(::String),
+            customer_portal_sign_in_image_position: T.nilable(::String),
+            customer_portal_sign_in_theme: T.nilable(::String)
           )
             .void
         }
@@ -106,7 +127,10 @@ module OpenApiSDK
           customer_portal_settings:,
           modified_at: nil,
           avatar_url: nil,
-          organization_features: nil
+          organization_features: nil,
+          customer_portal_sign_in_image_url: nil,
+          customer_portal_sign_in_image_position: nil,
+          customer_portal_sign_in_theme: nil
         )
           @created_at = created_at
           @id = id
@@ -118,6 +142,9 @@ module OpenApiSDK
           @modified_at = modified_at
           @avatar_url = avatar_url
           @organization_features = organization_features
+          @customer_portal_sign_in_image_url = customer_portal_sign_in_image_url
+          @customer_portal_sign_in_image_position = customer_portal_sign_in_image_position
+          @customer_portal_sign_in_theme = customer_portal_sign_in_theme
         end
 
         sig { params(other: T.untyped).returns(T::Boolean) }
@@ -133,6 +160,9 @@ module OpenApiSDK
           return false unless @modified_at == other.modified_at
           return false unless @avatar_url == other.avatar_url
           return false unless @organization_features == other.organization_features
+          return false unless @customer_portal_sign_in_image_url == other.customer_portal_sign_in_image_url
+          return false unless @customer_portal_sign_in_image_position == other.customer_portal_sign_in_image_position
+          return false unless @customer_portal_sign_in_theme == other.customer_portal_sign_in_theme
           true
         end
       end

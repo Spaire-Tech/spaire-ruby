@@ -29,6 +29,7 @@ module OpenApiSDK
   autoload :Members, "open_api_sdk/members"
   autoload :CustomerPortal, "open_api_sdk/customer_portal"
   autoload :SpaireBenefitGrants, "open_api_sdk/spaire_benefit_grants"
+  autoload :CustomerPortalCourses, "open_api_sdk/customer_portal_courses"
   autoload :SpaireCustomers, "open_api_sdk/spaire_customers"
   autoload :SpaireCustomerMeters, "open_api_sdk/spaire_customer_meters"
   autoload :Seats, "open_api_sdk/seats"
@@ -49,13 +50,15 @@ module OpenApiSDK
   autoload :OrganizationAccessTokens, "open_api_sdk/organization_access_tokens"
   autoload :CustomerMeters, "open_api_sdk/customer_meters"
   autoload :Payments, "open_api_sdk/payments"
+  autoload :CustomerPortalCommunity, "open_api_sdk/customer_portal_community"
+  autoload :Community, "open_api_sdk/community"
+  autoload :CustomerPortalNotifications, "open_api_sdk/customer_portal_notifications"
 
   module Models
     autoload :Components, "open_api_sdk/models/components"
     autoload :Operations, "open_api_sdk/models/operations"
     autoload :Errors, "open_api_sdk/models/errors"
     autoload :Callbacks, "open_api_sdk/models/callbacks"
-    autoload :Webhooks, "open_api_sdk/models/webhooks"
   end
 end
 

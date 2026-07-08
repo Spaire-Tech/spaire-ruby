@@ -60,6 +60,12 @@ class OpenApiSDK::Models::Components::Organization
   def default_presentment_currency=(str_)
   end
 
+  def default_tax_behavior
+  end
+
+  def default_tax_behavior=(str_)
+  end
+
   def subscription_settings
   end
 
@@ -118,5 +124,35 @@ class OpenApiSDK::Models::Components::Organization
   end
 
   def feature_settings=(str_)
+  end
+
+  def customer_portal_sign_in_image_url
+  end
+
+  def customer_portal_sign_in_image_url=(str_)
+  end
+
+  def customer_portal_sign_in_image_position
+  end
+
+  def customer_portal_sign_in_image_position=(str_)
+  end
+
+  def customer_portal_sign_in_theme
+  end
+
+  def customer_portal_sign_in_theme=(str_)
+  end
+
+  def ai_onboarding_completed_at
+  end
+
+  def ai_onboarding_completed_at=(str_)
+  end
+
+  def storefront_settings
+  end
+
+  def storefront_settings=(str_)
   end
 end
