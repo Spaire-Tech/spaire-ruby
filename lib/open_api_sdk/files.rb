@@ -253,7 +253,10 @@ module OpenApiSDK
         request: T.any(
           Models::Components::DownloadableFileCreate,
           Models::Components::ProductMediaFileCreate,
-          Models::Components::OrganizationAvatarFileCreate
+          Models::Components::OrganizationAvatarFileCreate,
+          Models::Components::StorefrontHeaderFileCreate,
+          Models::Components::StorefrontLinkFileCreate,
+          Models::Components::CommunityPostImageFileCreate
         ),
         timeout_ms: T.nilable(Integer),
         http_headers: T.nilable(T::Hash[T.any(String, Symbol), String])
@@ -550,7 +553,10 @@ module OpenApiSDK
               {
                 "downloadable" => Models::Components::DownloadableFileRead,
                 "product_media" => Models::Components::ProductMediaFileRead,
-                "organization_avatar" => Models::Components::OrganizationAvatarFileRead
+                "organization_avatar" => Models::Components::OrganizationAvatarFileRead,
+                "storefront_header" => Models::Components::StorefrontHeaderFileRead,
+                "storefront_link" => Models::Components::StorefrontLinkFileRead,
+                "community_post_image" => Models::Components::CommunityPostImageFileRead
               }
             )
           )
@@ -985,7 +991,10 @@ module OpenApiSDK
               {
                 "downloadable" => Models::Components::DownloadableFileRead,
                 "product_media" => Models::Components::ProductMediaFileRead,
-                "organization_avatar" => Models::Components::OrganizationAvatarFileRead
+                "organization_avatar" => Models::Components::OrganizationAvatarFileRead,
+                "storefront_header" => Models::Components::StorefrontHeaderFileRead,
+                "storefront_link" => Models::Components::StorefrontLinkFileRead,
+                "community_post_image" => Models::Components::CommunityPostImageFileRead
               }
             )
           )

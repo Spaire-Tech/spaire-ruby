@@ -65,4 +65,28 @@ class OpenApiSDK::Models::Components::CustomerOrganization
 
   def organization_features=(str_)
   end
+
+  def custom_domain
+  end
+
+  def custom_domain=(str_)
+  end
+
+  def customer_portal_sign_in_image_url
+  end
+
+  def customer_portal_sign_in_image_url=(str_)
+  end
+
+  def customer_portal_sign_in_image_position
+  end
+
+  def customer_portal_sign_in_image_position=(str_)
+  end
+
+  def customer_portal_sign_in_theme
+  end
+
+  def customer_portal_sign_in_theme=(str_)
+  end
 end
