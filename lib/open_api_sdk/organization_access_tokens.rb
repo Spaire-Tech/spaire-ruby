@@ -174,7 +174,7 @@ module OpenApiSDK
               next nil
             end
 
-            request_limit = !request.limit.nil? ? request.limit : 1
+            request_limit = !request.limit.nil? ? request.limit : 10
             if results.count < request_limit
               next nil
             end
