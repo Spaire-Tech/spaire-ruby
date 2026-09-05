@@ -162,7 +162,7 @@ module OpenApiSDK
               next nil
             end
 
-            request_limit = !request.limit.nil? ? request.limit : 1
+            request_limit = !request.limit.nil? ? request.limit : 10
             if results.count < request_limit
               next nil
             end
@@ -368,7 +368,8 @@ module OpenApiSDK
                 "github_repository" => Models::Components::BenefitGitHubRepository,
                 "downloadables" => Models::Components::BenefitDownloadables,
                 "license_keys" => Models::Components::BenefitLicenseKeys,
-                "meter_credit" => Models::Components::BenefitMeterCredit
+                "meter_credit" => Models::Components::BenefitMeterCredit,
+                "course_access" => Models::Components::BenefitCourseAccess
               }
             )
           )
@@ -552,7 +553,8 @@ module OpenApiSDK
                 "github_repository" => Models::Components::BenefitGitHubRepository,
                 "downloadables" => Models::Components::BenefitDownloadables,
                 "license_keys" => Models::Components::BenefitLicenseKeys,
-                "meter_credit" => Models::Components::BenefitMeterCredit
+                "meter_credit" => Models::Components::BenefitMeterCredit,
+                "course_access" => Models::Components::BenefitCourseAccess
               }
             )
           )
@@ -980,7 +982,8 @@ module OpenApiSDK
                 "github_repository" => Models::Components::BenefitGitHubRepository,
                 "downloadables" => Models::Components::BenefitDownloadables,
                 "license_keys" => Models::Components::BenefitLicenseKeys,
-                "meter_credit" => Models::Components::BenefitMeterCredit
+                "meter_credit" => Models::Components::BenefitMeterCredit,
+                "course_access" => Models::Components::BenefitCourseAccess
               }
             )
           )
@@ -1206,7 +1209,7 @@ module OpenApiSDK
               next nil
             end
 
-            request_limit = !request.limit.nil? ? request.limit : 1
+            request_limit = !request.limit.nil? ? request.limit : 10
             if results.count < request_limit
               next nil
             end

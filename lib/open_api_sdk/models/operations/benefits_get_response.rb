@@ -29,7 +29,8 @@ module OpenApiSDK
                 "github_repository" => Models::Components::BenefitGitHubRepository,
                 "downloadables" => Models::Components::BenefitDownloadables,
                 "license_keys" => Models::Components::BenefitLicenseKeys,
-                "meter_credit" => Models::Components::BenefitMeterCredit
+                "meter_credit" => Models::Components::BenefitMeterCredit,
+                "course_access" => Models::Components::BenefitCourseAccess
               }
             )
           )
@@ -47,7 +48,8 @@ module OpenApiSDK
                 Models::Components::BenefitGitHubRepository,
                 Models::Components::BenefitDownloadables,
                 Models::Components::BenefitLicenseKeys,
-                Models::Components::BenefitMeterCredit
+                Models::Components::BenefitMeterCredit,
+                Models::Components::BenefitCourseAccess
               )
             )
           )

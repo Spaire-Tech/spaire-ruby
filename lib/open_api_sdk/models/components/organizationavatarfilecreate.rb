@@ -18,7 +18,7 @@ module OpenApiSDK
           ::String,
           {'format_json': {'letter_case': ::OpenApiSDK::Utils.field_name("mime_type"), required: true}}
         )
-        # Size of the file. A maximum of 1 MB is allowed for this type of file.
+        # Size of the file. A maximum of 5 MB is allowed for this type of file.
         field :size, ::Integer, {'format_json': {'letter_case': ::OpenApiSDK::Utils.field_name("size"), required: true}}
 
         field(

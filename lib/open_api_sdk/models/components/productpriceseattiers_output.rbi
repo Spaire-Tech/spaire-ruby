@@ -18,6 +18,12 @@ class OpenApiSDK::Models::Components::ProductPriceSeatTiersOutput
   def minimum_seats=(str_)
   end
 
+  def seat_tier_type
+  end
+
+  def seat_tier_type=(str_)
+  end
+
   def maximum_seats
   end
 

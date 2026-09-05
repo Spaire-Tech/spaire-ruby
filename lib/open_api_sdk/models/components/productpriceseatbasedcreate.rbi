@@ -23,4 +23,10 @@ class OpenApiSDK::Models::Components::ProductPriceSeatBasedCreate
 
   def price_currency=(str_)
   end
+
+  def tax_behavior
+  end
+
+  def tax_behavior=(str_)
+  end
 end
