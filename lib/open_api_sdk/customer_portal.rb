@@ -18,6 +18,7 @@ module OpenApiSDK
     extend T::Sig
     attr_accessor(
       :benefit_grants,
+      :customer_portal_courses,
       :customers,
       :customer_meters,
       :seats,
@@ -40,6 +41,7 @@ module OpenApiSDK
     sig { void }
     def init_sdks
       @benefit_grants = ::OpenApiSDK::SpaireBenefitGrants.new(@sdk_configuration)
+      @customer_portal_courses = ::OpenApiSDK::CustomerPortalCourses.new(@sdk_configuration)
       @customers = ::OpenApiSDK::SpaireCustomers.new(@sdk_configuration)
       @customer_meters = ::OpenApiSDK::SpaireCustomerMeters.new(@sdk_configuration)
       @seats = ::OpenApiSDK::Seats.new(@sdk_configuration)

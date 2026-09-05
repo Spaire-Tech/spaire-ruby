@@ -47,7 +47,10 @@ module OpenApiSDK
       :meters,
       :organization_access_tokens,
       :customer_meters,
-      :payments
+      :payments,
+      :customer_portal_community,
+      :community,
+      :customer_portal_notifications
     )
 
     # Instantiates the SDK, configuring it with the provided parameters.
@@ -150,6 +153,9 @@ module OpenApiSDK
       @organization_access_tokens = OrganizationAccessTokens.new(@sdk_configuration)
       @customer_meters = CustomerMeters.new(@sdk_configuration)
       @payments = Payments.new(@sdk_configuration)
+      @customer_portal_community = CustomerPortalCommunity.new(@sdk_configuration)
+      @community = Community.new(@sdk_configuration)
+      @customer_portal_notifications = CustomerPortalNotifications.new(@sdk_configuration)
     end
 
     sig { params(base_url: String, url_variables: T.nilable(T::Hash[Symbol, T.any(String, T::Enum)])).returns(String) }
