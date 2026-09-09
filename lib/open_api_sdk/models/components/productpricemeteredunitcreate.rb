@@ -40,6 +40,17 @@ module OpenApiSDK
             }
           }
         )
+        # The tax behavior of the price. If not set, it will default to the organization's default tax behavior.
+        field(
+          :tax_behavior,
+          Crystalline::Nilable.new(Models::Components::TaxBehaviorOption),
+          {
+            'format_json': {
+              'letter_case': ::OpenApiSDK::Utils.field_name("tax_behavior"),
+              'decoder': ::OpenApiSDK::Utils.open_enum_from_string(Models::Components::TaxBehaviorOption, true)
+            }
+          }
+        )
         # Optional maximum amount in cents that can be charged, regardless of the number of units consumed.
         field(
           :cap_amount,
@@ -53,11 +64,19 @@ module OpenApiSDK
             unit_amount: T.any(::Float, ::String),
             amount_type: ::String,
             price_currency: T.nilable(Models::Components::PresentmentCurrency),
+            tax_behavior: T.nilable(Models::Components::TaxBehaviorOption),
             cap_amount: T.nilable(::Integer)
           )
             .void
         }
-        def initialize(meter_id:, unit_amount:, amount_type: "metered_unit", price_currency: nil, cap_amount: nil)
+        def initialize(
+          meter_id:,
+          unit_amount:,
+          amount_type: "metered_unit",
+          price_currency: nil,
+          tax_behavior: nil,
+          cap_amount: nil
+        )
           @meter_id = meter_id
           @unit_amount = unit_amount
           unless amount_type == "metered_unit"
@@ -66,6 +85,7 @@ module OpenApiSDK
 
           @amount_type = "metered_unit"
           @price_currency = price_currency
+          @tax_behavior = tax_behavior
           @cap_amount = cap_amount
         end
 
@@ -76,6 +96,7 @@ module OpenApiSDK
           return false unless @unit_amount == other.unit_amount
           return false unless @amount_type == other.amount_type
           return false unless @price_currency == other.price_currency
+          return false unless @tax_behavior == other.tax_behavior
           return false unless @cap_amount == other.cap_amount
           true
         end

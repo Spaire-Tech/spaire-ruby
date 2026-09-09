@@ -27,6 +27,17 @@ module OpenApiSDK
             }
           }
         )
+        # The tax behavior of the price. If not set, it will default to the organization's default tax behavior.
+        field(
+          :tax_behavior,
+          Crystalline::Nilable.new(Models::Components::TaxBehaviorOption),
+          {
+            'format_json': {
+              'letter_case': ::OpenApiSDK::Utils.field_name("tax_behavior"),
+              'decoder': ::OpenApiSDK::Utils.open_enum_from_string(Models::Components::TaxBehaviorOption, true)
+            }
+          }
+        )
         # The minimum amount the customer can pay. If set to 0, the price is 'free or pay what you want' and $0 is accepted. If set to a value between 1-49, it will be rejected. Defaults to 50 cents.
         field(
           :minimum_amount,
@@ -50,6 +61,7 @@ module OpenApiSDK
           params(
             amount_type: ::String,
             price_currency: T.nilable(Models::Components::PresentmentCurrency),
+            tax_behavior: T.nilable(Models::Components::TaxBehaviorOption),
             minimum_amount: T.nilable(::Integer),
             maximum_amount: T.nilable(::Integer),
             preset_amount: T.nilable(::Integer)
@@ -59,6 +71,7 @@ module OpenApiSDK
         def initialize(
           amount_type: "custom",
           price_currency: nil,
+          tax_behavior: nil,
           minimum_amount: 50,
           maximum_amount: nil,
           preset_amount: nil
@@ -69,6 +82,7 @@ module OpenApiSDK
 
           @amount_type = "custom"
           @price_currency = price_currency
+          @tax_behavior = tax_behavior
           @minimum_amount = minimum_amount
           @maximum_amount = maximum_amount
           @preset_amount = preset_amount
@@ -79,6 +93,7 @@ module OpenApiSDK
           return false unless other.is_a?(self.class)
           return false unless @amount_type == other.amount_type
           return false unless @price_currency == other.price_currency
+          return false unless @tax_behavior == other.tax_behavior
           return false unless @minimum_amount == other.minimum_amount
           return false unless @maximum_amount == other.maximum_amount
           return false unless @preset_amount == other.preset_amount

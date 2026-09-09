@@ -86,6 +86,17 @@ module OpenApiSDK
           Crystalline::Nilable.new(::String),
           {'format_json': {'letter_case': ::OpenApiSDK::Utils.field_name("description")}}
         )
+        # The digital product category (ebook, template, course, etc.).
+        field(
+          :category,
+          Crystalline::Nilable.new(Models::Components::ProductCategory),
+          {
+            'format_json': {
+              'letter_case': ::OpenApiSDK::Utils.field_name("category"),
+              'decoder': ::OpenApiSDK::Utils.open_enum_from_string(Models::Components::ProductCategory, true)
+            }
+          }
+        )
         # List of file IDs. Each one must be on the same organization as the product, of type `product_media` and correctly uploaded.
         field(
           :medias,
@@ -139,6 +150,7 @@ module OpenApiSDK
             visibility: T.nilable(Models::Components::ProductVisibility),
             attached_custom_fields: T.nilable(T::Array[Models::Components::AttachedCustomFieldCreate]),
             description: T.nilable(::String),
+            category: T.nilable(Models::Components::ProductCategory),
             medias: T.nilable(T::Array[::String]),
             organization_id: T.nilable(::String),
             trial_interval: T.nilable(Models::Components::TrialInterval),
@@ -155,6 +167,7 @@ module OpenApiSDK
           visibility: nil,
           attached_custom_fields: nil,
           description: nil,
+          category: nil,
           medias: nil,
           organization_id: nil,
           trial_interval: nil,
@@ -168,6 +181,7 @@ module OpenApiSDK
           @visibility = visibility
           @attached_custom_fields = attached_custom_fields
           @description = description
+          @category = category
           @medias = medias
           @organization_id = organization_id
           @trial_interval = trial_interval
@@ -185,6 +199,7 @@ module OpenApiSDK
           return false unless @visibility == other.visibility
           return false unless @attached_custom_fields == other.attached_custom_fields
           return false unless @description == other.description
+          return false unless @category == other.category
           return false unless @medias == other.medias
           return false unless @organization_id == other.organization_id
           return false unless @trial_interval == other.trial_interval

@@ -16,6 +16,7 @@ module OpenApiSDK
           DOWNLOADABLES = new("downloadables")
           LICENSE_KEYS = new("license_keys")
           METER_CREDIT = new("meter_credit")
+          COURSE_ACCESS = new("course_access")
         end
 
         open!

@@ -18,6 +18,12 @@ class OpenApiSDK::Models::Components::OrganizationFeatureSettings
   def seat_based_pricing_enabled=(str_)
   end
 
+  def course_player_white_label
+  end
+
+  def course_player_white_label=(str_)
+  end
+
   def revops_enabled
   end
 

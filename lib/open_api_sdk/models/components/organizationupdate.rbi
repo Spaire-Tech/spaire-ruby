@@ -18,6 +18,18 @@ class OpenApiSDK::Models::Components::OrganizationUpdate
   def avatar_url=(str_)
   end
 
+  def customer_portal_sign_in_image_position
+  end
+
+  def customer_portal_sign_in_image_position=(str_)
+  end
+
+  def customer_portal_sign_in_theme
+  end
+
+  def customer_portal_sign_in_theme=(str_)
+  end
+
   def email
   end
 
@@ -48,6 +60,12 @@ class OpenApiSDK::Models::Components::OrganizationUpdate
   def default_presentment_currency=(str_)
   end
 
+  def default_tax_behavior
+  end
+
+  def default_tax_behavior=(str_)
+  end
+
   def feature_settings
   end
 
@@ -76,5 +94,17 @@ class OpenApiSDK::Models::Components::OrganizationUpdate
   end
 
   def customer_portal_settings=(str_)
+  end
+
+  def storefront_settings
+  end
+
+  def storefront_settings=(str_)
+  end
+
+  def email_sender_domain
+  end
+
+  def email_sender_domain=(str_)
   end
 end

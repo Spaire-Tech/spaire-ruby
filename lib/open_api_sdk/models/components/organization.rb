@@ -82,6 +82,18 @@ module OpenApiSDK
         )
 
         field(
+          :default_tax_behavior,
+          Models::Components::TaxBehaviorOption,
+          {
+            'format_json': {
+              'letter_case': ::OpenApiSDK::Utils.field_name("default_tax_behavior"),
+              required: true,
+              'decoder': ::OpenApiSDK::Utils.open_enum_from_string(Models::Components::TaxBehaviorOption, false)
+            }
+          }
+        )
+
+        field(
           :subscription_settings,
           Models::Components::OrganizationSubscriptionSettings,
           {'format_json': {'letter_case': ::OpenApiSDK::Utils.field_name("subscription_settings"), required: true}}
@@ -152,6 +164,47 @@ module OpenApiSDK
           Crystalline::Nilable.new(Models::Components::OrganizationFeatureSettings),
           {'format_json': {'letter_case': ::OpenApiSDK::Utils.field_name("feature_settings"), required: true}}
         )
+        # Active custom storefront domain (e.g. learn.creator.com) serving the organization's landing and customer portal. Null when the storefront is served from the platform host.
+        field(
+          :custom_domain,
+          Crystalline::Nilable.new(::String),
+          {'format_json': {'letter_case': ::OpenApiSDK::Utils.field_name("custom_domain")}}
+        )
+        # Image shown on the left panel of the customer portal sign-in screen. Configured from the course builder's Auth tab and applies to the whole organization's portal sign-in. When unset, the portal falls back to the organization's most recent course thumbnail.
+        field(
+          :customer_portal_sign_in_image_url,
+          Crystalline::Nilable.new(::String),
+          {'format_json': {'letter_case': ::OpenApiSDK::Utils.field_name("customer_portal_sign_in_image_url")}}
+        )
+        # CSS object-position (e.g. '50% 30%') for the customer portal sign-in image, set by dragging to reposition in the Auth tab.
+        field(
+          :customer_portal_sign_in_image_position,
+          Crystalline::Nilable.new(::String),
+          {'format_json': {'letter_case': ::OpenApiSDK::Utils.field_name("customer_portal_sign_in_image_position")}}
+        )
+        # Creator-chosen appearance for the customer portal sign-in screen: 'light' or 'dark'. Null is treated as 'light'.
+        field(
+          :customer_portal_sign_in_theme,
+          Crystalline::Nilable.new(::String),
+          {'format_json': {'letter_case': ::OpenApiSDK::Utils.field_name("customer_portal_sign_in_theme")}}
+        )
+        # When the creator finished the onboarding flow (plan + review + assistant). Until this is set, the dashboard layout redirects the creator back to /onboarding/plan to prevent skipping the plan-selection step.
+        field(
+          :ai_onboarding_completed_at,
+          Crystalline::Nilable.new(::DateTime),
+          {
+            'format_json': {
+              'letter_case': ::OpenApiSDK::Utils.field_name("ai_onboarding_completed_at"),
+              'decoder': ::OpenApiSDK::Utils.datetime_from_iso_format(true)
+            }
+          }
+        )
+        # Storefront settings
+        field(
+          :storefront_settings,
+          Crystalline::Nilable.new(Models::Components::OrganizationStorefrontSettings),
+          {'format_json': {'letter_case': ::OpenApiSDK::Utils.field_name("storefront_settings")}}
+        )
 
         sig {
           params(
@@ -164,6 +217,7 @@ module OpenApiSDK
             socials: T::Array[Models::Components::OrganizationSocialLink],
             status: Models::Components::OrganizationStatus,
             default_presentment_currency: Models::Components::PresentmentCurrency,
+            default_tax_behavior: Models::Components::TaxBehaviorOption,
             subscription_settings: Models::Components::OrganizationSubscriptionSettings,
             notification_settings: Models::Components::OrganizationNotificationSettings,
             customer_email_settings: Models::Components::OrganizationCustomerEmailSettings,
@@ -173,7 +227,13 @@ module OpenApiSDK
             email: T.nilable(::String),
             website: T.nilable(::String),
             details_submitted_at: T.nilable(::DateTime),
-            feature_settings: T.nilable(Models::Components::OrganizationFeatureSettings)
+            feature_settings: T.nilable(Models::Components::OrganizationFeatureSettings),
+            custom_domain: T.nilable(::String),
+            customer_portal_sign_in_image_url: T.nilable(::String),
+            customer_portal_sign_in_image_position: T.nilable(::String),
+            customer_portal_sign_in_theme: T.nilable(::String),
+            ai_onboarding_completed_at: T.nilable(::DateTime),
+            storefront_settings: T.nilable(Models::Components::OrganizationStorefrontSettings)
           )
             .void
         }
@@ -187,6 +247,7 @@ module OpenApiSDK
           socials:,
           status:,
           default_presentment_currency:,
+          default_tax_behavior:,
           subscription_settings:,
           notification_settings:,
           customer_email_settings:,
@@ -196,7 +257,13 @@ module OpenApiSDK
           email: nil,
           website: nil,
           details_submitted_at: nil,
-          feature_settings: nil
+          feature_settings: nil,
+          custom_domain: nil,
+          customer_portal_sign_in_image_url: nil,
+          customer_portal_sign_in_image_position: nil,
+          customer_portal_sign_in_theme: nil,
+          ai_onboarding_completed_at: nil,
+          storefront_settings: nil
         )
           @created_at = created_at
           @id = id
@@ -207,6 +274,7 @@ module OpenApiSDK
           @socials = socials
           @status = status
           @default_presentment_currency = default_presentment_currency
+          @default_tax_behavior = default_tax_behavior
           @subscription_settings = subscription_settings
           @notification_settings = notification_settings
           @customer_email_settings = customer_email_settings
@@ -217,6 +285,12 @@ module OpenApiSDK
           @website = website
           @details_submitted_at = details_submitted_at
           @feature_settings = feature_settings
+          @custom_domain = custom_domain
+          @customer_portal_sign_in_image_url = customer_portal_sign_in_image_url
+          @customer_portal_sign_in_image_position = customer_portal_sign_in_image_position
+          @customer_portal_sign_in_theme = customer_portal_sign_in_theme
+          @ai_onboarding_completed_at = ai_onboarding_completed_at
+          @storefront_settings = storefront_settings
         end
 
         sig { params(other: T.untyped).returns(T::Boolean) }
@@ -231,6 +305,7 @@ module OpenApiSDK
           return false unless @socials == other.socials
           return false unless @status == other.status
           return false unless @default_presentment_currency == other.default_presentment_currency
+          return false unless @default_tax_behavior == other.default_tax_behavior
           return false unless @subscription_settings == other.subscription_settings
           return false unless @notification_settings == other.notification_settings
           return false unless @customer_email_settings == other.customer_email_settings
@@ -241,6 +316,12 @@ module OpenApiSDK
           return false unless @website == other.website
           return false unless @details_submitted_at == other.details_submitted_at
           return false unless @feature_settings == other.feature_settings
+          return false unless @custom_domain == other.custom_domain
+          return false unless @customer_portal_sign_in_image_url == other.customer_portal_sign_in_image_url
+          return false unless @customer_portal_sign_in_image_position == other.customer_portal_sign_in_image_position
+          return false unless @customer_portal_sign_in_theme == other.customer_portal_sign_in_theme
+          return false unless @ai_onboarding_completed_at == other.ai_onboarding_completed_at
+          return false unless @storefront_settings == other.storefront_settings
           true
         end
       end

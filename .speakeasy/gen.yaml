@@ -16,8 +16,8 @@ generation:
     sharedNestedComponentsJan2026: false
     nameOverrideFeb2026: false
   auth:
-    oAuth2ClientCredentialsEnabled: true
-    oAuth2PasswordEnabled: true
+    oAuth2ClientCredentialsEnabled: false
+    oAuth2PasswordEnabled: false
     hoistGlobalSecurity: true
   inferSSEOverload: true
   sdkHooksConfigAccess: true
@@ -31,7 +31,7 @@ generation:
     generateNewTests: true
     skipResponseBodyAssertions: false
 ruby:
-  version: 0.1.1
+  version: 0.2.0
   additionalDependencies:
     development: {}
     runtime: {}
@@ -55,6 +55,7 @@ ruby:
       webhooks: models/webhooks
   inferUnionDiscriminators: true
   inputModelSuffix: input
+  license: Apache-2.0
   maxMethodParams: 4
   module: OpenApiSdk
   multipartArrayFormat: standard

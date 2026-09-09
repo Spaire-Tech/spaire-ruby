@@ -101,4 +101,16 @@ class OpenApiSDK::Models::Components::CustomerProduct
 
   def recurring_interval_count=(str_)
   end
+
+  def category
+  end
+
+  def category=(str_)
+  end
+
+  def product_type
+  end
+
+  def product_type=(str_)
+  end
 end

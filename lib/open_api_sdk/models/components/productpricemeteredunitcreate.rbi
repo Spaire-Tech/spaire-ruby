@@ -30,6 +30,12 @@ class OpenApiSDK::Models::Components::ProductPriceMeteredUnitCreate
   def price_currency=(str_)
   end
 
+  def tax_behavior
+  end
+
+  def tax_behavior=(str_)
+  end
+
   def cap_amount
   end
 

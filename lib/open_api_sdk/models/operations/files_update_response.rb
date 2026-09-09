@@ -26,7 +26,10 @@ module OpenApiSDK
               {
                 "downloadable" => Models::Components::DownloadableFileRead,
                 "product_media" => Models::Components::ProductMediaFileRead,
-                "organization_avatar" => Models::Components::OrganizationAvatarFileRead
+                "organization_avatar" => Models::Components::OrganizationAvatarFileRead,
+                "storefront_header" => Models::Components::StorefrontHeaderFileRead,
+                "storefront_link" => Models::Components::StorefrontLinkFileRead,
+                "community_post_image" => Models::Components::CommunityPostImageFileRead
               }
             )
           )
@@ -41,7 +44,10 @@ module OpenApiSDK
               T.any(
                 Models::Components::DownloadableFileRead,
                 Models::Components::ProductMediaFileRead,
-                Models::Components::OrganizationAvatarFileRead
+                Models::Components::OrganizationAvatarFileRead,
+                Models::Components::StorefrontHeaderFileRead,
+                Models::Components::StorefrontLinkFileRead,
+                Models::Components::CommunityPostImageFileRead
               )
             )
           )

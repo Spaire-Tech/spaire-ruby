@@ -6,6 +6,7 @@
 
 * [get](#get) - Get Customer
 * [update](#update) - Update Customer
+* [update_profile](#update_profile) - Update Customer Profile
 * [list_payment_methods](#list_payment_methods) - List Customer Payment Methods
 * [add_payment_method](#add_payment_method) - Add Customer Payment Method
 * [confirm_payment_method](#confirm_payment_method) - Confirm Customer Payment Method
@@ -89,6 +90,54 @@ end
 ### Response
 
 **[T.nilable(Models::Operations::CustomerPortalCustomersUpdateResponse)](../../models/operations/customerportalcustomersupdateresponse.md)**
+
+### Errors
+
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Models::Errors::HTTPValidationError | 422                                 | application/json                    |
+| Errors::APIError                    | 4XX, 5XX                            | \*/\*                               |
+
+## update_profile
+
+First-sign-in + Settings menu's name + avatar editor.
+
+Separate from PATCH /me because it doesn't touch billing data
+and runs under a non-billing scope so any portal session can
+customize the customer's display identity.
+
+**Scopes**: `customer_portal:write`
+
+### Example Usage
+
+<!-- UsageSnippet language="ruby" operationID="customer_portal:customers:update_profile" method="patch" path="/v1/customer-portal/customers/me/profile" -->
+```ruby
+require 'spaire'
+
+Models = ::OpenApiSDK::Models
+s = ::OpenApiSDK::Spaire.new
+
+req = Models::Components::CustomerPortalCustomerProfileUpdate.new
+res = s.customer_portal.customers.update_profile(request: req, security: Models::Operations::CustomerPortalCustomersUpdateProfileSecurity.new(
+  customer_session: '<YOUR_BEARER_TOKEN_HERE>'
+))
+
+unless res.customer_portal_customer.nil?
+  # handle response
+end
+
+```
+
+### Parameters
+
+| Parameter                                                                                                                                   | Type                                                                                                                                        | Required                                                                                                                                    | Description                                                                                                                                 |
+| ------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                                                   | [Models::Components::CustomerPortalCustomerProfileUpdate](../../models/shared/customerportalcustomerprofileupdate.md)                       | :heavy_check_mark:                                                                                                                          | The request object to use for the request.                                                                                                  |
+| `security`                                                                                                                                  | [Models::Operations::CustomerPortalCustomersUpdateProfileSecurity](../../models/operations/customerportalcustomersupdateprofilesecurity.md) | :heavy_check_mark:                                                                                                                          | The security requirements to use for the request.                                                                                           |
+
+### Response
+
+**[T.nilable(Models::Operations::CustomerPortalCustomersUpdateProfileResponse)](../../models/operations/customerportalcustomersupdateprofileresponse.md)**
 
 ### Errors
 

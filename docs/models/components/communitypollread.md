@@ -1,0 +1,10 @@
+# CommunityPollRead
+
+
+## Fields
+
+| Field                                                                                                   | Type                                                                                                    | Required                                                                                                | Description                                                                                             |
+| ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| `options`                                                                                               | T::Array<[Models::Components::CommunityPollOptionRead](../../models/shared/communitypolloptionread.md)> | :heavy_check_mark:                                                                                      | N/A                                                                                                     |
+| `total`                                                                                                 | *T.nilable(::Integer)*                                                                                  | :heavy_minus_sign:                                                                                      | N/A                                                                                                     |
+| `my_vote`                                                                                               | *T.nilable(::String)*                                                                                   | :heavy_minus_sign:                                                                                      | N/A                                                                                                     |

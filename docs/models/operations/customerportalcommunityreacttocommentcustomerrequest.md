@@ -1,0 +1,10 @@
+# CustomerPortalCommunityReactToCommentCustomerRequest
+
+
+## Fields
+
+| Field                                                                                         | Type                                                                                          | Required                                                                                      | Description                                                                                   |
+| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `course_id`                                                                                   | *::String*                                                                                    | :heavy_check_mark:                                                                            | N/A                                                                                           |
+| `comment_id`                                                                                  | *::String*                                                                                    | :heavy_check_mark:                                                                            | N/A                                                                                           |
+| `body`                                                                                        | [Models::Components::CommunityReactionToggle](../../models/shared/communityreactiontoggle.md) | :heavy_check_mark:                                                                            | N/A                                                                                           |

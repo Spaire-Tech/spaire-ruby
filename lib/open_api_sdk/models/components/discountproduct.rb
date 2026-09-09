@@ -119,6 +119,23 @@ module OpenApiSDK
           Crystalline::Nilable.new(::Integer),
           {'format_json': {'letter_case': ::OpenApiSDK::Utils.field_name("recurring_interval_count"), required: true}}
         )
+        # The digital product category.
+        field(
+          :category,
+          Crystalline::Nilable.new(Models::Components::ProductCategory),
+          {
+            'format_json': {
+              'letter_case': ::OpenApiSDK::Utils.field_name("category"),
+              'decoder': ::OpenApiSDK::Utils.open_enum_from_string(Models::Components::ProductCategory, true)
+            }
+          }
+        )
+        # The type of product (e.g. 'digital', 'course').
+        field(
+          :product_type,
+          Crystalline::Nilable.new(::String),
+          {'format_json': {'letter_case': ::OpenApiSDK::Utils.field_name("product_type")}}
+        )
 
         sig {
           params(
@@ -135,7 +152,9 @@ module OpenApiSDK
             trial_interval_count: T.nilable(::Integer),
             description: T.nilable(::String),
             recurring_interval: T.nilable(Models::Components::SubscriptionRecurringInterval),
-            recurring_interval_count: T.nilable(::Integer)
+            recurring_interval_count: T.nilable(::Integer),
+            category: T.nilable(Models::Components::ProductCategory),
+            product_type: T.nilable(::String)
           )
             .void
         }
@@ -153,7 +172,9 @@ module OpenApiSDK
           trial_interval_count: nil,
           description: nil,
           recurring_interval: nil,
-          recurring_interval_count: nil
+          recurring_interval_count: nil,
+          category: nil,
+          product_type: "digital"
         )
           @metadata = metadata
           @id = id
@@ -169,6 +190,8 @@ module OpenApiSDK
           @description = description
           @recurring_interval = recurring_interval
           @recurring_interval_count = recurring_interval_count
+          @category = category
+          @product_type = product_type
         end
 
         sig { params(other: T.untyped).returns(T::Boolean) }
@@ -188,6 +211,8 @@ module OpenApiSDK
           return false unless @description == other.description
           return false unless @recurring_interval == other.recurring_interval
           return false unless @recurring_interval_count == other.recurring_interval_count
+          return false unless @category == other.category
+          return false unless @product_type == other.product_type
           true
         end
       end
